@@ -4,11 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Soutenir DineTech | Don & Contribution</title>
+  <title>Soutenir DineTech | Don & Contribution (FedaPay, MTN, Moov, PayPal)</title>
   <meta name="description" content="Soutenez DineTech à Djougou : contribution libre via FedaPay, MTN, Moov ou PayPal. Merci 🙏" />
   <meta name="keywords" content="DineTech, soutenir, don, contribution, Djougou, Bénin, réparation téléphone, réparation ordinateur, dépannage informatique, création site web, FedaPay, MTN, Moov, PayPal" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="theme-color" content="#0E5AA7" />
+  <meta name="color-scheme" content="dark light" />
 
   <!-- Favicon (racine) -->
   <link rel="icon" type="image/png" href="favicon.png" />
@@ -33,25 +34,51 @@
   <meta name="twitter:description" content="Contribution libre via FedaPay, MTN, Moov, PayPal." />
   <meta name="twitter:image" content="https://dinetech.vercel.app/logo-dinetech.png" />
 
+  <!-- SEO: indexation propre -->
+  <meta name="application-name" content="DineTech" />
+  <meta name="author" content="DineTech" />
+  <meta name="publisher" content="DineTech" />
+  <meta name="format-detection" content="telephone=no" />
+
   <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
-    "@type":"DonateAction",
-    "name":"Soutenir DineTech",
-    "description":"Contribution libre pour soutenir DineTech à Djougou (réparation, dépannage, maintenance et création de sites web).",
-    "recipient":{
-      "@type":"LocalBusiness",
-      "name":"DineTech",
-      "telephone":"+22999560661",
-      "address":{
-        "@type":"PostalAddress",
-        "addressLocality":"Djougou",
-        "addressCountry":"BJ",
-        "streetAddress":"Quartier Gah, dans la von de ministre, juste avant le pont"
+    "@graph":[
+      {
+        "@type":"LocalBusiness",
+        "name":"DineTech",
+        "image":"https://dinetech.vercel.app/logo-dinetech.png",
+        "url":"https://dinetech.vercel.app/",
+        "telephone":"+22999560661",
+        "address":{
+          "@type":"PostalAddress",
+          "addressLocality":"Djougou",
+          "addressCountry":"BJ",
+          "streetAddress":"Quartier Gah, dans la von de ministre, juste avant le pont"
+        },
+        "areaServed":[{"@type":"City","name":"Djougou"},{"@type":"Country","name":"Bénin"}],
+        "description":"DineTech à Djougou : réparation téléphones et ordinateurs, dépannage informatique, maintenance et création de sites web."
       },
-      "url":"https://dinetech.vercel.app/"
-    }
+      {
+        "@type":"DonateAction",
+        "name":"Soutenir DineTech",
+        "description":"Contribution libre pour soutenir DineTech à Djougou (réparation, dépannage, maintenance et création de sites web).",
+        "recipient":{
+          "@type":"LocalBusiness",
+          "name":"DineTech",
+          "url":"https://dinetech.vercel.app/",
+          "telephone":"+22999560661"
+        }
+      },
+      {
+        "@type":"WebPage",
+        "name":"Soutenir DineTech",
+        "url":"https://dinetech.vercel.app/soutien.html",
+        "inLanguage":"fr-FR",
+        "isPartOf":{"@type":"WebSite","name":"DineTech","url":"https://dinetech.vercel.app/"}
+      }
+    ]
   }
   </script>
 
@@ -66,9 +93,14 @@
       --brand:#0E5AA7;
       --brand2:#1E7FD6;
       --ok:#22C55E;
+      --warn:#ffd6a5;
       --shadow: 0 18px 60px rgba(0,0,0,.35);
       --radius: 18px;
       --max: 1100px;
+
+      /* Mobile menu */
+      --menu-bg: rgba(11,18,32,.92);
+      --menu-border: rgba(255,255,255,.12);
     }
     *{box-sizing:border-box}
     html,body{
@@ -84,7 +116,7 @@
     .wrap{max-width:var(--max); margin:0 auto; padding:22px 16px 70px;}
 
     .topbar{
-      position:sticky; top:0; z-index:50;
+      position:sticky; top:0; z-index:80;
       backdrop-filter: blur(10px);
       background: rgba(11,18,32,.55);
       border-bottom: 1px solid rgba(255,255,255,.08);
@@ -105,6 +137,7 @@
       box-shadow:0 10px 30px rgba(0,0,0,.25);
       display:block;
     }
+
     nav{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
     .navlink{
       padding:10px 12px; border-radius:12px;
@@ -112,12 +145,13 @@
       border:1px solid rgba(255,255,255,.08);
       background: rgba(255,255,255,.03);
       transition:.2s;
+      white-space:nowrap;
     }
     .navlink:hover{color:var(--text); border-color: rgba(30,127,214,.35); transform: translateY(-1px);}
 
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:12px 16px; border-radius:14px; font-weight:700;
+      padding:12px 16px; border-radius:14px; font-weight:800;
       border:1px solid rgba(255,255,255,.12);
       background: rgba(255,255,255,.06);
       transition:.2s;
@@ -134,6 +168,79 @@
       background: rgba(255,255,255,.08);
       border: 1px solid rgba(255,255,255,.16);
       color: var(--text);
+    }
+
+    /* Mobile menu button */
+    .navbtn{
+      display:none;
+      width:44px; height:44px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      cursor:pointer;
+      align-items:center;
+      justify-content:center;
+      gap:4px;
+      flex-direction:column;
+    }
+    .navbtn span{
+      display:block;
+      width:18px;
+      height:2px;
+      background: rgba(234,240,255,.85);
+      border-radius:99px;
+      transition: .2s;
+    }
+    .navbtn[aria-expanded="true"] span:nth-child(1){transform: translateY(6px) rotate(45deg);}
+    .navbtn[aria-expanded="true"] span:nth-child(2){opacity:0;}
+    .navbtn[aria-expanded="true"] span:nth-child(3){transform: translateY(-6px) rotate(-45deg);}
+
+    /* Mobile overlay menu */
+    .navpanel{
+      display:none;
+      position: fixed;
+      inset: 0;
+      z-index: 90;
+      background: rgba(0,0,0,.35);
+      backdrop-filter: blur(4px);
+    }
+    .navpanel.is-open{display:block;}
+    .navpanel .panel{
+      position:absolute;
+      right: 12px;
+      top: 72px;
+      width: min(92vw, 360px);
+      background: var(--menu-bg);
+      border: 1px solid var(--menu-border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 12px;
+    }
+    .navpanel .panel a{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding: 12px 12px;
+      border-radius: 14px;
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      margin-bottom: 10px;
+      font-weight: 800;
+    }
+    .navpanel .panel a small{
+      color: rgba(234,240,255,.70);
+      font-weight: 600;
+    }
+    .navpanel .panel a:hover{
+      border-color: rgba(30,127,214,.45);
+      transform: translateY(-1px);
+    }
+    .navpanel .panel .panel-cta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 6px;
     }
 
     .card{
@@ -167,21 +274,23 @@
       padding:10px 12px; border-radius: 999px;
       background: rgba(255,255,255,.05);
       border: 1px solid rgba(255,255,255,.10);
-      color: var(--muted);
-      font-weight:600;
+      color: rgba(234,240,255,.85);
+      font-weight:700;
     }
     .dot{width:10px; height:10px; border-radius:999px; background: var(--ok); box-shadow: 0 0 0 6px rgba(34,197,94,.12);}
 
     .heroCard{padding:18px;}
     .heroCard h2{margin:0 0 10px; font-size:18px;}
+
+    /* ✅ Fix lisibilité blocs (ancien "noir illisible") */
     .mini{
       padding:12px; border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.08);
       margin-bottom:10px;
     }
     .mini b{display:block; margin-bottom:6px}
-    .mini span{color: rgba(234,240,255,.80); font-size: 13px; line-height:1.4}
+    .mini span{color: rgba(234,240,255,.85); font-size: 13px; line-height:1.4}
 
     .section{padding: 16px 0;}
     .section h2{margin:0 0 10px; font-size: 22px;}
@@ -222,8 +331,8 @@
       background: linear-gradient(135deg, rgba(14,90,167,.55), rgba(30,127,214,.45));
     }
 
-    label{display:block; font-weight:800; margin: 12px 0 6px;}
-    .hint{color: var(--muted); font-size: 13px; line-height:1.5; margin:0 0 8px;}
+    label{display:block; font-weight:900; margin: 12px 0 6px;}
+    .hint{color: rgba(234,240,255,.78); font-size: 13px; line-height:1.5; margin:0 0 8px;}
     input, textarea, select{
       width:100%;
       background: rgba(255,255,255,.06);
@@ -235,11 +344,19 @@
       font-size: 14px;
     }
     textarea{resize: vertical; min-height: 130px;}
+    input:focus, textarea:focus, select:focus{
+      outline: 2px solid rgba(30,127,214,.55);
+      outline-offset: 2px;
+    }
+
+    /* ✅ Fix select "liste blanche" (Android/Chrome) */
+    select{ color-scheme: dark; background: rgba(255,255,255,.06); }
+    select option{ background: #0B1220; color:#EAF0FF; }
 
     .rowbtn{display:flex; gap:10px; flex-wrap:wrap; margin-top: 12px;}
     .small{font-size: 13px; color: var(--muted); line-height:1.6}
     .ok{color:#bfffd6;}
-    .warn{color:#ffd6a5;}
+    .warn{color: var(--warn);}
 
     footer{padding: 20px 0 8px; color: rgba(234,240,255,.7); font-size: 13px;}
     .footgrid{display:grid; grid-template-columns: 1.2fr .8fr; gap: 12px;}
@@ -274,14 +391,19 @@
     @media (max-width: 900px){
       .hero{grid-template-columns:1fr; padding-top: 24px;}
       nav{display:none;}
+      .navbtn{display:flex;}
       .don-grid{grid-template-columns: 1fr;}
       .footgrid{grid-template-columns: 1fr;}
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      *{scroll-behavior:auto!important; transition:none!important;}
     }
   </style>
 </head>
 
 <body>
-  <header class="topbar">
+  <header class="topbar" role="banner">
     <div class="inner">
       <a class="brand" href="index.html" aria-label="Retour à l'accueil">
         <img src="logo-dinetech.png" alt="Logo DineTech" class="logo-img">
@@ -294,15 +416,37 @@
       <nav aria-label="Navigation">
         <a class="navlink" href="index.html">Accueil</a>
         <a class="navlink" href="services.html">Services</a>
-        <a class="navlink" href="web.html">Site Web</a>
+        <a class="navlink" href="web.html">Sites web</a>
         <a class="navlink" href="soutien.html">Soutien</a>
         <a class="navlink" href="contact.html">Contact</a>
         <a class="navlink" href="legal.html">Légal</a>
       </nav>
 
+      <!-- Mobile menu button -->
+      <button class="navbtn" id="navBtn" aria-expanded="false" aria-controls="navPanel" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+
       <a class="btn primary" id="btnWhatsAppHeader" href="#" rel="noopener">WhatsApp</a>
     </div>
   </header>
+
+  <!-- Mobile navigation panel -->
+  <div class="navpanel" id="navPanel" aria-hidden="true">
+    <div class="panel" role="dialog" aria-label="Menu">
+      <a href="index.html"><span>Accueil</span> <small>🏠</small></a>
+      <a href="services.html"><span>Services</span> <small>🧰</small></a>
+      <a href="web.html"><span>Sites web</span> <small>💻</small></a>
+      <a href="soutien.html"><span>Soutien</span> <small>🙏</small></a>
+      <a href="contact.html"><span>Contact</span> <small>📍</small></a>
+      <a href="legal.html"><span>Légal</span> <small>⚖️</small></a>
+
+      <div class="panel-cta">
+        <a class="btn primary" id="btnWhatsAppMenu" href="#" rel="noopener">WhatsApp</a>
+        <a class="btn ghost" href="#form">Formulaire</a>
+      </div>
+    </div>
+  </div>
 
   <main class="wrap">
     <section class="hero" aria-label="Soutenir DineTech">
@@ -429,12 +573,13 @@
                 <button class="btn" type="submit">Payer avec PayPal</button>
               </form>
 
-              <a class="btn" href="tel:*880%23">MTN (*880#)</a>
-              <a class="btn" href="tel:*855%23">MOOV (*855#)</a>
+              <!-- USSD prefill -->
+              <a class="btn" id="btnMTN" href="tel:*880%23">MTN (*880#)</a>
+              <a class="btn" id="btnMOOV" href="tel:*855%23">MOOV (*855#)</a>
             </div>
 
             <div class="small" style="margin-top:10px;">
-              <span class="ok">✅</span> MTN/MOOV : le code s’ouvre, tu mets le montant et tu valides.
+              <span class="ok">✅</span> MTN/MOOV : le code s’ouvre (si ton téléphone l’autorise), le montant est pré-rempli, tu valides.
               <br>
               <span class="warn">⚠️</span> Selon le téléphone, le système peut demander confirmation (normal).
             </div>
@@ -592,6 +737,22 @@ ${($("message").value || "").trim() || "Merci pour votre service."}
       });
     });
 
+    function setUSSDLinks(){
+      const amt = getAmount();
+
+      // Base codes
+      const mtnBase = "*880#";
+      const moovBase = "*855#";
+
+      // Prefill format (may vary by operator/phone)
+      // If it doesn't work on a device, it will still open the base code.
+      const mtnPrefill = amt ? `*880*${amt}#` : mtnBase;
+      const moovPrefill = amt ? `*855*${amt}#` : moovBase;
+
+      $("btnMTN").setAttribute("href", "tel:" + encodeURIComponent(mtnPrefill));
+      $("btnMOOV").setAttribute("href", "tel:" + encodeURIComponent(moovPrefill));
+    }
+
     // ===== Auto-message =====
     function syncAll(){
       if(!($("message").value || "").trim()){
@@ -603,9 +764,16 @@ ${($("message").value || "").trim() || "Merci pour votre service."}
       $("paypalAmount").value = amt ? String(amt) : "";
 
       const msg = buildMessage();
-      $("btnWhatsAppHeader").href = waLink(msg);
-      $("btnWhatsAppFloat").href = waLink(msg);
+      const headMsg = msg;
+
+      $("btnWhatsAppHeader").href = waLink(headMsg);
+      $("btnWhatsAppFloat").href = waLink(headMsg);
+      const menuBtn = $("btnWhatsAppMenu");
+      if(menuBtn) menuBtn.href = waLink(headMsg);
+
       $("btnWhatsAppAfter").href = waLink(`Bonjour ${businessName}, j’ai soutenu DineTech 🙏. Nom : `);
+
+      setUSSDLinks();
     }
 
     ["amount","fullname","email","message"].forEach(id=>{
@@ -692,13 +860,48 @@ ${($("message").value || "").trim() || "Merci pour votre service."}
     $("btnPayFedapay").addEventListener("click", payWithFedapay);
     $("btnPayFedapayTop").addEventListener("click", payWithFedapay);
 
-    // ===== Année =====
+    // ===== Footer year =====
     $("year").textContent = new Date().getFullYear();
+
+    // ===== Mobile menu =====
+    const navBtn = document.getElementById("navBtn");
+    const navPanel = document.getElementById("navPanel");
+
+    function closeMenu(){
+      navPanel.classList.remove("is-open");
+      navPanel.setAttribute("aria-hidden","true");
+      navBtn.setAttribute("aria-expanded","false");
+      document.body.style.overflow = "";
+    }
+
+    function openMenu(){
+      navPanel.classList.add("is-open");
+      navPanel.setAttribute("aria-hidden","false");
+      navBtn.setAttribute("aria-expanded","true");
+      document.body.style.overflow = "hidden";
+    }
+
+    if(navBtn && navPanel){
+      navBtn.addEventListener("click", ()=>{
+        const expanded = navBtn.getAttribute("aria-expanded") === "true";
+        expanded ? closeMenu() : openMenu();
+      });
+
+      navPanel.addEventListener("click", (e)=>{
+        if(e.target === navPanel) closeMenu();
+      });
+
+      navPanel.querySelectorAll("a").forEach(a=>{
+        a.addEventListener("click", ()=> closeMenu());
+      });
+
+      document.addEventListener("keydown", (e)=>{
+        if(e.key === "Escape") closeMenu();
+      });
+    }
 
     // Init
     syncAll();
   </script>
 </body>
 </html>
-
-
