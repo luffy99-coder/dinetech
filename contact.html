@@ -312,18 +312,40 @@
 
     .poles{display:grid; grid-template-columns: 1fr; gap:10px; margin-top: 8px;}
     .pole{
-      display:flex; align-items:flex-start; gap:10px;
-      padding: 12px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      color: rgba(234,240,255,.86);
-      font-weight:800;
-      cursor:pointer;
-      user-select:none;
-    }
-    .pole input{margin-top: 2px;}
-    .pole:hover{border-color: rgba(30,127,214,.35); transform: translateY(-1px);}
+  display:grid;
+  grid-template-columns: 18px 1fr;
+  align-items:center;
+  gap:12px;
+
+  padding: 14px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+
+  color: rgba(234,240,255,.86);
+  font-weight: 800;
+  cursor: pointer;
+  user-select: none;
+
+  min-height: 54px; /* mêmes tailles partout */
+}
+
+.pole:hover{
+  border-color: rgba(30,127,214,.35);
+  background: rgba(30,127,214,.06);
+  transform: translateY(-1px);
+}
+   .pole input{
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--brand2);
+}
+.pole{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
     /* Map */
     .section{padding: 16px 0;}
@@ -711,3 +733,4 @@
   </script>
 </body>
 </html>
+
