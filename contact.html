@@ -3,50 +3,63 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact DineTech | Djougou - Quartier Gah</title>
-  <meta name="description" content="Contactez DineTech à Djougou (Quartier Gah, dans la von de ministre, juste avant le pont). Disponible tous les jours. WhatsApp : 99560661. Itinéraire Google Maps." />
-  <meta name="robots" content="index, follow" />
+
+  <title>Contact DineTech | Itinéraire & localisation à Djougou (Quartier Gah)</title>
+  <meta name="description" content="Contactez DineTech à Djougou (Quartier Gah, dans la von de ministre, juste avant le pont). Disponible tous les jours. WhatsApp : 99560661. Ouvrir l’itinéraire Google Maps." />
+  <meta name="keywords" content="contact DineTech, DineTech Djougou, Quartier Gah Djougou, réparation téléphone Djougou, réparation ordinateur Djougou, dépannage informatique Djougou, itinéraire DineTech, Google Maps Djougou, technicien informatique Djougou, Bénin" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="theme-color" content="#0E5AA7" />
+  <meta name="color-scheme" content="dark light" />
 
   <!-- Favicon (racine) -->
   <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+
+  <!-- Canonical (Vercel) -->
+  <link rel="canonical" href="https://dinetech.vercel.app/contact.html" />
 
   <!-- Open Graph (WhatsApp/Facebook) -->
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Contact DineTech | Djougou - Quartier Gah" />
-  <meta property="og:description" content="DineTech à Djougou (Quartier Gah). Disponible tous les jours. SAV disponible. WhatsApp : 99560661. Cliquez pour ouvrir l’itinéraire sur Google Maps." />
-  <meta property="og:url" content="https://dinetech.bj/contact.html" />
+  <meta property="og:title" content="Contact DineTech | Localisation & itinéraire à Djougou" />
+  <meta property="og:description" content="Quartier Gah (von de ministre, juste avant le pont). Disponible tous les jours. WhatsApp : 99560661. Cliquez pour ouvrir l’itinéraire sur Google Maps." />
+  <meta property="og:url" content="https://dinetech.vercel.app/contact.html" />
   <meta property="og:site_name" content="DineTech" />
-  <meta property="og:image" content="https://dinetech.bj/logo-dinetech.png" />
+  <meta property="og:image" content="https://dinetech.vercel.app/logo-dinetech.png" />
+  <meta property="og:image:alt" content="Logo DineTech" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Contact DineTech | Djougou - Quartier Gah" />
   <meta name="twitter:description" content="Disponible tous les jours. WhatsApp : 99560661. Ouvrir l’itinéraire Google Maps." />
-  <meta name="twitter:image" content="https://dinetech.bj/logo-dinetech.png" />
+  <meta name="twitter:image" content="https://dinetech.vercel.app/logo-dinetech.png" />
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://dinetech.bj/contact.html" />
+  <!-- SEO local -->
+  <meta name="geo.region" content="BJ" />
+  <meta name="geo.placename" content="Djougou" />
+  <meta name="language" content="fr" />
 
   <!-- Schema.org (LocalBusiness) -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "DineTech",
-    "image": "https://dinetech.bj/logo-dinetech.png",
-    "url": "https://dinetech.bj/",
-    "telephone": "+22999560661",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Djougou",
-      "addressCountry": "BJ",
-      "streetAddress": "Quartier Gah, dans la von de ministre, juste avant le pont"
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"DineTech",
+    "image":"https://dinetech.vercel.app/logo-dinetech.png",
+    "url":"https://dinetech.vercel.app/",
+    "telephone":"+22999560661",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Quartier Gah, dans la von de ministre, juste avant le pont",
+      "addressLocality":"Djougou",
+      "addressCountry":"BJ"
     },
-    "openingHours": "Mo-Su",
-    "areaServed": "Djougou",
-    "description": "DineTech à Djougou : dépannage et réparation informatique (téléphones, ordinateurs, logiciels, réseau). Service après-vente disponible."
+    "areaServed":[
+      { "@type":"City","name":"Djougou" },
+      { "@type":"Country","name":"Bénin" }
+    ],
+    "openingHours":"Mo-Su",
+    "description":"DineTech à Djougou : dépannage et réparation informatique (téléphones, ordinateurs, logiciels, réseau) + création web. Service après-vente disponible."
   }
   </script>
 
@@ -61,6 +74,9 @@
       --shadow: 0 18px 60px rgba(0,0,0,.35);
       --radius: 18px;
       --max: 1100px;
+
+      --menu-bg: rgba(11,18,32,.92);
+      --menu-border: rgba(255,255,255,.12);
     }
     *{box-sizing:border-box}
     html,body{
@@ -76,7 +92,7 @@
     .wrap{max-width:var(--max); margin:0 auto; padding:22px 16px 70px;}
 
     .topbar{
-      position:sticky; top:0; z-index:50;
+      position:sticky; top:0; z-index:80;
       backdrop-filter: blur(10px);
       background: rgba(11,18,32,.55);
       border-bottom: 1px solid rgba(255,255,255,.08);
@@ -99,6 +115,7 @@
       object-fit:contain;background:#fff;padding:4px;
       box-shadow:0 10px 30px rgba(0,0,0,.25);
     }
+
     nav{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
     .navlink{
       padding:10px 12px; border-radius:12px;
@@ -106,8 +123,10 @@
       border:1px solid rgba(255,255,255,.08);
       background: rgba(255,255,255,.03);
       transition:.2s;
+      white-space:nowrap;
     }
     .navlink:hover{color:var(--text); border-color: rgba(30,127,214,.35); transform: translateY(-1px);}
+
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:10px;
       padding:12px 16px; border-radius:14px; font-weight:700;
@@ -122,6 +141,83 @@
       background: linear-gradient(135deg, var(--brand), var(--brand2));
       border-color: rgba(255,255,255,.18);
       box-shadow: 0 18px 60px rgba(14,90,167,.25);
+    }
+    .btn.ghost{
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.16);
+    }
+
+    /* Mobile menu button */
+    .navbtn{
+      display:none;
+      width:44px; height:44px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      cursor:pointer;
+      align-items:center;
+      justify-content:center;
+      gap:4px;
+      flex-direction:column;
+    }
+    .navbtn span{
+      display:block;
+      width:18px;
+      height:2px;
+      background: rgba(234,240,255,.85);
+      border-radius:99px;
+      transition: .2s;
+    }
+    .navbtn[aria-expanded="true"] span:nth-child(1){transform: translateY(6px) rotate(45deg);}
+    .navbtn[aria-expanded="true"] span:nth-child(2){opacity:0;}
+    .navbtn[aria-expanded="true"] span:nth-child(3){transform: translateY(-6px) rotate(-45deg);}
+
+    /* Mobile overlay menu */
+    .navpanel{
+      display:none;
+      position: fixed;
+      inset: 0;
+      z-index: 90;
+      background: rgba(0,0,0,.35);
+      backdrop-filter: blur(4px);
+    }
+    .navpanel.is-open{display:block;}
+    .navpanel .panel{
+      position:absolute;
+      right: 12px;
+      top: 72px;
+      width: min(92vw, 380px);
+      background: var(--menu-bg);
+      border: 1px solid var(--menu-border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 12px;
+    }
+    .navpanel .panel a{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding: 12px 12px;
+      border-radius: 14px;
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      margin-bottom: 10px;
+      font-weight: 800;
+    }
+    .navpanel .panel a small{
+      color: rgba(234,240,255,.70);
+      font-weight: 600;
+    }
+    .navpanel .panel a:hover{
+      border-color: rgba(30,127,214,.45);
+      transform: translateY(-1px);
+    }
+    .navpanel .panel .panel-cta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 6px;
     }
 
     .card{
@@ -163,13 +259,15 @@
     .heroCard{padding:18px;}
     .heroCard h2{margin:0 0 10px; font-size:18px;}
     .grid2{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+
+    /* Better contrast */
     .mini{
       padding:12px; border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.18);
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.07);
     }
     .mini b{display:block; margin-bottom:6px}
-    .mini span{color: var(--muted); font-size: 13px; line-height:1.4}
+    .mini span{color: rgba(234,240,255,.80); font-size: 13px; line-height:1.4}
 
     .section{padding: 16px 0;}
     .section h2{margin:0 0 10px; font-size: 22px;}
@@ -179,7 +277,7 @@
       overflow:hidden;
       border-radius: var(--radius);
       border: 1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.18);
+      background: rgba(255,255,255,.06);
     }
     .mapWrap iframe{
       width:100%;
@@ -222,14 +320,19 @@
     @media (max-width: 900px){
       .hero{grid-template-columns:1fr; padding-top: 24px;}
       nav{display:none;}
+      .navbtn{display:flex;}
       .footgrid{grid-template-columns: 1fr;}
       .mapWrap iframe{height: 320px;}
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      *{scroll-behavior:auto!important; transition:none!important;}
     }
   </style>
 </head>
 
 <body>
-  <header class="topbar">
+  <header class="topbar" role="banner">
     <div class="inner">
       <a class="brand" href="index.html" aria-label="Retour à l'accueil">
         <img src="logo-dinetech.png" alt="Logo DineTech" class="logo-img">
@@ -247,9 +350,28 @@
         <a class="navlink" href="soutien.html">Soutien</a>
       </nav>
 
+      <!-- Mobile menu button -->
+      <button class="navbtn" id="navBtn" aria-expanded="false" aria-controls="navPanel" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+
       <a class="btn primary" id="btnWhatsAppHeader" href="#" rel="noopener">WhatsApp</a>
     </div>
   </header>
+
+  <!-- Mobile navigation panel -->
+  <div class="navpanel" id="navPanel" aria-hidden="true">
+    <div class="panel" role="dialog" aria-label="Menu">
+      <a href="index.html"><span>Accueil</span> <small>🏠</small></a>
+      <a href="services.html"><span>Services</span> <small>🧰</small></a>
+      <a href="contact.html"><span>Contact</span> <small>📍</small></a>
+      <a href="soutien.html"><span>Soutien</span> <small>🙏</small></a>
+      <div class="panel-cta">
+        <a class="btn primary" id="btnWhatsAppMenu" href="#" rel="noopener">WhatsApp</a>
+        <a class="btn ghost" href="soutien.html">Soutenir</a>
+      </div>
+    </div>
+  </div>
 
   <main class="wrap">
     <section class="hero" aria-label="Contact DineTech">
@@ -268,7 +390,8 @@
 
         <div style="display:flex; gap:10px; flex-wrap:wrap;">
           <a class="btn primary" id="btnWhatsAppHero" href="#" rel="noopener">Écrire sur WhatsApp</a>
-          <a class="btn" id="btnMapsHero" href="#" target="_blank" rel="noopener">Ouvrir l’itinéraire</a>
+          <a class="btn" id="btnMapsHero" href="https://maps.app.goo.gl/rFQBvQp5tmgN7wUk7" target="_blank" rel="noopener">Ouvrir l’itinéraire</a>
+          <a class="btn ghost" href="soutien.html">Soutenir DineTech</a>
         </div>
       </div>
 
@@ -295,7 +418,7 @@
 
         <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
           <a class="btn primary" id="btnWhatsAppCard" href="#" rel="noopener">Demander un devis</a>
-          <a class="btn" id="btnMapsCard" href="#" target="_blank" rel="noopener">Voir sur Maps</a>
+          <a class="btn" href="https://maps.app.goo.gl/rFQBvQp5tmgN7wUk7" target="_blank" rel="noopener">Voir sur Maps</a>
         </div>
 
         <div style="margin-top:14px; color:var(--muted); font-size:13px; line-height:1.6;">
@@ -306,29 +429,21 @@
 
     <section id="carte" class="section" aria-label="Carte Google Maps">
       <h2>Carte</h2>
-      <p>Clique sur “Ouvrir l’itinéraire” pour afficher ta position sur Google Maps.</p>
+      <p>La carte ci-dessous pointe la position exacte. Tu peux aussi cliquer sur “Ouvrir l’itinéraire”.</p>
 
       <div class="card" style="padding:14px;">
         <div class="mapWrap">
-          <!-- Carte basée sur l’adresse (en attendant le lien exact ou coordonnées) -->
           <iframe
-  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d983.199462532352!2d1.6533406694965063!3d9.698287499399516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s6FX3MMX3%2B8H9!5e0!3m2!1sfr!2sbj!4v1768745682684!5m2!1sfr!2sbj"
-  width="100%"
-  height="380"
-  style="border:0;"
-  allowfullscreen
-  loading="lazy"
-  referrerpolicy="no-referrer-when-downgrade">
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d983.199462532352!2d1.6533406694965063!3d9.698287499399516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s6FX3MMX3%2B8H9!5e0!3m2!1sfr!2sbj!4v1768745682684!5m2!1sfr!2sbj"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
           </iframe>
         </div>
 
         <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn" id="btnMaps"
-   href="https://maps.app.goo.gl/rFQBvQp5tmgN7wUk7"
-   target="_blank" rel="noopener">
-  📍 Ouvrir l’itinéraire
-          </a>
-          <a class="btn" id="btnMapsAdresse" href="#" target="_blank" rel="noopener">🧭 Ouvrir l’adresse</a>
+          <a class="btn" href="https://maps.app.goo.gl/rFQBvQp5tmgN7wUk7" target="_blank" rel="noopener">📍 Ouvrir l’itinéraire</a>
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&query=6FX3MMX3%2B8H9%20Djougou" target="_blank" rel="noopener">🧭 Ouvrir l’adresse</a>
         </div>
 
         <div style="margin-top:10px; color:var(--muted); font-size:13px; line-height:1.6;">
@@ -349,6 +464,7 @@
         <div style="display:flex; gap:10px; flex-wrap:wrap;">
           <a class="btn primary" id="btnWhatsAppCTA" href="#" rel="noopener">WhatsApp : 99560661</a>
           <a class="btn" href="services.html">Voir Services</a>
+          <a class="btn ghost" href="soutien.html">Soutenir</a>
         </div>
       </div>
     </section>
@@ -359,6 +475,9 @@
           <div style="font-weight:900; font-size:14px;">DineTech</div>
           <div style="color:rgba(234,240,255,.7); margin-top:6px; line-height:1.6;">
             Quartier Gah (Djougou) • Dépannage & réparation informatique • SAV disponible
+          </div>
+          <div style="margin-top:10px;">
+            <a class="btn ghost" href="soutien.html">Soutenir DineTech</a>
           </div>
         </div>
         <div style="text-align:left;">
@@ -391,39 +510,54 @@
     const defaultMessage = `Bonjour ${businessName}, je suis à ${city}. Je veux venir à Quartier Gah (von de ministre, juste avant le pont). J'ai besoin d'aide pour : `;
 
     function waLink(msg){
-      const text = encodeURIComponent(msg);
-      return `https://wa.me/${phone}?text=${text}`;
+      return `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
     }
 
-    // Google Maps (adresse)
-    // NOTE: Pour une position EXACTE, remplace mapsQuery par ton lien "Partager" Google Maps ou des coordonnées.
-    const mapsQuery = "DineTech, Quartier Gah, von de ministre, juste avant le pont, Djougou, Benin";
-    const mapsSearchLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapsQuery)}`;
-    const mapsDirectionsLink = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(mapsQuery)}`;
-
-    // Iframe embed (sans clé API)
-    const iframeSrc = `https://www.google.com/maps?q=${encodeURIComponent(mapsQuery)}&output=embed`;
-
     // Brancher boutons WhatsApp
-    ["btnWhatsAppHeader","btnWhatsAppHero","btnWhatsAppCard","btnWhatsAppCTA","btnWhatsAppFloat"].forEach(id=>{
+    ["btnWhatsAppHeader","btnWhatsAppHero","btnWhatsAppCard","btnWhatsAppCTA","btnWhatsAppFloat","btnWhatsAppMenu"].forEach(id=>{
       const el = document.getElementById(id);
       if(el) el.href = waLink(defaultMessage);
     });
 
-    // Brancher boutons Maps
-    ["btnMapsHero","btnMapsCard","btnMapsAdresse"].forEach(id=>{
-      const el = document.getElementById(id);
-      if(el) el.href = mapsSearchLink;
-    });
-    const it = document.getElementById("btnMapsItineraire");
-    if(it) it.href = mapsDirectionsLink;
-
-    // Inject iframe
-    const iframe = document.getElementById("mapsIframe");
-    if(iframe) iframe.src = iframeSrc;
-
     // Année footer
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mobile menu
+    const navBtn = document.getElementById("navBtn");
+    const navPanel = document.getElementById("navPanel");
+
+    function closeMenu(){
+      navPanel.classList.remove("is-open");
+      navPanel.setAttribute("aria-hidden","true");
+      navBtn.setAttribute("aria-expanded","false");
+      document.body.style.overflow = "";
+    }
+
+    function openMenu(){
+      navPanel.classList.add("is-open");
+      navPanel.setAttribute("aria-hidden","false");
+      navBtn.setAttribute("aria-expanded","true");
+      document.body.style.overflow = "hidden";
+    }
+
+    if(navBtn && navPanel){
+      navBtn.addEventListener("click", ()=>{
+        const expanded = navBtn.getAttribute("aria-expanded") === "true";
+        expanded ? closeMenu() : openMenu();
+      });
+
+      navPanel.addEventListener("click", (e)=>{
+        if(e.target === navPanel) closeMenu();
+      });
+
+      navPanel.querySelectorAll("a").forEach(a=>{
+        a.addEventListener("click", ()=> closeMenu());
+      });
+
+      document.addEventListener("keydown", (e)=>{
+        if(e.key === "Escape") closeMenu();
+      });
+    }
   </script>
 </body>
 </html>
