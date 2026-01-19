@@ -39,27 +39,38 @@
   <meta name="geo.placename" content="Djougou" />
   <meta name="language" content="fr" />
 
-  <!-- Schema.org (LocalBusiness) -->
+  <!-- Schema.org (LocalBusiness + ContactPage) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
-    "@type":"LocalBusiness",
-    "name":"DineTech",
-    "image":"https://dinetech.vercel.app/logo-dinetech.png",
-    "url":"https://dinetech.vercel.app/",
-    "telephone":"+22999560661",
-    "address":{
-      "@type":"PostalAddress",
-      "streetAddress":"Quartier Gah, dans la von de ministre, juste avant le pont",
-      "addressLocality":"Djougou",
-      "addressCountry":"BJ"
-    },
-    "areaServed":[
-      { "@type":"City","name":"Djougou" },
-      { "@type":"Country","name":"Bénin" }
-    ],
-    "openingHours":"Mo-Su",
-    "description":"DineTech à Djougou : dépannage et réparation informatique (téléphones, ordinateurs, logiciels, réseau) + création web. Service après-vente disponible."
+    "@graph":[
+      {
+        "@type":"LocalBusiness",
+        "name":"DineTech",
+        "image":"https://dinetech.vercel.app/logo-dinetech.png",
+        "url":"https://dinetech.vercel.app/",
+        "telephone":"+22999560661",
+        "address":{
+          "@type":"PostalAddress",
+          "streetAddress":"Quartier Gah, dans la von de ministre, juste avant le pont",
+          "addressLocality":"Djougou",
+          "addressCountry":"BJ"
+        },
+        "areaServed":[
+          { "@type":"City","name":"Djougou" },
+          { "@type":"Country","name":"Bénin" }
+        ],
+        "openingHours":"Mo-Su",
+        "description":"DineTech à Djougou : dépannage et réparation informatique (téléphones, ordinateurs, logiciels, réseau) + création web. Service après-vente disponible."
+      },
+      {
+        "@type":"ContactPage",
+        "name":"Contact DineTech",
+        "url":"https://dinetech.vercel.app/contact.html",
+        "about":{"@type":"LocalBusiness","name":"DineTech"},
+        "inLanguage":"fr-FR"
+      }
+    ]
   }
   </script>
 
@@ -109,6 +120,7 @@
     .brand{
       display:flex; align-items:center; gap:10px;
       font-weight:800; letter-spacing:.2px;
+      min-width: 220px;
     }
     .logo-img{
       width:42px;height:42px;border-radius:50%;
@@ -227,48 +239,93 @@
       box-shadow: var(--shadow);
     }
 
-    .hero{
-      padding: 34px 0 12px;
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 16px;
-      align-items: stretch;
+    /* ---- Contact style "comme ton modèle" ---- */
+    .contact-hero{padding:18px;}
+    .contact-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      color: rgba(234,240,255,.86);
+      font-weight:900;
+      font-size:12.5px;
+      margin-bottom: 12px;
     }
-    .hero h1{
+    .h1{
       font-size: clamp(26px, 4vw, 40px);
-      line-height: 1.1;
+      line-height:1.08;
       margin: 0 0 10px;
     }
-    .hero p{
-      margin:0 0 16px;
-      color:var(--muted);
-      font-size: 16px;
-      line-height:1.65;
+    .muted{color: var(--muted); line-height:1.65;}
+    .contact-cards{
+      margin-top: 14px;
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
     }
-    .pillrow{display:flex; flex-wrap:wrap; gap:10px; margin: 12px 0 14px;}
-    .pill{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:10px 12px; border-radius: 999px;
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.10);
-      color: var(--muted);
-      font-weight:600;
-    }
-    .dot{width:10px; height:10px; border-radius:999px; background: var(--ok); box-shadow: 0 0 0 6px rgba(34,197,94,.12);}
-
-    .heroCard{padding:18px;}
-    .heroCard h2{margin:0 0 10px; font-size:18px;}
-    .grid2{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
-
-    /* Better contrast */
-    .mini{
-      padding:12px; border-radius: 14px;
+    .contact-card{padding:16px;}
+    .h3{margin:0 0 6px; font-size:16px;}
+    .contact-pill{
+      margin-top: 10px;
+      display:inline-flex;
+      padding: 10px 12px;
+      border-radius: 999px;
       border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.07);
+      background: rgba(255,255,255,.06);
+      font-weight:900;
+      color: rgba(234,240,255,.90);
+      word-break: break-word;
     }
-    .mini b{display:block; margin-bottom:6px}
-    .mini span{color: rgba(234,240,255,.80); font-size: 13px; line-height:1.4}
+    .actions{margin-top: 12px; display:flex; gap:10px; flex-wrap:wrap;}
+    .small{font-size: 13px; color: rgba(234,240,255,.75); line-height:1.6;}
 
+    .contact-grid2{
+      margin-top: 14px;
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 12px;
+      align-items:start;
+    }
+    .contact-form{padding:16px;}
+    .contact-join{padding:16px;}
+    label{display:block; font-weight:900; margin: 12px 0 6px; font-size: 13px; color: rgba(234,240,255,.85);}
+    input, textarea, select{
+      width:100%;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.16);
+      color: var(--text);
+      border-radius: 14px;
+      padding: 12px 12px;
+      outline: none;
+      font-size: 14px;
+    }
+    textarea{resize: vertical; min-height: 140px;}
+    select{color-scheme: dark;}
+    select option{background:#0B1220; color:#EAF0FF;}
+    input:focus, textarea:focus, select:focus{
+      outline: 2px solid rgba(30,127,214,.55);
+      outline-offset: 2px;
+    }
+
+    .poles{display:grid; grid-template-columns: 1fr; gap:10px; margin-top: 8px;}
+    .pole{
+      display:flex; align-items:flex-start; gap:10px;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      color: rgba(234,240,255,.86);
+      font-weight:800;
+      cursor:pointer;
+      user-select:none;
+    }
+    .pole input{margin-top: 2px;}
+    .pole:hover{border-color: rgba(30,127,214,.35); transform: translateY(-1px);}
+
+    /* Map */
     .section{padding: 16px 0;}
     .section h2{margin:0 0 10px; font-size: 22px;}
     .section p{margin:0 0 14px; color: var(--muted); line-height:1.6}
@@ -279,12 +336,7 @@
       border: 1px solid rgba(255,255,255,.10);
       background: rgba(255,255,255,.06);
     }
-    .mapWrap iframe{
-      width:100%;
-      height: 360px;
-      border:0;
-      display:block;
-    }
+    .mapWrap iframe{width:100%; height: 360px; border:0; display:block;}
 
     footer{padding: 20px 0 8px; color: rgba(234,240,255,.7); font-size: 13px;}
     .footgrid{display:grid; grid-template-columns: 1.2fr .8fr; gap: 12px;}
@@ -318,13 +370,13 @@
     .wa-float:hover{transform: translateY(-1px); border-color: rgba(37,211,102,.35);}
 
     @media (max-width: 900px){
-      .hero{grid-template-columns:1fr; padding-top: 24px;}
       nav{display:none;}
       .navbtn{display:flex;}
+      .contact-cards{grid-template-columns:1fr;}
+      .contact-grid2{grid-template-columns:1fr;}
       .footgrid{grid-template-columns: 1fr;}
       .mapWrap iframe{height: 320px;}
     }
-
     @media (prefers-reduced-motion: reduce){
       *{scroll-behavior:auto!important; transition:none!important;}
     }
@@ -345,7 +397,7 @@
       <nav aria-label="Navigation">
         <a class="navlink" href="index.html">Accueil</a>
         <a class="navlink" href="services.html">Services</a>
-        <a class="navlink" href="web.html">Site Wen</a>
+        <a class="navlink" href="web.html">Site Web</a>
         <a class="navlink" href="soutien.html">Soutien</a>
         <a class="navlink" href="#carte">Carte</a>
         <a class="navlink" href="#contact">Contact</a>
@@ -364,12 +416,13 @@
   <!-- Mobile navigation panel -->
   <div class="navpanel" id="navPanel" aria-hidden="true">
     <div class="panel" role="dialog" aria-label="Menu">
-       <a href="index.html"><span>Accueil</span> <small>🏠</small></a>  
-      <a href="services.html"><span>Services</span> <small>🧰</small></a>  
-      <a href="web.html"><span>Sites web</span> <small>💻</small></a>  
-      <a href="contact.html"><span>Contact</span> <small>📍</small></a>  
-      <a href="soutien.html"><span>Soutien</span> <small>🙏</small></a>  
-      <a href="legal.html"><span>Légal</span> <small>📄</small></a> 
+      <a href="index.html"><span>Accueil</span> <small>🏠</small></a>
+      <a href="services.html"><span>Services</span> <small>🧰</small></a>
+      <a href="web.html"><span>Sites web</span> <small>💻</small></a>
+      <a href="contact.html"><span>Contact</span> <small>📍</small></a>
+      <a href="soutien.html"><span>Soutien</span> <small>🙏</small></a>
+      <a href="legal.html"><span>Légal</span> <small>📄</small></a>
+
       <div class="panel-cta">
         <a class="btn primary" id="btnWhatsAppMenu" href="#" rel="noopener">WhatsApp</a>
         <a class="btn ghost" href="soutien.html">Soutenir</a>
@@ -378,59 +431,115 @@
   </div>
 
   <main class="wrap">
-    <section class="hero" aria-label="Contact DineTech">
-      <div>
-        <h1>Contact & localisation à <span style="color:var(--brand2)">Djougou</span></h1>
-        <p>
-          <b>DineTech</b> est situé à <b>Quartier Gah</b>, <b>dans la von de ministre</b>, <b>juste avant le pont</b>.
-          Disponible <b>tous les jours</b>. <b>SAV disponible</b>.
-        </p>
+    <!-- HERO style "page contact que tu adores" -->
+    <section class="card contact-hero" id="contact" aria-label="Contact DineTech">
+      <div class="contact-badge">Contact officiel • Réponse rapide</div>
 
-        <div class="pillrow" role="list">
-          <div class="pill" role="listitem"><span class="dot" aria-hidden="true"></span> Tous les jours</div>
-          <div class="pill" role="listitem">WhatsApp : 99560661</div>
-          <div class="pill" role="listitem">Itinéraire Google Maps</div>
+      <h1 class="h1">Nous contacter</h1>
+      <p class="muted">
+        DineTech est situé à <b>Quartier Gah</b>, <b>dans la von de ministre</b>, <b>juste avant le pont</b>.
+        Disponible <b>tous les jours</b>. <b>SAV disponible</b>.
+      </p>
+
+      <div class="contact-cards" aria-label="Canaux de contact">
+        <article class="card contact-card">
+          <h2 class="h3">WhatsApp / Téléphone</h2>
+          <p class="muted">Canal recommandé pour un devis rapide.</p>
+          <div class="contact-pill">+229 99 56 06 61</div>
+          <div class="actions">
+            <a class="btn primary" id="btnWhatsAppCard" href="#" rel="noopener">Ouvrir WhatsApp</a>
+            <a class="btn ghost" href="tel:+22999560661">Appeler</a>
+          </div>
+        </article>
+
+        <article class="card contact-card">
+          <h2 class="h3">Adresse & itinéraire</h2>
+          <p class="muted">Quartier Gah • von de ministre • avant le pont</p>
+          <div class="actions">
+            <a class="btn primary" id="btnMapsTop" href="https://maps.app.goo.gl/rFQBvQp5tmgN7wUk7" target="_blank" rel="noopener">Ouvrir l’itinéraire</a>
+            <a class="btn ghost" href="#carte">Voir la carte</a>
+          </div>
+          <p class="small" style="margin-top:10px;">Astuce : si tu es perdu, écris “Je suis à …” sur WhatsApp.</p>
+        </article>
+
+        <article class="card contact-card">
+          <h2 class="h3">Horaires</h2>
+          <p class="muted"><b>Tous les jours</b> (réponse rapide sur WhatsApp).</p>
+          <p class="small">En dehors des heures, laisse un message. Je réponds dès que possible.</p>
+        </article>
+
+        <article class="card contact-card">
+          <h2 class="h3">Conseil pour un devis rapide</h2>
+          <p class="muted">Envoie : <b>modèle + panne + photo</b> (si possible).</p>
+          <div class="actions">
+            <a class="btn primary" id="btnWhatsAppHero" href="#" rel="noopener">Envoyer maintenant</a>
+            <a class="btn" href="services.html">Voir les services</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- GRID 2 : Form + "Rejoindre / demander service" -->
+    <section class="contact-grid2" aria-label="Formulaire et demandes">
+      <section class="card contact-form" aria-label="Envoyer un message">
+        <h2 style="margin:0 0 8px; font-size:20px;">Envoyer un message</h2>
+        <p class="muted" style="margin-top:0;">Ce formulaire prépare un message et l’ouvre sur WhatsApp.</p>
+
+        <form id="contactForm">
+          <label for="cName">Nom & Prénom</label>
+          <input id="cName" type="text" placeholder="Ex : Jean Dupont" required autocomplete="name" />
+
+          <label for="cTopic">Objet</label>
+          <select id="cTopic" required>
+            <option value="" selected disabled>Choisir…</option>
+            <option value="Devis réparation téléphone">Devis réparation téléphone</option>
+            <option value="Devis réparation ordinateur">Devis réparation ordinateur</option>
+            <option value="Dépannage / logiciels">Dépannage / logiciels</option>
+            <option value="Réseau / Wi-Fi">Réseau / Wi-Fi</option>
+            <option value="Création de site Web">Création de site Web</option>
+            <option value="Autre">Autre</option>
+          </select>
+
+          <label for="cMsg">Message</label>
+          <textarea id="cMsg" rows="6" placeholder="Décris ta demande (modèle, panne, urgence, budget, etc.)…" required></textarea>
+
+          <div class="actions">
+            <button class="btn primary" type="submit">Envoyer sur WhatsApp</button>
+            <button class="btn ghost" type="button" id="copyPrepared">Copier le message</button>
+          </div>
+
+          <div class="small" id="copyPreparedState" aria-live="polite"></div>
+        </form>
+      </section>
+
+      <aside class="card contact-join" aria-label="Choisir un service">
+        <h2 style="margin:0 0 8px; font-size:20px;">Choisir un service</h2>
+        <p class="muted" style="margin-top:0;">Coche ce qui te concerne (tu peux choisir plusieurs).</p>
+
+        <div class="poles" id="servicesPick">
+          <label class="pole"><input type="checkbox" value="Réparation téléphone"> Réparation téléphone</label>
+          <label class="pole"><input type="checkbox" value="Réparation ordinateur (PC)"> Réparation ordinateur (PC)</label>
+          <label class="pole"><input type="checkbox" value="Installation / logiciels"> Installation / logiciels</label>
+          <label class="pole"><input type="checkbox" value="Réseau / Wi-Fi"> Réseau / Wi-Fi</label>
+          <label class="pole"><input type="checkbox" value="Maintenance & suivi"> Maintenance & suivi</label>
+          <label class="pole"><input type="checkbox" value="Création de site Web"> Création de site Web</label>
         </div>
 
-        <div style="display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn primary" id="btnWhatsAppHero" href="#" rel="noopener">Écrire sur WhatsApp</a>
-          <a class="btn" id="btnMapsHero" href="https://maps.app.goo.gl/rFQBvQp5tmgN7wUk7" target="_blank" rel="noopener">Ouvrir l’itinéraire</a>
+        <label for="joinNote">Détails (optionnel)</label>
+        <textarea id="joinNote" rows="5" placeholder="Ex : modèle, panne, budget, délai, localisation…"></textarea>
+
+        <div class="actions">
+          <button class="btn primary" type="button" id="joinWhatsApp">Envoyer ma demande</button>
           <a class="btn ghost" href="soutien.html">Soutenir DineTech</a>
         </div>
-      </div>
 
-      <aside class="card heroCard" id="contact" aria-label="Infos contact">
-        <h2>Infos rapides</h2>
-        <div class="grid2">
-          <div class="mini">
-            <b>Adresse</b>
-            <span>Quartier Gah, dans la von de ministre, juste avant le pont</span>
-          </div>
-          <div class="mini">
-            <b>Ville</b>
-            <span>Djougou, Bénin</span>
-          </div>
-          <div class="mini">
-            <b>WhatsApp</b>
-            <span>99560661</span>
-          </div>
-          <div class="mini">
-            <b>Horaires</b>
-            <span>Tous les jours</span>
-          </div>
-        </div>
-
-        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn primary" id="btnWhatsAppCard" href="#" rel="noopener">Demander un devis</a>
-          <a class="btn" href="https://maps.app.goo.gl/rFQBvQp5tmgN7wUk7" target="_blank" rel="noopener">Voir sur Maps</a>
-        </div>
-
-        <div style="margin-top:14px; color:var(--muted); font-size:13px; line-height:1.6;">
-          Astuce : envoie <b>modèle + panne + photo</b> et je te réponds vite.
-        </div>
+        <p class="small" style="margin-top:10px;">
+          Après l’envoi, si tu as une photo (écran cassé, PC, erreur), tu peux l’ajouter sur WhatsApp.
+        </p>
       </aside>
     </section>
 
+    <!-- MAP -->
     <section id="carte" class="section" aria-label="Carte Google Maps">
       <h2>Carte</h2>
       <p>La carte ci-dessous pointe la position exacte. Tu peux aussi cliquer sur “Ouvrir l’itinéraire”.</p>
@@ -452,23 +561,6 @@
 
         <div style="margin-top:10px; color:var(--muted); font-size:13px; line-height:1.6;">
           Disponible pour vous.
-        </div>
-      </div>
-    </section>
-
-    <section class="section" aria-label="Message WhatsApp">
-      <h2>Message rapide</h2>
-      <div class="card" style="padding:18px; display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;">
-        <div>
-          <div style="font-weight:900; font-size:18px; margin-bottom:6px;">Besoin d’un devis ?</div>
-          <div style="color:var(--muted); line-height:1.6;">
-            Écris directement sur WhatsApp : modèle + panne + photo si possible.
-          </div>
-        </div>
-        <div style="display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn primary" id="btnWhatsAppCTA" href="#" rel="noopener">WhatsApp : 99560661</a>
-          <a class="btn" href="services.html">Voir Services</a>
-          <a class="btn ghost" href="soutien.html">Soutenir</a>
         </div>
       </div>
     </section>
@@ -507,26 +599,81 @@
   </a>
 
   <script>
-    // WhatsApp
+    // ===== CONFIG =====
     const phone = "22999560661";
     const businessName = "DineTech";
     const city = "Djougou";
-    const defaultMessage = `Bonjour ${businessName}, je suis à ${city}. Je veux venir à Quartier Gah (von de ministre, juste avant le pont). J'ai besoin d'aide pour : `;
 
     function waLink(msg){
       return `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
     }
 
-    // Brancher boutons WhatsApp
-    ["btnWhatsAppHeader","btnWhatsAppHero","btnWhatsAppCard","btnWhatsAppCTA","btnWhatsAppFloat","btnWhatsAppMenu"].forEach(id=>{
+    function buildDefault(){
+      return `Bonjour ${businessName}, je suis à ${city}. Je veux venir à Quartier Gah (von de ministre, juste avant le pont).\nJ'ai besoin d'aide pour : `;
+    }
+
+    // Brancher boutons WhatsApp simples
+    ["btnWhatsAppHeader","btnWhatsAppHero","btnWhatsAppCard","btnWhatsAppMenu","btnWhatsAppFloat"].forEach(id=>{
       const el = document.getElementById(id);
-      if(el) el.href = waLink(defaultMessage);
+      if(el) el.href = waLink(buildDefault());
     });
 
-    // Année footer
+    // Footer year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Mobile menu
+    // ===== FORM -> WhatsApp (comme ton modèle) =====
+    const form = document.getElementById("contactForm");
+    const copyBtn = document.getElementById("copyPrepared");
+    const copyState = document.getElementById("copyPreparedState");
+
+    function buildFormMessage(){
+      const name = (document.getElementById("cName").value || "").trim();
+      const topic = document.getElementById("cTopic").value || "";
+      const msg = (document.getElementById("cMsg").value || "").trim();
+
+      return `Bonjour ${businessName} 👋\n` +
+             `- Nom : ${name || "Non précisé"}\n` +
+             `- Objet : ${topic || "Non précisé"}\n\n` +
+             `Message :\n${msg || "Non précisé"}\n\n` +
+             `Merci.`;
+    }
+
+    form.addEventListener("submit", (e)=>{
+      e.preventDefault();
+      window.open(waLink(buildFormMessage()), "_blank", "noopener");
+    });
+
+    copyBtn.addEventListener("click", async ()=>{
+      const text = buildFormMessage();
+      try{
+        await navigator.clipboard.writeText(text);
+        copyState.innerHTML = "✅ Message copié.";
+      }catch(err){
+        copyState.innerHTML = "⚠️ Copie impossible. Sélectionne le texte et copie.";
+      }
+      setTimeout(()=>{ copyState.textContent = ""; }, 2200);
+    });
+
+    // ===== SIDE "Choisir un service" -> WhatsApp =====
+    const joinBtn = document.getElementById("joinWhatsApp");
+    joinBtn.addEventListener("click", ()=>{
+      const checks = Array.from(document.querySelectorAll("#servicesPick input[type='checkbox']:checked"))
+        .map(x => x.value);
+
+      const note = (document.getElementById("joinNote").value || "").trim();
+      const servicesTxt = checks.length ? checks.join(", ") : "Non précisé";
+
+      const text =
+        `Bonjour ${businessName} 👋\n` +
+        `Je veux un devis / une assistance.\n` +
+        `- Services : ${servicesTxt}\n` +
+        `- Détails : ${note || "Non précisé"}\n\n` +
+        `Je suis à ${city}. Merci.`;
+
+      window.open(waLink(text), "_blank", "noopener");
+    });
+
+    // ===== Mobile menu =====
     const navBtn = document.getElementById("navBtn");
     const navPanel = document.getElementById("navPanel");
 
@@ -536,7 +683,6 @@
       navBtn.setAttribute("aria-expanded","false");
       document.body.style.overflow = "";
     }
-
     function openMenu(){
       navPanel.classList.add("is-open");
       navPanel.setAttribute("aria-hidden","false");
@@ -565,6 +711,3 @@
   </script>
 </body>
 </html>
-
-
-
