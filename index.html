@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DineTech | Réparation Téléphones & Ordinateurs à Djougou</title>
+  <meta name="description" content="DineTech à Djougou : réparation téléphones et ordinateurs, dépannage informatique, installation logiciels, maintenance et service après-vente. Disponible tous les jours. Devis rapide par WhatsApp." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0B5ED7" />
+
+  <!-- Favicon (PNG à la racine) -->
+  <link rel="icon" type="image/png" href="./favicon.png?v=1">
+  <link rel="apple-touch-icon" href="./favicon.png?v=1">
+
+  <!-- Open Graph (WhatsApp/Facebook) -->
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="DineTech | Dépannage & Réparation Informatique à Djougou" />
+  <meta property="og:description" content="Réparation téléphones & ordinateurs, dépannage informatique, installation, maintenance. Disponible tous les jours. SAV disponible. Contact WhatsApp : 99560661." />
+  <meta property="og:url" content="https://dinetech.bj/" />
+  <meta property="og:site_name" content="DineTech" />
+  <meta property="og:image" content="https://dinetech.bj/logo-dinetech.png" />
+  <meta property="og:image:alt" content="Logo DineTech" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DineTech | Réparation & Dépannage à Djougou" />
+  <meta name="twitter:description" content="Téléphones, ordinateurs, logiciels, maintenance. Disponible tous les jours. WhatsApp : 99560661." />
+  <meta name="twitter:image" content="https://dinetech.bj/logo-dinetech.png" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://dinetech.bj/" />
+
+  <!-- Preconnect (si tu ajoutes Google Fonts plus tard) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Schema.org (LocalBusiness) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "DineTech",
+    "image": "https://dinetech.bj/logo-dinetech.png",
+    "url": "https://dinetech.bj/",
+    "telephone": "+22999560661",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Djougou",
+      "addressCountry": "BJ"
+    },
+    "areaServed": "Djougou",
+    "openingHours": "Mo-Su",
+    "description": "DineTech à Djougou : réparation téléphones et ordinateurs, dépannage informatique, installation logiciels, maintenance et service après-vente."
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#0B1220;
+      --card:#0F1A33;
+      --text:#EAF0FF;
+      --muted:#B8C2E0;
+      --brand:#0E5AA7;
+      --brand2:#1E7FD6;
+      --ok:#22C55E;
+      --danger:#EF4444;
+      --shadow: 0 18px 60px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:radial-gradient(1200px 700px at 20% 10%, rgba(24,160,251,.25), transparent 60%),
+                                   radial-gradient(900px 600px at 80% 20%, rgba(11,94,215,.25), transparent 55%),
+                                   var(--bg);
+             color:var(--text); font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px 16px 70px;}
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,18,32,.55);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .topbar .inner{max-width:var(--max); margin:0 auto; padding:14px 16px; display:flex; align-items:center; justify-content:space-between; gap:14px;}
+    .brand{
+      display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px;
+    }
+    .logo{
+      width:38px; height:38px; border-radius:12px;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 10px 30px rgba(24,160,251,.25);
+      display:grid; place-items:center; font-weight:900;
+    }
+    nav{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    .navlink{
+      padding:10px 12px; border-radius:12px;
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      transition:.2s;
+    }
+    .navlink:hover{color:var(--text); border-color: rgba(24,160,251,.35); transform: translateY(-1px);}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 16px; border-radius:14px; font-weight:700;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      transition:.2s;
+      cursor:pointer;
+    }
+    .btn:hover{transform: translateY(-1px); border-color: rgba(24,160,251,.45);}
+    .btn.primary{
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      border-color: rgba(255,255,255,.18);
+      box-shadow: 0 18px 60px rgba(11,94,215,.25);
+    }
+    .btn.primary:hover{box-shadow: 0 22px 70px rgba(11,94,215,.32);}
+    .hero{
+      padding: 44px 0 22px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+    .hero h1{
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.08;
+      margin: 0 0 12px;
+    }
+    .hero p{margin:0 0 18px; color:var(--muted); font-size: 16px; line-height:1.6;}
+    .pillrow{display:flex; flex-wrap:wrap; gap:10px; margin: 14px 0 18px;}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px; border-radius: 999px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.10);
+      color: var(--muted);
+      font-weight:600;
+    }
+    .dot{width:10px; height:10px; border-radius:999px; background: var(--ok); box-shadow: 0 0 0 6px rgba(34,197,94,.12);}
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .heroCard{padding:18px;}
+    .heroCard h2{margin:0 0 10px; font-size:18px;}
+    .grid2{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+    .mini{
+      padding:12px; border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
+    }
+    .mini b{display:block; margin-bottom:6px}
+    .mini span{color: var(--muted); font-size: 13px; line-height:1.4}
+    .section{padding: 18px 0;}
+    .section h2{margin:0 0 10px; font-size: 22px;}
+    .section p{margin:0 0 14px; color: var(--muted); line-height:1.6}
+    .services{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .service{
+      padding: 16px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      transition:.2s;
+      min-height: 140px;
+    }
+    .service:hover{transform: translateY(-2px); border-color: rgba(24,160,251,.35); background: rgba(24,160,251,.06);}
+    .service h3{margin:0 0 8px; font-size: 16px;}
+    .service ul{margin:0; padding-left: 18px; color: var(--muted); font-size: 13.5px; line-height:1.55;}
+    .cta{
+      padding: 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+    }
+    .cta h3{margin:0 0 6px; font-size: 18px;}
+    .cta p{margin:0; color:var(--muted)}
+    footer{padding: 20px 0 8px; color: rgba(234,240,255,.7); font-size: 13px;}
+    .footgrid{display:grid; grid-template-columns: 1.2fr .8fr; gap: 12px;}
+    .contactbox{padding:14px}
+    .contactbox b{display:block; margin-bottom:6px}
+    .contactline{color: var(--muted); line-height:1.6}
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px; border-radius: 999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      font-weight:600;
+      margin-top:10px;
+    }
+
+    /* WhatsApp Floating Button */
+    .wa-float{
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 60;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding: 12px 14px;
+      border-radius: 999px;
+      background: rgba(0,0,0,.35);
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 18px 60px rgba(0,0,0,.35);
+      backdrop-filter: blur(10px);
+    }
+    .wa-icon{
+      width:42px; height:42px; border-radius:999px;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      display:grid; place-items:center;
+      font-weight:900;
+      color:#072b1e;
+    }
+    .wa-text{display:flex; flex-direction:column; line-height:1.1}
+    .wa-text small{color: var(--muted)}
+    .wa-text strong{color: var(--text)}
+    .wa-float:hover{transform: translateY(-1px); border-color: rgba(37,211,102,.35);}
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr; padding-top: 28px;}
+      .services{grid-template-columns:1fr; }
+      nav{display:none;}
+      .footgrid{grid-template-columns: 1fr;}
+    }
+
+    .logo-img{
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      object-fit:contain;
+      display:block;
+      background:#ffffff;
+      padding:4px;
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="inner">
+      <a class="brand" href="#top" aria-label="Retour en haut">
+        <img src="./logo-dinetech.png?v=1" alt="Logo DineTech" class="logo-img">
+        <div>
+          <div style="font-size:15px; line-height:1; font-weight:900;">DineTech</div>
+          <div style="font-size:12px; color:var(--muted); margin-top:3px;">Djougou • Dépannage & Réparation</div>
+        </div>
+      </a>
+
+      <nav aria-label="Navigation">
+        <a class="navlink" href="services.html">Services</a>
+        <a class="navlink" href="#process">Comment ça marche</a>
+        <a class="navlink" href="contact.html">Contact</a>
+        <a class="navlink" href="soutien.html">Soutien</a>
+      </nav>
+
+      <a class="btn primary" href="#contact">Obtenir un devis</a>
+
+    </div>
+  </header>
+
+  <main id="top" class="wrap">
+    <section class="hero" aria-label="Présentation">
+      <div>
+        <h1>Réparation & dépannage informatique à <span style="color:var(--brand2)">Djougou</span><br/>Téléphones, ordinateurs et plus.</h1>
+        <p>
+          DineTech intervient sur tout ce qui touche à l’informatique : réparation, maintenance, installation, optimisation,
+          sauvegarde, et assistance. <b>Service après-vente disponible</b> et réponse rapide.
+        </p>
+        <p>
+  DineTech vous accompagne aussi dans la <b>création de sites web professionnels</b> pour développer votre activité.
+</p>
+
+
+        <div class="pillrow" role="list">
+          <div class="pill" role="listitem"><span class="dot" aria-hidden="true"></span> Disponible tous les jours</div>
+          <div class="pill" role="listitem">Devis rapide par WhatsApp</div>
+          <div class="pill" role="listitem">SAV disponible</div>
+        </div>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn primary" id="btnWhatsAppHero" href="#" rel="noopener">WhatsApp : 99560661</a>
+          <a class="btn" href="#services">Voir les services</a>
+        </div>
+      </div>
+
+      <aside class="card heroCard" aria-label="Infos clés">
+        <h2>Infos rapides</h2>
+        <div class="grid2">
+          <div class="mini">
+            <b>Ville</b>
+            <span>Djougou (Bénin)</span>
+          </div>
+          <div class="mini">
+            <b>Disponibilité</b>
+            <span>Tous les jours</span>
+          </div>
+          <div class="mini">
+            <b>Contact</b>
+            <span>WhatsApp : 99560661</span>
+          </div>
+          <div class="mini">
+            <b>Service après-vente</b>
+            <span>Oui, disponible</span>
+          </div>
+        </div>
+
+        <div class="badge" aria-label="Engagement">
+          ⚡ Intervention rapide & diagnostic clair
+        </div>
+
+        <div style="margin-top:14px; color:var(--muted); font-size:13px; line-height:1.6;">
+          Astuce : décris la panne + modèle (ex: iPhone 11, HP, Dell…) et envoie une photo si possible. Je te réponds vite.
+        </div>
+      </aside>
+    </section>
+
+    <section id="services" class="section" aria-label="Services">
+      <h2>Services DineTech</h2>
+      <p>Voici les services principaux (triés par catégorie). Si tu veux, on ajoutera tes services exacts + des tarifs “à partir de”.</p>
+
+      <div class="services">
+        <div class="service">
+          <h3>🖥️ Ordinateurs (PC)</h3>
+          <ul>
+            <li>Réparation matériel (charge, écran, clavier…)</li>
+            <li>PC lent, optimisation, nettoyage, surchauffe</li>
+            <li>Installation Windows, pilotes, logiciels</li>
+            <li>Récupération & sauvegarde de données</li>
+          </ul>
+        </div>
+
+        <article class="service">
+  <h3>💻 Création de site Web</h3>
+  <ul style="margin-top:10px; padding-left:18px; color:var(--muted); font-size:13.5px; line-height:1.55;">
+    <li>Site vitrine rapide & responsive</li>
+    <li>Optimisé pour Google (SEO)</li>
+    <li>Hebergement sùr et fiable</li>
+  </ul>
+  <div style="margin-top:12px;">
+  </div>
+</article>
+
+        <div class="service">
+          <h3>📱 Téléphones</h3>
+          <ul>
+            <li>Écran, batterie, charge, connecteurs</li>
+            <li>Déblocage logiciel, mise à jour, flash</li>
+            <li>Diagnostic pannes & réparations</li>
+            <li>Conseils de protection & entretien</li>
+          </ul>
+        </div>
+
+        <div class="service">
+          <h3>🌐 Réseau & Internet</h3>
+          <ul>
+            <li>Configuration Wi-Fi / routeur</li>
+            <li>Partage de connexion & optimisation</li>
+            <li>Installation basique de réseau</li>
+            <li>Assistance et dépannage</li>
+          </ul>
+        </div>
+
+        <div class="service">
+          <h3>🧩 Logiciels</h3>
+          <ul>
+            <li>Installation logiciels utiles (bureautique…)</li>
+            <li>Nettoyage virus / pub / programmes indésirables</li>
+            <li>Configuration imprimantes & périphériques</li>
+            <li>Paramétrages & mises à jour</li>
+          </ul>
+        </div>
+
+        <div class="service">
+          <h3>🔧 Maintenance & suivi</h3>
+          <ul>
+            <li>Entretien régulier (particuliers & pro)</li>
+            <li>Contrôle performance & sécurité</li>
+            <li>Conseils d’achat (PC / téléphone)</li>
+            <li>SAV et accompagnement</li>
+          </ul>
+        </div>
+
+        <div class="service">
+          <h3>🏪 Service pro (option)</h3>
+          <ul>
+            <li>Maintenance boutique / cyber / bureau</li>
+            <li>Interventions planifiées</li>
+            <li>Rapport simple après intervention</li>
+            <li>Priorité sur les urgences</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="section" aria-label="Processus">
+      <h2>Comment ça marche</h2>
+      <div class="card cta">
+        <div>
+          <h3>1) Tu expliques la panne</h3>
+          <p>Modèle + symptômes + photo si possible.</p>
+          <h3 style="margin-top:12px;">2) Diagnostic & devis</h3>
+          <p>Je te dis ce qui est probable, et le coût estimatif.</p>
+          <h3 style="margin-top:12px;">3) Réparation + SAV</h3>
+          <p>Réparation propre, test, puis suivi SAV si besoin.</p>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:10px; min-width: 220px;">
+          <a class="btn primary" id="btnWhatsAppCTA" href="#" rel="noopener">Demander un devis</a>
+          <a class="btn" href="#contact">Voir le contact</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section" aria-label="Contact">
+      <h2>Contact</h2>
+      <p>Écris-moi directement sur WhatsApp pour un devis rapide.</p>
+
+      <div class="card contactbox">
+        <b>DineTech — Djougou</b>
+        <div class="contactline">
+          📞 WhatsApp : <b>99560661</b><br/>
+          🗓️ Disponibilité : <b>Tous les jours</b><br/>
+          ✅ Service après-vente : <b>Disponible</b>
+        </div>
+
+        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn primary" id="btnWhatsAppContact" href="#" rel="noopener">Ouvrir WhatsApp</a>
+          <a class="btn" href="#top">Retour en haut</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footgrid">
+        <div>
+          <div style="font-weight:900; font-size:14px;">DineTech</div>
+          <div style="color:rgba(234,240,255,.7); margin-top:6px; line-height:1.6;">
+            Réparation téléphones & ordinateurs • Dépannage informatique • Installation • Maintenance • SAV
+          </div>
+        </div>
+        <div style="text-align:left;">
+          <div style="font-weight:800;">Contact rapide</div>
+          <div style="margin-top:6px; color:rgba(234,240,255,.7); line-height:1.6;">
+            WhatsApp : 99560661<br/>Djougou • Bénin
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:14px; border-top:1px solid rgba(255,255,255,.08); padding-top:10px;">
+        © <span id="year"></span> DineTech. Tous droits réservés.
+      </div>
+    </footer>
+  </main>
+
+  <!-- WhatsApp Floating -->
+  <a class="wa-float" id="btnWhatsAppFloat" href="#" aria-label="Contacter DineTech sur WhatsApp" rel="noopener">
+    <div class="wa-icon" aria-hidden="true">WA</div>
+    <div class="wa-text">
+      <small>Devis rapide</small>
+      <strong>WhatsApp</strong>
+    </div>
+  </a>
+
+  <script>
+    // Config
+    const phone = "22999560661"; // +229 Bénin
+    const businessName = "DineTech";
+    const city = "Djougou";
+    const defaultMessage = `Bonjour ${businessName}, je suis à ${city}. J'ai besoin d'aide pour : `;
+
+    function waLink(msg){
+      const text = encodeURIComponent(msg);
+      return `https://wa.me/${phone}?text=${text}`;
+    }
+
+    // Buttons
+    const btns = ["btnWhatsAppHero","btnWhatsAppCTA","btnWhatsAppContact","btnWhatsAppFloat"];
+    btns.forEach(id=>{
+      const el = document.getElementById(id);
+      if(el) el.href = waLink(defaultMessage);
+    });
+
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

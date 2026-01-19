@@ -1,0 +1,678 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Soutenir DineTech | Don & Contribution</title>
+  <meta name="description" content="Soutenez DineTech à Djougou : contribution libre via FedaPay, MTN, Moov ou PayPal. Merci 🙏" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0E5AA7" />
+
+  <!-- Favicon (racine) -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Soutenir DineTech | Don & Contribution" />
+  <meta property="og:description" content="Contribution libre pour soutenir DineTech (Djougou). FedaPay, MTN, Moov, PayPal." />
+  <meta property="og:url" content="https://dinetech.bj/soutien.html" />
+  <meta property="og:site_name" content="DineTech" />
+  <meta property="og:image" content="https://dinetech.bj/logo-dinetech.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Soutenir DineTech" />
+  <meta name="twitter:description" content="Contribution libre via FedaPay, MTN, Moov, PayPal." />
+  <meta name="twitter:image" content="https://dinetech.bj/logo-dinetech.png" />
+
+  <link rel="canonical" href="https://dinetech.bj/soutien.html" />
+
+  <!-- FedaPay Checkout.js -->
+  <script src="https://cdn.fedapay.com/checkout.js?v=1.1.7"></script>
+
+  <style>
+    :root{
+      --bg:#0B1220;
+      --text:#EAF0FF;
+      --muted:#B8C2E0;
+      --brand:#0E5AA7;
+      --brand2:#1E7FD6;
+      --ok:#22C55E;
+      --shadow: 0 18px 60px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;padding:0;
+      background:
+        radial-gradient(1200px 700px at 20% 10%, rgba(30,127,214,.25), transparent 60%),
+        radial-gradient(900px 600px at 80% 20%, rgba(14,90,167,.25), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px 16px 70px;}
+
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,18,32,.55);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .topbar .inner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:14px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px;}
+    .logo-img{
+      width:42px;height:42px;border-radius:50%;
+      object-fit:contain;background:#ffffff;padding:4px;
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    nav{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    .navlink{
+      padding:10px 12px; border-radius:12px;
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      transition:.2s;
+    }
+    .navlink:hover{color:var(--text); border-color: rgba(30,127,214,.35); transform: translateY(-1px);}
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 16px; border-radius:14px; font-weight:700;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      transition:.2s;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+    .btn:hover{transform: translateY(-1px); border-color: rgba(30,127,214,.45);}
+    .btn.primary{
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      border-color: rgba(255,255,255,.18);
+      box-shadow: 0 18px 60px rgba(14,90,167,.25);
+    }
+    .btn.ghost{
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.16);
+  color: var(--text);
+}
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero{
+      padding: 34px 0 12px;
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+    .hero h1{
+      font-size: clamp(26px, 4vw, 40px);
+      line-height: 1.1;
+      margin: 0 0 10px;
+    }
+    .hero p{
+      margin:0 0 16px;
+      color:var(--muted);
+      font-size: 16px;
+      line-height:1.65;
+    }
+    .pillrow{display:flex; flex-wrap:wrap; gap:10px; margin: 12px 0 14px;}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px; border-radius: 999px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.10);
+      color: var(--muted);
+      font-weight:600;
+    }
+    .dot{width:10px; height:10px; border-radius:999px; background: var(--ok); box-shadow: 0 0 0 6px rgba(34,197,94,.12);}
+
+    .heroCard{padding:18px;}
+    .heroCard h2{margin:0 0 10px; font-size:18px;}
+    .mini{
+  padding:12px; border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.07);
+  margin-bottom:10px;
+}
+.mini b{display:block; margin-bottom:6px}
+.mini span{color: rgba(234,240,255,.80); font-size: 13px; line-height:1.4}
+
+    .section{padding: 16px 0;}
+    .section h2{margin:0 0 10px; font-size: 22px;}
+    .section p{margin:0 0 14px; color: var(--muted); line-height:1.6}
+
+    .don-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 12px;
+      margin-top: 10px;
+      align-items:start;
+    }
+
+    .block{
+  padding: 16px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.05);
+  margin-bottom: 12px;
+}
+
+    .chips{display:flex; gap:10px; flex-wrap:wrap; margin-top: 10px;}
+    .chip{
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      font-weight:800;
+      cursor:pointer;
+      transition:.2s;
+      user-select:none;
+    }
+    .chip:hover{transform: translateY(-1px); border-color: rgba(30,127,214,.35);}
+    .chip.active{
+      color: var(--text);
+      border-color: rgba(255,255,255,.18);
+      background: linear-gradient(135deg, rgba(14,90,167,.55), rgba(30,127,214,.45));
+    }
+
+    label{display:block; font-weight:800; margin: 12px 0 6px;}
+    .hint{color: var(--muted); font-size: 13px; line-height:1.5; margin:0 0 8px;}
+    input, textarea, select{
+  width:100%;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.16);
+  color: var(--text);
+  border-radius: 14px;
+  padding: 12px 12px;
+  outline: none;
+  font-size: 14px;
+}
+    textarea{resize: vertical; min-height: 130px;}
+
+    .rowbtn{display:flex; gap:10px; flex-wrap:wrap; margin-top: 12px;}
+    .small{font-size: 13px; color: var(--muted); line-height:1.6}
+    .ok{color:#bfffd6;}
+    .warn{color:#ffd6a5;}
+
+    footer{padding: 20px 0 8px; color: rgba(234,240,255,.7); font-size: 13px;}
+    .footgrid{display:grid; grid-template-columns: 1.2fr .8fr; gap: 12px;}
+
+    .wa-float{
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 60;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding: 12px 14px;
+      border-radius: 999px;
+      background: rgba(0,0,0,.35);
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 18px 60px rgba(0,0,0,.35);
+      backdrop-filter: blur(10px);
+    }
+    .wa-icon{
+      width:42px; height:42px; border-radius:999px;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      display:grid; place-items:center;
+      font-weight:900;
+      color:#072b1e;
+    }
+    .wa-text{display:flex; flex-direction:column; line-height:1.1}
+    .wa-text small{color: var(--muted)}
+    .wa-text strong{color: var(--text)}
+    .wa-float:hover{transform: translateY(-1px); border-color: rgba(37,211,102,.35);}
+
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr; padding-top: 24px;}
+      nav{display:none;}
+      .don-grid{grid-template-columns: 1fr;}
+      .footgrid{grid-template-columns: 1fr;}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="inner">
+      <a class="brand" href="index.html" aria-label="Retour à l'accueil">
+        <img src="logo-dinetech.png" alt="Logo DineTech" class="logo-img">
+        <div>
+          <div style="font-size:15px; line-height:1; font-weight:900;">DineTech</div>
+          <div style="font-size:12px; color:var(--muted); margin-top:3px;">Djougou • Soutien</div>
+        </div>
+      </a>
+
+      <nav aria-label="Navigation">
+        <a class="navlink" href="index.html">Accueil</a>
+        <a class="navlink" href="services.html">Services</a>
+        <a class="navlink" href="contact.html">Contact</a>
+        <a class="navlink" href="soutien.html">Soutien</a>
+      </nav>
+
+      <a class="btn primary" id="btnWhatsAppHeader" href="#" rel="noopener">WhatsApp</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" aria-label="Soutenir DineTech">
+      <div>
+        <h1>Soutenir <span style="color:var(--brand2)">DineTech</span></h1>
+        <p>
+          Si DineTech t’a aidé (réparation, dépannage, maintenance ou création web), tu peux faire une
+          <b>contribution libre</b>. Merci 🙏
+        </p>
+
+        <div class="pillrow" role="list">
+          <div class="pill" role="listitem"><span class="dot" aria-hidden="true"></span> Contribution libre</div>
+          <div class="pill" role="listitem">FedaPay • MTN • Moov • PayPal</div>
+          <div class="pill" role="listitem">Message automatique</div>
+        </div>
+
+        <div class="rowbtn">
+          <button class="btn primary" id="btnPayFedapayTop" type="button">Payer via FedaPay</buttontTT</button>
+          <a class="btn" href="#form">Remplir le formulaire</a>
+        </div>
+
+        <p class="small" style="margin-top:12px;">
+          Astuce : choisis un montant + type, puis clique sur la méthode que tu veux.
+        </p>
+      </div>
+
+      <aside class="card heroCard" aria-label="Infos">
+        <h2>Infos rapides</h2>
+
+        <div class="mini">
+          <b>WhatsApp</b>
+          <span>99560661</span>
+        </div>
+        <div class="mini">
+          <b>Adresse</b>
+          <span>Quartier Gah (Djougou)</span>
+        </div>
+        <div class="mini">
+          <b>PayPal</b>
+          <span>ouoroucherifdine400@gmail.com</span>
+        </div>
+
+        <div class="small" style="margin-top:10px;">
+          Après ton soutien, tu peux envoyer le reçu / confirmation sur WhatsApp.
+        </div>
+      </aside>
+    </section>
+
+    <section id="form" class="section" aria-label="Formulaire soutien">
+      <h2>Formulaire simple</h2>
+      <p>Remplis les infos, puis choisis la méthode de paiement.</p>
+
+      <div class="don-grid">
+        <!-- MAIN -->
+        <div>
+          <div class="block card">
+            <h2 style="margin:0 0 6px; font-size:18px;">1) Choisir un montant</h2>
+            <p class="hint">Optionnel. Tu peux aussi laisser vide.</p>
+
+            <div class="chips" id="amtChips">
+              <button class="chip" type="button" data-amt="2000">2 000</button>
+              <button class="chip" type="button" data-amt="5000">5 000</button>
+              <button class="chip" type="button" data-amt="10000">10 000</button>
+              <button class="chip" type="button" data-amt="25000">25 000</button>
+            </div>
+
+            <label for="amount">Ou entrer un montant (FCFA)</label>
+            <input id="amount" type="number" inputmode="numeric" min="0" placeholder="Ex : 15000" />
+          </div>
+
+          <div class="block card">
+            <h2 style="margin:0 0 6px; font-size:18px;">2) Type de soutien</h2>
+            <p class="hint">Choisis le type qui te ressemble.</p>
+
+            <div class="chips" id="kindChips">
+              <button class="chip active" type="button" data-kind="Don financier">Don financier</button>
+              <button class="chip" type="button" data-kind="Soutien matériel">Soutien matériel</button>
+              <button class="chip" type="button" data-kind="Soutien (service / web)">Soutien (service / web)</button>
+              <button class="chip" type="button" data-kind="Partenariat / recommandation">Partenariat / recommandation</button>
+            </div>
+          </div>
+
+          <div class="block card">
+            <h2 style="margin:0 0 6px; font-size:18px;">3) Tes informations</h2>
+
+            <label for="fullname">Nom complet</label>
+            <input id="fullname" type="text" placeholder="Ex : Jean Dupont" autocomplete="name" />
+
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="Ex : jean@gmail.com" autocomplete="email" />
+          </div>
+
+          <div class="block card">
+            <h2 style="margin:0 0 6px; font-size:18px;">4) Message</h2>
+            <p class="hint">Le message se construit automatiquement, tu peux modifier si tu veux.</p>
+
+            <label for="message">Message (modifiable)</label>
+            <textarea id="message" rows="6" placeholder="Décris ton soutien…"></textarea>
+
+            <div class="rowbtn">
+              <button class="btn primary" id="btnWhatsApp" type="button">Continuer sur WhatsApp</button>
+              <button class="btn ghost" id="btnCopy" type="button">Copier le message</button>
+            </div>
+
+            <div id="copyState" class="small"></div>
+          </div>
+
+          <div class="block card">
+            <h2 style="margin:0 0 6px; font-size:18px;">5) Choisir la méthode</h2>
+            <p class="hint">Les boutons ci-dessous utilisent le montant + infos du formulaire.</p>
+
+            <div class="rowbtn">
+              <button class="btn primary" id="btnPayFedapay" type="button">Payer avec FedaPay</button>
+
+              <!-- PayPal donate form -->
+              <form id="paypalForm" action="https://www.paypal.com/cgi-bin/webscr" method="post" style="margin:0;">
+                <input type="hidden" name="cmd" value="_donations">
+                <input type="hidden" name="business" value="ouoroucherifdine400@gmail.com">
+                <input type="hidden" name="item_name" value="Soutien DineTech">
+                <input type="hidden" name="currency_code" value="XOF">
+                <input type="hidden" name="amount" id="paypalAmount" value="">
+                <input type="hidden" name="cn" value="Message (optionnel)">
+                <input type="hidden" name="no_shipping" value="1">
+                <button class="btn" type="submit">Payer avec PayPal</button>
+              </form>
+
+              <a class="btn" href="tel:*880%23">MTN (*880#)</a>
+              <a class="btn" href="tel:*855%23">MOOV (*855#)</a>
+            </div>
+
+            <div class="small" style="margin-top:10px;">
+              <span class="ok">✅</span> MTN/MOOV : le code s’ouvre, tu mets le montant et tu valides.
+              <br>
+              <span class="warn">⚠️</span> Selon le téléphone, le système peut demander confirmation (normal).
+            </div>
+          </div>
+        </div>
+
+        <!-- SIDE -->
+        <aside>
+          <div class="block card">
+            <h2 style="margin:0 0 6px; font-size:18px;">Contact Soutien</h2>
+            <p class="hint">Canal officiel DineTech :</p>
+            <div class="mini" style="margin:10px 0 0;">
+              <b>WhatsApp</b>
+              <span>+229 99 56 06 61</span>
+            </div>
+            <div class="mini" style="margin:10px 0 0;">
+              <b>PayPal</b>
+              <span>ouoroucherifdine400@gmail.com</span>
+            </div>
+            <div class="rowbtn" style="margin-top:12px;">
+              <button class="btn ghost" id="btnCopyNumber" type="button">Copier le numéro</button>
+              <button class="btn ghost" id="btnCopyPaypal" type="button">Copier l’email PayPal</button>
+            </div>
+            <div class="small" id="copySideState"></div>
+          </div>
+
+          <div class="block card">
+            <h2 style="margin:0 0 6px; font-size:18px;">Transparence</h2>
+            <p class="small">
+              Ton soutien sert à améliorer le service : outils, matériel, déplacements, formation et qualité.
+            </p>
+          </div>
+
+          <div class="block card">
+            <h2 style="margin:0 0 6px; font-size:18px;">Après paiement</h2>
+            <p class="small">
+              Envoie “J’ai soutenu DineTech” + ton nom sur WhatsApp pour que je te remercie 🙏
+            </p>
+            <div class="rowbtn">
+              <a class="btn primary" id="btnWhatsAppAfter" href="#" rel="noopener">Envoyer le message</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footgrid">
+        <div>
+          <div style="font-weight:900; font-size:14px;">DineTech</div>
+          <div style="color:rgba(234,240,255,.7); margin-top:6px; line-height:1.6;">
+            Réparation • Dépannage • Maintenance • Création de sites web • Djougou
+          </div>
+        </div>
+        <div style="text-align:left;">
+          <div style="font-weight:800;">Contact</div>
+          <div style="margin-top:6px; color:rgba(234,240,255,.7); line-height:1.6;">
+            WhatsApp : 99560661<br/>Djougou • Bénin
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:14px; border-top:1px solid rgba(255,255,255,.08); padding-top:10px;">
+        © <span id="year"></span> DineTech. Tous droits réservés.
+      </div>
+    </footer>
+  </main>
+
+  <!-- WhatsApp Floating -->
+  <a class="wa-float" id="btnWhatsAppFloat" href="#" aria-label="Contacter DineTech sur WhatsApp" rel="noopener">
+    <div class="wa-icon" aria-hidden="true">WA</div>
+    <div class="wa-text">
+      <small>Message rapide</small>
+      <strong>WhatsApp</strong>
+    </div>
+  </a>
+
+  <script>
+    // ===== CONFIG =====
+    const phone = "22999560661";
+    const businessName = "DineTech";
+
+    // FedaPay public key (LIVE) fournie par toi
+    const FEDAPAY_PUBLIC_KEY = "pk_live_JVKrYdAmUDpIrrJJP6aQ0UxR";
+
+    // ===== Helpers =====
+    const $ = (id) => document.getElementById(id);
+
+    function formatFCFA(n){
+      try { return Number(n).toLocaleString("fr-FR"); }
+      catch { return String(n); }
+    }
+
+    function waLink(msg){
+      return `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+    }
+
+    function getActiveKind(){
+      const active = document.querySelector("#kindChips .chip.active");
+      return active ? active.getAttribute("data-kind") : "Don financier";
+    }
+
+    function getAmount(){
+      const v = ($("amount").value || "").trim();
+      const n = Number(v);
+      if(!v) return null;
+      if(!Number.isFinite(n) || n <= 0) return null;
+      return Math.round(n);
+    }
+
+    function splitName(full){
+      const t = (full || "").trim().replace(/\s+/g," ");
+      if(!t) return { firstname: "Client", lastname: "DineTech" };
+      const parts = t.split(" ");
+      if(parts.length === 1) return { firstname: parts[0], lastname: parts[0] };
+      return { firstname: parts[0], lastname: parts.slice(1).join(" ") };
+    }
+
+    function buildMessage(){
+      const name = ($("fullname").value || "").trim();
+      const email = ($("email").value || "").trim();
+      const kind = getActiveKind();
+      const amt = getAmount();
+      const amtTxt = amt ? `${formatFCFA(amt)} FCFA` : "Non précisé";
+      const base =
+`Bonjour ${businessName}, je veux vous soutenir 🙏
+- Nom : ${name || "Non précisé"}
+- Email : ${email || "Non précisé"}
+- Type : ${kind}
+- Montant : ${amtTxt}
+
+Message :
+${($("message").value || "").trim() || "Merci pour votre service."}
+`;
+      return base;
+    }
+
+    // ===== Chips Montant =====
+    const amtChips = Array.from(document.querySelectorAll("#amtChips .chip"));
+    amtChips.forEach(chip=>{
+      chip.addEventListener("click", ()=>{
+        amtChips.forEach(c=>c.classList.remove("active"));
+        chip.classList.add("active");
+        $("amount").value = chip.getAttribute("data-amt");
+        syncAll();
+      });
+    });
+
+    // ===== Chips Type =====
+    const kindChips = Array.from(document.querySelectorAll("#kindChips .chip"));
+    kindChips.forEach(chip=>{
+      chip.addEventListener("click", ()=>{
+        kindChips.forEach(c=>c.classList.remove("active"));
+        chip.classList.add("active");
+        syncAll();
+      });
+    });
+
+    // ===== Auto-message =====
+    function syncAll(){
+      // Si textarea vide, on propose un message par défaut simple
+      if(!($("message").value || "").trim()){
+        const kind = getActiveKind();
+        $("message").value = `Soutien : ${kind}. Merci DineTech 🙏`;
+      }
+
+      // PayPal amount
+      const amt = getAmount();
+      $("paypalAmount").value = amt ? String(amt) : "";
+
+      // WhatsApp
+      const msg = buildMessage();
+      $("btnWhatsAppHeader").href = waLink(msg);
+      $("btnWhatsAppFloat").href = waLink(msg);
+      $("btnWhatsAppAfter").href = waLink(`Bonjour ${businessName}, j’ai soutenu DineTech 🙏. Nom : `);
+    }
+
+    ["amount","fullname","email","message"].forEach(id=>{
+      $(id).addEventListener("input", ()=>{
+        // si l'utilisateur tape dans montant, on désactive les chips actives
+        if(id === "amount"){
+          amtChips.forEach(c=>c.classList.remove("active"));
+        }
+        syncAll();
+      });
+    });
+
+    // ===== Copier message =====
+    $("btnCopy").addEventListener("click", async ()=>{
+      const msg = buildMessage();
+      try{
+        await navigator.clipboard.writeText(msg);
+        $("copyState").innerHTML = `<span class="ok">✅ Message copié.</span>`;
+      }catch(e){
+        $("copyState").innerHTML = `<span class="warn">⚠️ Copie impossible. Sélectionne le texte et copie.</span>`;
+      }
+      setTimeout(()=>{$("copyState").textContent="";}, 2500);
+    });
+
+    // ===== WhatsApp continue =====
+    $("btnWhatsApp").addEventListener("click", ()=>{
+      window.open(waLink(buildMessage()), "_blank", "noopener");
+    });
+
+    // ===== Copy side =====
+    $("btnCopyNumber").addEventListener("click", async ()=>{
+      try{
+        await navigator.clipboard.writeText("99560661");
+        $("copySideState").innerHTML = `<span class="ok">✅ Numéro copié.</span>`;
+      }catch(e){
+        $("copySideState").innerHTML = `<span class="warn">⚠️ Copie impossible.</span>`;
+      }
+      setTimeout(()=>{$("copySideState").textContent="";}, 2200);
+    });
+
+    $("btnCopyPaypal").addEventListener("click", async ()=>{
+      try{
+        await navigator.clipboard.writeText("ouoroucherifdine400@gmail.com");
+        $("copySideState").innerHTML = `<span class="ok">✅ Email PayPal copié.</span>`;
+      }catch(e){
+        $("copySideState").innerHTML = `<span class="warn">⚠️ Copie impossible.</span>`;
+      }
+      setTimeout(()=>{$("copySideState").textContent="";}, 2200);
+    });
+
+    // ===== FedaPay (Checkout.js) =====
+    function payWithFedapay(){
+      const amt = getAmount();
+      if(!amt){
+        alert("Entre un montant (FCFA) avant de payer avec FedaPay.");
+        return;
+      }
+
+      const email = ($("email").value || "").trim();
+      if(!email){
+        alert("Entre ton email (obligatoire) pour payer avec FedaPay.");
+        return;
+      }
+
+      const name = ($("fullname").value || "").trim();
+      const { firstname, lastname } = splitName(name);
+
+      const kind = getActiveKind();
+      const desc = `Soutien DineTech - ${kind}`;
+
+      // Initialise et ouvre la popup
+      FedaPay.init({
+        public_key: FEDAPAY_PUBLIC_KEY,
+        transaction: {
+          amount: amt,
+          description: desc
+        },
+        customer: {
+          email: email,
+          firstname: firstname,
+          lastname: lastname || firstname
+        }
+      }).open();
+    }
+
+    $("btnPayFedapay").addEventListener("click", payWithFedapay);
+    $("btnPayFedapayTop").addEventListener("click", payWithFedapay);
+
+    // ===== Année =====
+    $("year").textContent = new Date().getFullYear();
+
+    // Init
+    syncAll();
+  </script>
+</body>
+</html>

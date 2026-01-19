@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact DineTech | Djougou - Quartier Gah</title>
+  <meta name="description" content="Contactez DineTech à Djougou (Quartier Gah, dans la von de ministre, juste avant le pont). Disponible tous les jours. WhatsApp : 99560661. Itinéraire Google Maps." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0E5AA7" />
+
+  <!-- Favicon (racine) -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <!-- Open Graph (WhatsApp/Facebook) -->
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Contact DineTech | Djougou - Quartier Gah" />
+  <meta property="og:description" content="DineTech à Djougou (Quartier Gah). Disponible tous les jours. SAV disponible. WhatsApp : 99560661. Cliquez pour ouvrir l’itinéraire sur Google Maps." />
+  <meta property="og:url" content="https://dinetech.bj/contact.html" />
+  <meta property="og:site_name" content="DineTech" />
+  <meta property="og:image" content="https://dinetech.bj/logo-dinetech.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact DineTech | Djougou - Quartier Gah" />
+  <meta name="twitter:description" content="Disponible tous les jours. WhatsApp : 99560661. Ouvrir l’itinéraire Google Maps." />
+  <meta name="twitter:image" content="https://dinetech.bj/logo-dinetech.png" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://dinetech.bj/contact.html" />
+
+  <!-- Schema.org (LocalBusiness) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "DineTech",
+    "image": "https://dinetech.bj/logo-dinetech.png",
+    "url": "https://dinetech.bj/",
+    "telephone": "+22999560661",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Djougou",
+      "addressCountry": "BJ",
+      "streetAddress": "Quartier Gah, dans la von de ministre, juste avant le pont"
+    },
+    "openingHours": "Mo-Su",
+    "areaServed": "Djougou",
+    "description": "DineTech à Djougou : dépannage et réparation informatique (téléphones, ordinateurs, logiciels, réseau). Service après-vente disponible."
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#0B1220;
+      --text:#EAF0FF;
+      --muted:#B8C2E0;
+      --brand:#0E5AA7;
+      --brand2:#1E7FD6;
+      --ok:#22C55E;
+      --shadow: 0 18px 60px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;padding:0;
+      background:
+        radial-gradient(1200px 700px at 20% 10%, rgba(30,127,214,.25), transparent 60%),
+        radial-gradient(900px 600px at 80% 20%, rgba(14,90,167,.25), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px 16px 70px;}
+
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,18,32,.55);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .topbar .inner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:14px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:800; letter-spacing:.2px;
+    }
+    .logo-img{
+      width:42px;height:42px;border-radius:50%;
+      object-fit:contain;background:#fff;padding:4px;
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    nav{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    .navlink{
+      padding:10px 12px; border-radius:12px;
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      transition:.2s;
+    }
+    .navlink:hover{color:var(--text); border-color: rgba(30,127,214,.35); transform: translateY(-1px);}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 16px; border-radius:14px; font-weight:700;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      transition:.2s;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+    .btn:hover{transform: translateY(-1px); border-color: rgba(30,127,214,.45);}
+    .btn.primary{
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      border-color: rgba(255,255,255,.18);
+      box-shadow: 0 18px 60px rgba(14,90,167,.25);
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero{
+      padding: 34px 0 12px;
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+    .hero h1{
+      font-size: clamp(26px, 4vw, 40px);
+      line-height: 1.1;
+      margin: 0 0 10px;
+    }
+    .hero p{
+      margin:0 0 16px;
+      color:var(--muted);
+      font-size: 16px;
+      line-height:1.65;
+    }
+    .pillrow{display:flex; flex-wrap:wrap; gap:10px; margin: 12px 0 14px;}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px; border-radius: 999px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.10);
+      color: var(--muted);
+      font-weight:600;
+    }
+    .dot{width:10px; height:10px; border-radius:999px; background: var(--ok); box-shadow: 0 0 0 6px rgba(34,197,94,.12);}
+
+    .heroCard{padding:18px;}
+    .heroCard h2{margin:0 0 10px; font-size:18px;}
+    .grid2{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+    .mini{
+      padding:12px; border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
+    }
+    .mini b{display:block; margin-bottom:6px}
+    .mini span{color: var(--muted); font-size: 13px; line-height:1.4}
+
+    .section{padding: 16px 0;}
+    .section h2{margin:0 0 10px; font-size: 22px;}
+    .section p{margin:0 0 14px; color: var(--muted); line-height:1.6}
+
+    .mapWrap{
+      overflow:hidden;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
+    }
+    .mapWrap iframe{
+      width:100%;
+      height: 360px;
+      border:0;
+      display:block;
+    }
+
+    footer{padding: 20px 0 8px; color: rgba(234,240,255,.7); font-size: 13px;}
+    .footgrid{display:grid; grid-template-columns: 1.2fr .8fr; gap: 12px;}
+
+    /* WhatsApp Floating Button */
+    .wa-float{
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 60;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding: 12px 14px;
+      border-radius: 999px;
+      background: rgba(0,0,0,.35);
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 18px 60px rgba(0,0,0,.35);
+      backdrop-filter: blur(10px);
+    }
+    .wa-icon{
+      width:42px; height:42px; border-radius:999px;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      display:grid; place-items:center;
+      font-weight:900;
+      color:#072b1e;
+    }
+    .wa-text{display:flex; flex-direction:column; line-height:1.1}
+    .wa-text small{color: var(--muted)}
+    .wa-text strong{color: var(--text)}
+    .wa-float:hover{transform: translateY(-1px); border-color: rgba(37,211,102,.35);}
+
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr; padding-top: 24px;}
+      nav{display:none;}
+      .footgrid{grid-template-columns: 1fr;}
+      .mapWrap iframe{height: 320px;}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="inner">
+      <a class="brand" href="index.html" aria-label="Retour à l'accueil">
+        <img src="logo-dinetech.png" alt="Logo DineTech" class="logo-img">
+        <div>
+          <div style="font-size:15px; line-height:1; font-weight:900;">DineTech</div>
+          <div style="font-size:12px; color:var(--muted); margin-top:3px;">Djougou • Contact & Itinéraire</div>
+        </div>
+      </a>
+
+      <nav aria-label="Navigation">
+        <a class="navlink" href="index.html">Accueil</a>
+        <a class="navlink" href="services.html">Services</a>
+        <a class="navlink" href="#carte">Carte</a>
+        <a class="navlink" href="#contact">Contact</a>
+        <a class="navlink" href="soutien.html">Soutien</a>
+      </nav>
+
+      <a class="btn primary" id="btnWhatsAppHeader" href="#" rel="noopener">WhatsApp</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" aria-label="Contact DineTech">
+      <div>
+        <h1>Contact & localisation à <span style="color:var(--brand2)">Djougou</span></h1>
+        <p>
+          <b>DineTech</b> est situé à <b>Quartier Gah</b>, <b>dans la von de ministre</b>, <b>juste avant le pont</b>.
+          Disponible <b>tous les jours</b>. <b>SAV disponible</b>.
+        </p>
+
+        <div class="pillrow" role="list">
+          <div class="pill" role="listitem"><span class="dot" aria-hidden="true"></span> Tous les jours</div>
+          <div class="pill" role="listitem">WhatsApp : 99560661</div>
+          <div class="pill" role="listitem">Itinéraire Google Maps</div>
+        </div>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn primary" id="btnWhatsAppHero" href="#" rel="noopener">Écrire sur WhatsApp</a>
+          <a class="btn" id="btnMapsHero" href="#" target="_blank" rel="noopener">Ouvrir l’itinéraire</a>
+        </div>
+      </div>
+
+      <aside class="card heroCard" id="contact" aria-label="Infos contact">
+        <h2>Infos rapides</h2>
+        <div class="grid2">
+          <div class="mini">
+            <b>Adresse</b>
+            <span>Quartier Gah, dans la von de ministre, juste avant le pont</span>
+          </div>
+          <div class="mini">
+            <b>Ville</b>
+            <span>Djougou, Bénin</span>
+          </div>
+          <div class="mini">
+            <b>WhatsApp</b>
+            <span>99560661</span>
+          </div>
+          <div class="mini">
+            <b>Horaires</b>
+            <span>Tous les jours</span>
+          </div>
+        </div>
+
+        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn primary" id="btnWhatsAppCard" href="#" rel="noopener">Demander un devis</a>
+          <a class="btn" id="btnMapsCard" href="#" target="_blank" rel="noopener">Voir sur Maps</a>
+        </div>
+
+        <div style="margin-top:14px; color:var(--muted); font-size:13px; line-height:1.6;">
+          Astuce : envoie <b>modèle + panne + photo</b> et je te réponds vite.
+        </div>
+      </aside>
+    </section>
+
+    <section id="carte" class="section" aria-label="Carte Google Maps">
+      <h2>Carte</h2>
+      <p>Clique sur “Ouvrir l’itinéraire” pour afficher ta position sur Google Maps.</p>
+
+      <div class="card" style="padding:14px;">
+        <div class="mapWrap">
+          <!-- Carte basée sur l’adresse (en attendant le lien exact ou coordonnées) -->
+          <iframe
+  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d983.199462532352!2d1.6533406694965063!3d9.698287499399516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s6FX3MMX3%2B8H9!5e0!3m2!1sfr!2sbj!4v1768745682684!5m2!1sfr!2sbj"
+  width="100%"
+  height="380"
+  style="border:0;"
+  allowfullscreen
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn" id="btnMaps"
+   href="https://maps.app.goo.gl/rFQBvQp5tmgN7wUk7"
+   target="_blank" rel="noopener">
+  📍 Ouvrir l’itinéraire
+          </a>
+          <a class="btn" id="btnMapsAdresse" href="#" target="_blank" rel="noopener">🧭 Ouvrir l’adresse</a>
+        </div>
+
+        <div style="margin-top:10px; color:var(--muted); font-size:13px; line-height:1.6;">
+          Disponible pour vous.
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Message WhatsApp">
+      <h2>Message rapide</h2>
+      <div class="card" style="padding:18px; display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;">
+        <div>
+          <div style="font-weight:900; font-size:18px; margin-bottom:6px;">Besoin d’un devis ?</div>
+          <div style="color:var(--muted); line-height:1.6;">
+            Écris directement sur WhatsApp : modèle + panne + photo si possible.
+          </div>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn primary" id="btnWhatsAppCTA" href="#" rel="noopener">WhatsApp : 99560661</a>
+          <a class="btn" href="services.html">Voir Services</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footgrid">
+        <div>
+          <div style="font-weight:900; font-size:14px;">DineTech</div>
+          <div style="color:rgba(234,240,255,.7); margin-top:6px; line-height:1.6;">
+            Quartier Gah (Djougou) • Dépannage & réparation informatique • SAV disponible
+          </div>
+        </div>
+        <div style="text-align:left;">
+          <div style="font-weight:800;">Contact</div>
+          <div style="margin-top:6px; color:rgba(234,240,255,.7); line-height:1.6;">
+            WhatsApp : 99560661<br/>Djougou • Bénin
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:14px; border-top:1px solid rgba(255,255,255,.08); padding-top:10px;">
+        © <span id="year"></span> DineTech. Tous droits réservés.
+      </div>
+    </footer>
+  </main>
+
+  <!-- WhatsApp Floating -->
+  <a class="wa-float" id="btnWhatsAppFloat" href="#" aria-label="Contacter DineTech sur WhatsApp" rel="noopener">
+    <div class="wa-icon" aria-hidden="true">WA</div>
+    <div class="wa-text">
+      <small>Devis rapide</small>
+      <strong>WhatsApp</strong>
+    </div>
+  </a>
+
+  <script>
+    // WhatsApp
+    const phone = "22999560661";
+    const businessName = "DineTech";
+    const city = "Djougou";
+    const defaultMessage = `Bonjour ${businessName}, je suis à ${city}. Je veux venir à Quartier Gah (von de ministre, juste avant le pont). J'ai besoin d'aide pour : `;
+
+    function waLink(msg){
+      const text = encodeURIComponent(msg);
+      return `https://wa.me/${phone}?text=${text}`;
+    }
+
+    // Google Maps (adresse)
+    // NOTE: Pour une position EXACTE, remplace mapsQuery par ton lien "Partager" Google Maps ou des coordonnées.
+    const mapsQuery = "DineTech, Quartier Gah, von de ministre, juste avant le pont, Djougou, Benin";
+    const mapsSearchLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapsQuery)}`;
+    const mapsDirectionsLink = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(mapsQuery)}`;
+
+    // Iframe embed (sans clé API)
+    const iframeSrc = `https://www.google.com/maps?q=${encodeURIComponent(mapsQuery)}&output=embed`;
+
+    // Brancher boutons WhatsApp
+    ["btnWhatsAppHeader","btnWhatsAppHero","btnWhatsAppCard","btnWhatsAppCTA","btnWhatsAppFloat"].forEach(id=>{
+      const el = document.getElementById(id);
+      if(el) el.href = waLink(defaultMessage);
+    });
+
+    // Brancher boutons Maps
+    ["btnMapsHero","btnMapsCard","btnMapsAdresse"].forEach(id=>{
+      const el = document.getElementById(id);
+      if(el) el.href = mapsSearchLink;
+    });
+    const it = document.getElementById("btnMapsItineraire");
+    if(it) it.href = mapsDirectionsLink;
+
+    // Inject iframe
+    const iframe = document.getElementById("mapsIframe");
+    if(iframe) iframe.src = iframeSrc;
+
+    // Année footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Services DineTech | Réparation Téléphones & Ordinateurs à Djougou</title>
+  <meta name="description" content="Découvrez tous les services DineTech à Djougou : réparation téléphones, maintenance PC, installation logiciels, dépannage réseau/Wi-Fi, récupération de données et service après-vente. Disponible tous les jours. WhatsApp 99560661." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0E5AA7" />
+
+  <!-- Favicon (racine) -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <!-- Open Graph (WhatsApp/Facebook) -->
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Services DineTech | Dépannage & Réparation à Djougou" />
+  <meta property="og:description" content="Téléphones, ordinateurs, logiciels, réseau/Wi-Fi, récupération de données, maintenance. Disponible tous les jours. SAV disponible. WhatsApp : 99560661." />
+  <meta property="og:url" content="https://dinetech.bj/services.html" />
+  <meta property="og:site_name" content="DineTech" />
+  <meta property="og:image" content="https://dinetech.bj/logo-dinetech.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Services DineTech | Réparation & Dépannage à Djougou" />
+  <meta name="twitter:description" content="Téléphones, ordinateurs, logiciels, réseau/Wi-Fi, récupération de données. Disponible tous les jours. WhatsApp : 99560661." />
+  <meta name="twitter:image" content="https://dinetech.bj/logo-dinetech.png" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://dinetech.bj/services.html" />
+
+  <!-- Schema.org (LocalBusiness + Services) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "DineTech",
+    "image": "https://dinetech.bj/logo-dinetech.png",
+    "url": "https://dinetech.bj/",
+    "telephone": "+22999560661",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Djougou",
+      "addressCountry": "BJ"
+    },
+    "areaServed": "Djougou",
+    "openingHours": "Mo-Su",
+    "description": "DineTech à Djougou : réparation téléphones et ordinateurs, dépannage informatique, installation logiciels, maintenance et service après-vente.",
+    "makesOffer": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Réparation de téléphones" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Maintenance et réparation d'ordinateurs" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Installation et configuration de logiciels" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dépannage réseau et Wi-Fi" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Récupération et sauvegarde de données" } }
+    ]
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#0B1220;
+      --text:#EAF0FF;
+      --muted:#B8C2E0;
+      --brand:#0E5AA7;   /* Bleu logo */
+      --brand2:#1E7FD6;  /* Bleu secondaire */
+      --ok:#22C55E;
+      --shadow: 0 18px 60px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;padding:0;
+      background:
+        radial-gradient(1200px 700px at 20% 10%, rgba(30,127,214,.25), transparent 60%),
+        radial-gradient(900px 600px at 80% 20%, rgba(14,90,167,.25), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px 16px 70px;}
+
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,18,32,.55);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .topbar .inner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:14px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:800; letter-spacing:.2px;
+    }
+    .logo-img{
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      object-fit:contain;
+      background:#ffffff;
+      padding:4px;
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    nav{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    .navlink{
+      padding:10px 12px; border-radius:12px;
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      transition:.2s;
+    }
+    .navlink:hover{color:var(--text); border-color: rgba(30,127,214,.35); transform: translateY(-1px);}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 16px; border-radius:14px; font-weight:700;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      transition:.2s;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+    .btn:hover{transform: translateY(-1px); border-color: rgba(30,127,214,.45);}
+    .btn.primary{
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      border-color: rgba(255,255,255,.18);
+      box-shadow: 0 18px 60px rgba(14,90,167,.25);
+    }
+    .btn.primary:hover{box-shadow: 0 22px 70px rgba(14,90,167,.32);}
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero{
+      padding: 34px 0 12px;
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+    .hero h1{
+      font-size: clamp(26px, 4vw, 40px);
+      line-height: 1.1;
+      margin: 0 0 10px;
+    }
+    .hero p{
+      margin:0 0 16px;
+      color:var(--muted);
+      font-size: 16px;
+      line-height:1.65;
+    }
+    .pillrow{display:flex; flex-wrap:wrap; gap:10px; margin: 12px 0 14px;}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px; border-radius: 999px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.10);
+      color: var(--muted);
+      font-weight:600;
+    }
+    .dot{width:10px; height:10px; border-radius:999px; background: var(--ok); box-shadow: 0 0 0 6px rgba(34,197,94,.12);}
+
+    .heroCard{padding:18px;}
+    .heroCard h2{margin:0 0 10px; font-size:18px;}
+    .grid2{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+    .mini{
+      padding:12px; border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
+    }
+    .mini b{display:block; margin-bottom:6px}
+    .mini span{color: var(--muted); font-size: 13px; line-height:1.4}
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px; border-radius: 999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      font-weight:600;
+      margin-top:10px;
+    }
+
+    .section{padding: 16px 0;}
+    .section h2{margin:0 0 10px; font-size: 22px;}
+    .section p{margin:0 0 14px; color: var(--muted); line-height:1.6}
+
+    .filters{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      margin-top: 10px;
+    }
+    .search{
+      flex: 1 1 260px;
+      display:flex; gap:10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
+    }
+    .search input{
+      width:100%;
+      background: transparent;
+      border:0;
+      outline:0;
+      color: var(--text);
+      font-size: 14px;
+    }
+    .chiprow{display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;}
+    .chip{
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      font-weight:700;
+      cursor:pointer;
+      transition:.2s;
+      user-select:none;
+    }
+    .chip:hover{transform: translateY(-1px); border-color: rgba(30,127,214,.35);}
+    .chip.active{
+      color: var(--text);
+      border-color: rgba(255,255,255,.18);
+      background: linear-gradient(135deg, rgba(14,90,167,.55), rgba(30,127,214,.45));
+    }
+
+    .services{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .service{
+      padding: 16px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      transition:.2s;
+      min-height: 150px;
+    }
+    .service:hover{
+      transform: translateY(-2px);
+      border-color: rgba(30,127,214,.35);
+      background: rgba(30,127,214,.06);
+    }
+    .service h3{margin:0 0 8px; font-size: 16px;}
+    .service ul{margin:0; padding-left: 18px; color: var(--muted); font-size: 13.5px; line-height:1.55;}
+    .tag{
+      display:inline-flex; align-items:center; gap:8px;
+      margin-top: 10px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
+      color: var(--muted);
+      font-weight:700;
+      font-size: 12px;
+    }
+
+    .cta{
+      padding: 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+      margin-top: 8px;
+    }
+    .cta h3{margin:0 0 6px; font-size: 18px;}
+    .cta p{margin:0; color:var(--muted)}
+
+    footer{padding: 20px 0 8px; color: rgba(234,240,255,.7); font-size: 13px;}
+    .footgrid{display:grid; grid-template-columns: 1.2fr .8fr; gap: 12px;}
+
+    /* WhatsApp Floating Button */
+    .wa-float{
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 60;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding: 12px 14px;
+      border-radius: 999px;
+      background: rgba(0,0,0,.35);
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 18px 60px rgba(0,0,0,.35);
+      backdrop-filter: blur(10px);
+    }
+    .wa-icon{
+      width:42px; height:42px; border-radius:999px;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      display:grid; place-items:center;
+      font-weight:900;
+      color:#072b1e;
+    }
+    .wa-text{display:flex; flex-direction:column; line-height:1.1}
+    .wa-text small{color: var(--muted)}
+    .wa-text strong{color: var(--text)}
+    .wa-float:hover{transform: translateY(-1px); border-color: rgba(37,211,102,.35);}
+
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr; padding-top: 24px;}
+      .services{grid-template-columns:1fr;}
+      nav{display:none;}
+      .footgrid{grid-template-columns: 1fr;}
+      .chiprow{justify-content:flex-start;}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="inner">
+      <a class="brand" href="index.html" aria-label="Retour à l'accueil">
+        <img src="logo-dinetech.png" alt="Logo DineTech" class="logo-img">
+        <div>
+          <div style="font-size:15px; line-height:1; font-weight:900;">DineTech</div>
+          <div style="font-size:12px; color:var(--muted); margin-top:3px;">Djougou • Services & Réparation</div>
+        </div>
+      </a>
+
+      <nav aria-label="Navigation">
+        <a class="navlink" href="index.html">Accueil</a>
+        <a class="navlink" href="#liste">Services</a>
+        <a class="navlink" href="#devis">Devis</a>
+        <a class="navlink" href="contact.html">Contact</a>
+        <a class="navlink" href="#faq">FAQ</a>
+        <a class="navlink" href="soutien.html">Soutien</a>
+      </nav>
+
+      <a class="btn primary" id="btnWhatsAppHeader" href="#" rel="noopener">WhatsApp</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" aria-label="Présentation des services">
+      <div>
+        <h1>Nos services à <span style="color:var(--brand2)">Djougou</span><br/>Dépannage, réparation et maintenance.</h1>
+        <p>
+          Chez <b>DineTech</b>, on prend en charge tout ce qui touche à l’informatique : téléphones, ordinateurs,
+          logiciels, réseau/Wi-Fi, récupération de données et suivi. <b>SAV disponible</b> et réponse rapide.
+        </p>
+
+        <div class="pillrow" role="list">
+          <div class="pill" role="listitem"><span class="dot" aria-hidden="true"></span> Disponible tous les jours</div>
+          <div class="pill" role="listitem">Diagnostic clair</div>
+          <div class="pill" role="listitem">Devis rapide</div>
+        </div>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn primary" id="btnWhatsAppHero" href="#" rel="noopener">Demander un devis</a>
+          <a class="btn" href="#liste">Voir la liste</a>
+        </div>
+      </div>
+
+      <aside class="card heroCard" aria-label="Infos clés">
+        <h2>Infos rapides</h2>
+        <div class="grid2">
+          <div class="mini">
+            <b>Ville</b>
+            <span>Djougou (Bénin)</span>
+          </div>
+          <div class="mini">
+            <b>Disponibilité</b>
+            <span>Tous les jours</span>
+          </div>
+          <div class="mini">
+            <b>Contact</b>
+            <span>WhatsApp : 99560661</span>
+          </div>
+          <div class="mini">
+            <b>Service après-vente</b>
+            <span>Disponible</span>
+          </div>
+        </div>
+        <div class="badge">✅ Travail propre & suivi</div>
+        <div style="margin-top:14px; color:var(--muted); font-size:13px; line-height:1.6;">
+          Conseil : envoie le <b>modèle</b> + une <b>photo</b> + la <b>panne</b> (ex: “ne charge plus”, “écran noir”, “PC lent”).
+        </div>
+      </aside>
+    </section>
+
+    <section id="liste" class="section" aria-label="Liste des services">
+      <h2>Liste des services</h2>
+      <p>Utilise la recherche et les filtres pour voir rapidement ce que tu veux.</p>
+
+      <div class="filters">
+        <div class="search" aria-label="Recherche services">
+          🔎
+          <input id="searchInput" type="search" placeholder="Ex: écran, batterie, Windows, Wi-Fi, données..." autocomplete="off" />
+        </div>
+        <div class="chiprow" aria-label="Filtres catégories">
+          <div class="chip active" data-filter="all">Tout</div>
+          <div class="chip" data-filter="tel">Téléphones</div>
+          <div class="chip" data-filter="pc">Ordinateurs</div>
+          <div class="chip" data-filter="web">Web</div>
+          <div class="chip" data-filter="soft">Logiciels</div>
+          <div class="chip" data-filter="net">Réseau</div>
+          <div class="chip" data-filter="data">Données</div>
+        </div>
+      </div>
+
+      <div class="services" id="servicesGrid">
+        <!-- Téléphones -->
+        <article class="service" data-cat="tel" data-keywords="telephone téléphone écran batterie charge connecteur micro haut-parleur caméra tactile">
+          <h3>📱 Réparation téléphones</h3>
+          <ul>
+            <li>Écran (tactile, affichage), vitre</li>
+            <li>Batterie, surchauffe, autonomie</li>
+            <li>Charge (port, connecteur), câble/chargeur</li>
+            <li>Micro, haut-parleur, caméra</li>
+            <li>Diagnostic complet et test</li>
+          </ul>
+          <div class="tag">Catégorie : Téléphones</div>
+        </article>
+
+        <article class="service" data-cat="tel" data-keywords="android iphone logiciel flash mise à jour déblocage redémarrage bootloop compte google">
+          <h3>📲 Logiciel téléphone</h3>
+          <ul>
+            <li>Mise à jour, réinstallation système</li>
+            <li>Flash, bug, redémarrage, lenteur</li>
+            <li>Nettoyage & optimisation</li>
+            <li>Configuration applications</li>
+            <li>Conseils sécurité & sauvegarde</li>
+          </ul>
+          <div class="tag">Catégorie : Téléphones</div>
+        </article>
+
+        <!-- PC -->
+        <article class="service" data-cat="pc" data-keywords="ordinateur pc portable bureau écran clavier trackpad charge ventilateur surchauffe">
+          <h3>🖥️ Réparation ordinateurs</h3>
+          <ul>
+            <li>Problèmes de charge, alimentation</li>
+            <li>Clavier, écran, charnière</li>
+            <li>Surchauffe, ventilateur, nettoyage</li>
+            <li>Changement SSD/HDD, RAM</li>
+            <li>Diagnostic et tests</li>
+          </ul>
+          <div class="tag">Catégorie : Ordinateurs</div>
+        </article>
+
+        <!-- Web -->
+<article class="service" data-cat="web" data-keywords="site web création site vitrine design responsive seo vercel github domaine hébergement">
+  <h3>💻 Création de site Web</h3>
+  <ul>
+    <li>Site vitrine professionnel (entreprise / ONG / projet)</li>
+    <li>Design moderne + responsive (mobile & PC)</li>
+    <li>SEO (titres, meta, partage WhatsApp, structure)</li>
+    <li>Déploiement GitHub / Vercel</li>
+    <li>Conseils domaine & mise en ligne</li>
+  </ul>
+  <div class="tag">Catégorie : Web</div>
+</article>
+
+<article class="service" data-cat="web" data-keywords="maintenance site web mise à jour contenu sécurité performance optimisation vercel domaine">
+  <h3>🛠️ Maintenance & mise à jour Web</h3>
+  <ul>
+    <li>Modifications de pages / contenu</li>
+    <li>Optimisation vitesse & performance</li>
+    <li>Correction bugs & améliorations</li>
+    <li>Ajout pages (Contact, Don, Tarifs, Blog)</li>
+    <li>Suivi et assistance (SAV)</li>
+  </ul>
+  <div class="tag">Catégorie : Web</div>
+</article>
+
+        <article class="service" data-cat="pc" data-keywords="pc lent optimisation nettoyage performance windows démarre pas écran noir bleu">
+          <h3>⚡ PC lent / ne démarre pas</h3>
+          <ul>
+            <li>Optimisation vitesse et démarrage</li>
+            <li>Réparation Windows (erreurs, écran bleu)</li>
+            <li>Nettoyage virus / pubs</li>
+            <li>Réglages performance</li>
+            <li>Conseils pour prolonger la durée de vie</li>
+          </ul>
+          <div class="tag">Catégorie : Ordinateurs</div>
+        </article>
+
+        <!-- Logiciels -->
+        <article class="service" data-cat="soft" data-keywords="installation logiciels windows office antivirus pilotes drivers imprimante scanner">
+          <h3>🧩 Installation & configuration</h3>
+          <ul>
+            <li>Installation Windows + pilotes</li>
+            <li>Installation logiciels (bureautique…)</li>
+            <li>Configuration imprimante / scanner</li>
+            <li>Mises à jour et réglages</li>
+            <li>Conseils d’utilisation</li>
+          </ul>
+          <div class="tag">Catégorie : Logiciels</div>
+        </article>
+
+        <article class="service" data-cat="soft" data-keywords="virus malware pub sécurité nettoyage antivirus protection">
+          <h3>🛡️ Sécurité & nettoyage</h3>
+          <ul>
+            <li>Suppression virus / malwares</li>
+            <li>Nettoyage pubs & programmes indésirables</li>
+            <li>Protection antivirus (installation/paramétrage)</li>
+            <li>Bonnes pratiques sécurité</li>
+            <li>Optimisation système après nettoyage</li>
+          </ul>
+          <div class="tag">Catégorie : Logiciels</div>
+        </article>
+
+        <!-- Réseau -->
+        <article class="service" data-cat="net" data-keywords="wifi routeur internet connexion partage configuration réseau lenteur">
+          <h3>🌐 Réseau / Wi-Fi / Internet</h3>
+          <ul>
+            <li>Configuration Wi-Fi / routeur</li>
+            <li>Dépannage connexion lente / instable</li>
+            <li>Partage de connexion</li>
+            <li>Installation réseau basique</li>
+            <li>Conseils pour améliorer la couverture</li>
+          </ul>
+          <div class="tag">Catégorie : Réseau</div>
+        </article>
+
+        <!-- Données -->
+        <article class="service" data-cat="data" data-keywords="données récupération sauvegarde photos fichiers disque dur ssd clé usb">
+          <h3>💾 Données : récupération & sauvegarde</h3>
+          <ul>
+            <li>Sauvegarde photos, documents, contacts</li>
+            <li>Récupération de fichiers (selon cas)</li>
+            <li>Transfert vers nouveau téléphone/PC</li>
+            <li>Organisation et tri</li>
+            <li>Conseils prévention pertes de données</li>
+          </ul>
+          <div class="tag">Catégorie : Données</div>
+        </article>
+
+        <article class="service" data-cat="pc" data-keywords="maintenance entretien diagnostic suivi sav service après-vente">
+          <h3>🔧 Maintenance & SAV</h3>
+          <ul>
+            <li>Entretien régulier (PC / téléphone)</li>
+            <li>Contrôle performance & sécurité</li>
+            <li>Suivi après réparation (SAV)</li>
+            <li>Assistance et conseils</li>
+            <li>Interventions planifiées (pro)</li>
+          </ul>
+          <div class="tag">Catégorie : Maintenance</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="devis" class="section" aria-label="Demande de devis">
+      <h2>Demander un devis</h2>
+      <div class="card cta">
+        <div>
+          <h3>Envoie ton problème sur WhatsApp</h3>
+          <p>Modèle + panne + photo si possible. Je te réponds vite.</p>
+          <div style="margin-top:10px; color:var(--muted); font-size:13px; line-height:1.6;">
+            Exemple message : “Bonjour DineTech, je suis à Djougou. Mon PC est lent et chauffe, pouvez-vous m’aider ?”
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:10px; min-width: 220px;">
+          <a class="btn primary" id="btnWhatsAppCTA" href="#" rel="noopener">WhatsApp : 99560661</a>
+          <a class="btn" href="index.html">Retour Accueil</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section" aria-label="FAQ">
+      <h2>FAQ</h2>
+      <div class="services" style="margin-top:0;">
+        <div class="service" data-cat="all">
+          <h3>⏱️ Vous êtes disponibles quand ?</h3>
+          <ul>
+            <li>Nous sommes disponibles <b>tous les jours</b>.</li>
+            <li>Contact rapide via WhatsApp : <b>99560661</b>.</li>
+          </ul>
+        </div>
+        <div class="service" data-cat="all">
+          <h3>✅ Est-ce que le SAV est disponible ?</h3>
+          <ul>
+            <li>Oui, <b>service après-vente disponible</b>.</li>
+            <li>On assure le suivi après intervention.</li>
+          </ul>
+        </div>
+        <div class="service" data-cat="all">
+          <h3>💬 Comment accélérer la prise en charge ?</h3>
+          <ul>
+            <li>Envoie : <b>modèle</b> + <b>panne</b> + <b>photo</b> (si possible).</li>
+            <li>Tu reçois un diagnostic clair + devis estimatif.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footgrid">
+        <div>
+          <div style="font-weight:900; font-size:14px;">DineTech</div>
+          <div style="color:rgba(234,240,255,.7); margin-top:6px; line-height:1.6;">
+            Services informatiques à Djougou : téléphones, ordinateurs, logiciels, réseau/Wi-Fi, sauvegarde, maintenance, SAV.
+          </div>
+        </div>
+        <div style="text-align:left;">
+          <div style="font-weight:800;">Contact</div>
+          <div style="margin-top:6px; color:rgba(234,240,255,.7); line-height:1.6;">
+            WhatsApp : 99560661<br/>Djougou • Bénin
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:14px; border-top:1px solid rgba(255,255,255,.08); padding-top:10px;">
+        © <span id="year"></span> DineTech. Tous droits réservés.
+      </div>
+    </footer>
+  </main>
+
+  <!-- WhatsApp Floating -->
+  <a class="wa-float" id="btnWhatsAppFloat" href="#" aria-label="Contacter DineTech sur WhatsApp" rel="noopener">
+    <div class="wa-icon" aria-hidden="true">WA</div>
+    <div class="wa-text">
+      <small>Devis rapide</small>
+      <strong>WhatsApp</strong>
+    </div>
+  </a>
+
+  <script>
+    // Config WhatsApp
+    const phone = "22999560661";
+    const businessName = "DineTech";
+    const city = "Djougou";
+    const defaultMessage = `Bonjour ${businessName}, je suis à ${city}. J'ai besoin d'aide pour : `;
+
+    function waLink(msg){
+      const text = encodeURIComponent(msg);
+      return `https://wa.me/${phone}?text=${text}`;
+    }
+
+    // Brancher tous les boutons WhatsApp
+    const btns = ["btnWhatsAppHeader","btnWhatsAppHero","btnWhatsAppCTA","btnWhatsAppFloat"];
+    btns.forEach(id=>{
+      const el = document.getElementById(id);
+      if(el) el.href = waLink(defaultMessage);
+    });
+
+    // Année footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Recherche + filtres
+    const chips = Array.from(document.querySelectorAll(".chip"));
+    const cards = Array.from(document.querySelectorAll("#servicesGrid .service"));
+    const input = document.getElementById("searchInput");
+    let activeFilter = "all";
+
+    function matchesFilter(card){
+      if(activeFilter === "all") return true;
+      return card.getAttribute("data-cat") === activeFilter;
+    }
+
+    function matchesSearch(card, q){
+      if(!q) return true;
+      const text = (card.innerText + " " + (card.getAttribute("data-keywords") || "")).toLowerCase();
+      return text.includes(q);
+    }
+
+    function render(){
+      const q = (input.value || "").trim().toLowerCase();
+      cards.forEach(card=>{
+        const ok = matchesFilter(card) && matchesSearch(card, q);
+        card.style.display = ok ? "" : "none";
+      });
+    }
+
+    chips.forEach(chip=>{
+      chip.addEventListener("click", ()=>{
+        chips.forEach(c=>c.classList.remove("active"));
+        chip.classList.add("active");
+        activeFilter = chip.getAttribute("data-filter");
+        render();
+      });
+    });
+
+    input.addEventListener("input", render);
+  </script>
+</body>
+</html>
