@@ -3,31 +3,57 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Soutenir DineTech | Don & Contribution</title>
   <meta name="description" content="Soutenez DineTech à Djougou : contribution libre via FedaPay, MTN, Moov ou PayPal. Merci 🙏" />
-  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="DineTech, soutenir, don, contribution, Djougou, Bénin, réparation téléphone, réparation ordinateur, dépannage informatique, création site web, FedaPay, MTN, Moov, PayPal" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="theme-color" content="#0E5AA7" />
 
   <!-- Favicon (racine) -->
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="apple-touch-icon" href="favicon.png" />
 
+  <!-- Canonical (Vercel) -->
+  <link rel="canonical" href="https://dinetech.vercel.app/soutien.html" />
+
   <!-- Open Graph -->
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Soutenir DineTech | Don & Contribution" />
   <meta property="og:description" content="Contribution libre pour soutenir DineTech (Djougou). FedaPay, MTN, Moov, PayPal." />
-  <meta property="og:url" content="https://dinetech.bj/soutien.html" />
+  <meta property="og:url" content="https://dinetech.vercel.app/soutien.html" />
   <meta property="og:site_name" content="DineTech" />
-  <meta property="og:image" content="https://dinetech.bj/logo-dinetech.png" />
+  <meta property="og:image" content="https://dinetech.vercel.app/logo-dinetech.png" />
+  <meta property="og:image:alt" content="Logo DineTech" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Soutenir DineTech" />
   <meta name="twitter:description" content="Contribution libre via FedaPay, MTN, Moov, PayPal." />
-  <meta name="twitter:image" content="https://dinetech.bj/logo-dinetech.png" />
+  <meta name="twitter:image" content="https://dinetech.vercel.app/logo-dinetech.png" />
 
-  <link rel="canonical" href="https://dinetech.bj/soutien.html" />
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"DonateAction",
+    "name":"Soutenir DineTech",
+    "description":"Contribution libre pour soutenir DineTech à Djougou (réparation, dépannage, maintenance et création de sites web).",
+    "recipient":{
+      "@type":"LocalBusiness",
+      "name":"DineTech",
+      "telephone":"+22999560661",
+      "address":{
+        "@type":"PostalAddress",
+        "addressLocality":"Djougou",
+        "addressCountry":"BJ",
+        "streetAddress":"Quartier Gah, dans la von de ministre, juste avant le pont"
+      },
+      "url":"https://dinetech.vercel.app/"
+    }
+  }
+  </script>
 
   <!-- FedaPay Checkout.js -->
   <script src="https://cdn.fedapay.com/checkout.js?v=1.1.7"></script>
@@ -77,6 +103,7 @@
       width:42px;height:42px;border-radius:50%;
       object-fit:contain;background:#ffffff;padding:4px;
       box-shadow:0 10px 30px rgba(0,0,0,.25);
+      display:block;
     }
     nav{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
     .navlink{
@@ -104,10 +131,10 @@
       box-shadow: 0 18px 60px rgba(14,90,167,.25);
     }
     .btn.ghost{
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.16);
-  color: var(--text);
-}
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.16);
+      color: var(--text);
+    }
 
     .card{
       background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
@@ -148,13 +175,13 @@
     .heroCard{padding:18px;}
     .heroCard h2{margin:0 0 10px; font-size:18px;}
     .mini{
-  padding:12px; border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(255,255,255,.07);
-  margin-bottom:10px;
-}
-.mini b{display:block; margin-bottom:6px}
-.mini span{color: rgba(234,240,255,.80); font-size: 13px; line-height:1.4}
+      padding:12px; border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.07);
+      margin-bottom:10px;
+    }
+    .mini b{display:block; margin-bottom:6px}
+    .mini span{color: rgba(234,240,255,.80); font-size: 13px; line-height:1.4}
 
     .section{padding: 16px 0;}
     .section h2{margin:0 0 10px; font-size: 22px;}
@@ -169,12 +196,12 @@
     }
 
     .block{
-  padding: 16px;
-  border-radius: var(--radius);
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(255,255,255,.05);
-  margin-bottom: 12px;
-}
+      padding: 16px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      margin-bottom: 12px;
+    }
 
     .chips{display:flex; gap:10px; flex-wrap:wrap; margin-top: 10px;}
     .chip{
@@ -198,15 +225,15 @@
     label{display:block; font-weight:800; margin: 12px 0 6px;}
     .hint{color: var(--muted); font-size: 13px; line-height:1.5; margin:0 0 8px;}
     input, textarea, select{
-  width:100%;
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.16);
-  color: var(--text);
-  border-radius: 14px;
-  padding: 12px 12px;
-  outline: none;
-  font-size: 14px;
-}
+      width:100%;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.16);
+      color: var(--text);
+      border-radius: 14px;
+      padding: 12px 12px;
+      outline: none;
+      font-size: 14px;
+    }
     textarea{resize: vertical; min-height: 130px;}
 
     .rowbtn{display:flex; gap:10px; flex-wrap:wrap; margin-top: 12px;}
@@ -291,7 +318,7 @@
         </div>
 
         <div class="rowbtn">
-          <button class="btn primary" id="btnPayFedapayTop" type="button">Payer via FedaPay</buttontTT</button>
+          <button class="btn primary" id="btnPayFedapayTop" type="button">Payer via FedaPay</button>
           <a class="btn" href="#form">Remplir le formulaire</a>
         </div>
 
@@ -487,7 +514,7 @@
     const phone = "22999560661";
     const businessName = "DineTech";
 
-    // FedaPay public key (LIVE) fournie par toi
+    // FedaPay public key (LIVE)
     const FEDAPAY_PUBLIC_KEY = "pk_live_JVKrYdAmUDpIrrJJP6aQ0UxR";
 
     // ===== Helpers =====
@@ -565,17 +592,14 @@ ${($("message").value || "").trim() || "Merci pour votre service."}
 
     // ===== Auto-message =====
     function syncAll(){
-      // Si textarea vide, on propose un message par défaut simple
       if(!($("message").value || "").trim()){
         const kind = getActiveKind();
         $("message").value = `Soutien : ${kind}. Merci DineTech 🙏`;
       }
 
-      // PayPal amount
       const amt = getAmount();
       $("paypalAmount").value = amt ? String(amt) : "";
 
-      // WhatsApp
       const msg = buildMessage();
       $("btnWhatsAppHeader").href = waLink(msg);
       $("btnWhatsAppFloat").href = waLink(msg);
@@ -584,7 +608,6 @@ ${($("message").value || "").trim() || "Merci pour votre service."}
 
     ["amount","fullname","email","message"].forEach(id=>{
       $(id).addEventListener("input", ()=>{
-        // si l'utilisateur tape dans montant, on désactive les chips actives
         if(id === "amount"){
           amtChips.forEach(c=>c.classList.remove("active"));
         }
@@ -650,7 +673,6 @@ ${($("message").value || "").trim() || "Merci pour votre service."}
       const kind = getActiveKind();
       const desc = `Soutien DineTech - ${kind}`;
 
-      // Initialise et ouvre la popup
       FedaPay.init({
         public_key: FEDAPAY_PUBLIC_KEY,
         transaction: {
