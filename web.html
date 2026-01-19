@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Création de site Web à Djougou | Site vitrine, SEO & Déploiement — DineTech</title>
+  <meta name="description" content="DineTech à Djougou : création de sites web modernes (site vitrine), responsive mobile, SEO, performance, déploiement Vercel/GitHub. Devis rapide sur WhatsApp : 99560661." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0E5AA7" />
+
+  <!-- Favicon (racine) -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://dinetech.vercel.app/web.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Création de site Web à Djougou — DineTech" />
+  <meta property="og:description" content="Site vitrine, responsive, SEO, performance, déploiement Vercel/GitHub. Devis rapide WhatsApp : 99560661." />
+  <meta property="og:url" content="https://dinetech.vercel.app/web.html" />
+  <meta property="og:site_name" content="DineTech" />
+  <meta property="og:image" content="https://dinetech.vercel.app/logo-dinetech.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Création de site Web — DineTech" />
+  <meta name="twitter:description" content="Site vitrine, responsive, SEO, déploiement Vercel/GitHub. WhatsApp : 99560661." />
+  <meta name="twitter:image" content="https://dinetech.vercel.app/logo-dinetech.png" />
+
+  <!-- Schema.org : LocalBusiness + Service + FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"LocalBusiness",
+        "name":"DineTech",
+        "image":"https://dinetech.vercel.app/logo-dinetech.png",
+        "url":"https://dinetech.vercel.app/",
+        "telephone":"+22999560661",
+        "address":{
+          "@type":"PostalAddress",
+          "addressLocality":"Djougou",
+          "addressCountry":"BJ"
+        },
+        "areaServed":"Djougou",
+        "openingHours":"Mo-Su",
+        "description":"DineTech à Djougou : réparation téléphones et ordinateurs, dépannage informatique, et création de sites web."
+      },
+      {
+        "@type":"Service",
+        "name":"Création de site Web (site vitrine)",
+        "provider":{"@type":"LocalBusiness","name":"DineTech"},
+        "areaServed":"Djougou",
+        "serviceType":"Développement web",
+        "description":"Création de sites web modernes, responsive mobile, optimisés SEO, performance et déploiement.",
+        "offers":{
+          "@type":"Offer",
+          "priceCurrency":"XOF",
+          "price":"0",
+          "description":"Devis gratuit sur WhatsApp (prix selon besoin)."
+        }
+      },
+      {
+        "@type":"FAQPage",
+        "mainEntity":[
+          {
+            "@type":"Question",
+            "name":"Est-ce que le site est adapté aux téléphones ?",
+            "acceptedAnswer":{"@type":"Answer","text":"Oui. Le site est responsive et optimisé pour mobile (lecture, boutons, vitesse)."}
+          },
+          {
+            "@type":"Question",
+            "name":"Est-ce que vous faites le SEO ?",
+            "acceptedAnswer":{"@type":"Answer","text":"Oui. Balises SEO, Open Graph, structure Hn, Schema.org et optimisation des performances."}
+          },
+          {
+            "@type":"Question",
+            "name":"Vous déployez le site où ?",
+            "acceptedAnswer":{"@type":"Answer","text":"Déploiement possible sur Vercel et GitHub, avec un lien public et une configuration propre."}
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#0B1220;
+      --text:#EAF0FF;
+      --muted:#B8C2E0;
+      --brand:#0E5AA7;
+      --brand2:#1E7FD6;
+      --ok:#22C55E;
+      --shadow: 0 18px 60px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;padding:0;
+      background:
+        radial-gradient(1200px 700px at 20% 10%, rgba(30,127,214,.25), transparent 60%),
+        radial-gradient(900px 600px at 80% 20%, rgba(14,90,167,.25), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px 16px 70px;}
+
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,18,32,.55);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .topbar .inner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:14px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px;}
+    .logo-img{
+      width:42px;height:42px;border-radius:50%;
+      object-fit:contain;background:#ffffff;padding:4px;
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    nav{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    .navlink{
+      padding:10px 12px; border-radius:12px;
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      transition:.2s;
+    }
+    .navlink:hover{color:var(--text); border-color: rgba(30,127,214,.35); transform: translateY(-1px);}
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 16px; border-radius:14px; font-weight:800;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      transition:.2s;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+    .btn:hover{transform: translateY(-1px); border-color: rgba(30,127,214,.45);}
+    .btn.primary{
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      border-color: rgba(255,255,255,.18);
+      box-shadow: 0 18px 60px rgba(14,90,167,.25);
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero{
+      padding: 34px 0 12px;
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+    .hero h1{
+      font-size: clamp(26px, 4vw, 42px);
+      line-height: 1.08;
+      margin: 0 0 10px;
+    }
+    .hero p{
+      margin:0 0 16px;
+      color:var(--muted);
+      font-size: 16px;
+      line-height:1.65;
+    }
+    .pillrow{display:flex; flex-wrap:wrap; gap:10px; margin: 12px 0 14px;}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px; border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      color: rgba(234,240,255,.82);
+      font-weight:700;
+    }
+    .dot{width:10px; height:10px; border-radius:999px; background: var(--ok); box-shadow: 0 0 0 6px rgba(34,197,94,.12);}
+
+    .heroCard{padding:18px;}
+    .heroCard h2{margin:0 0 10px; font-size:18px;}
+    .mini{
+      padding:12px; border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.07);
+      margin-bottom:10px;
+    }
+    .mini b{display:block; margin-bottom:6px}
+    .mini span{color: rgba(234,240,255,.82); font-size: 13px; line-height:1.4}
+
+    .section{padding: 16px 0;}
+    .section h2{margin:0 0 10px; font-size: 22px;}
+    .section p{margin:0 0 14px; color: var(--muted); line-height:1.6}
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .box{
+      padding: 16px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      transition:.2s;
+      min-height: 170px;
+    }
+    .box:hover{
+      transform: translateY(-2px);
+      border-color: rgba(30,127,214,.35);
+      background: rgba(30,127,214,.07);
+    }
+    .box h3{margin:0 0 8px; font-size: 16px;}
+    .box ul{margin:0; padding-left: 18px; color: rgba(234,240,255,.78); font-size: 13.5px; line-height:1.55}
+    .tag{
+      display:inline-flex; align-items:center; gap:8px;
+      margin-top: 10px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.12);
+      color: rgba(234,240,255,.78);
+      font-weight:800;
+      font-size: 12px;
+    }
+
+    .form{
+      padding: 16px;
+      margin-top: 10px;
+    }
+    label{display:block; font-weight:900; margin: 12px 0 6px;}
+    .hint{color: rgba(234,240,255,.78); font-size: 13px; line-height:1.5; margin:0 0 8px;}
+    input, textarea, select{
+      width:100%;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.16);
+      color: var(--text);
+      border-radius: 14px;
+      padding: 12px 12px;
+      outline: none;
+      font-size: 14px;
+    }
+    textarea{resize: vertical; min-height: 120px;}
+
+    .rowbtn{display:flex; gap:10px; flex-wrap:wrap; margin-top: 12px;}
+
+    footer{padding: 20px 0 8px; color: rgba(234,240,255,.7); font-size: 13px;}
+    .footgrid{display:grid; grid-template-columns: 1.2fr .8fr; gap: 12px;}
+
+    .wa-float{
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 60;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding: 12px 14px;
+      border-radius: 999px;
+      background: rgba(0,0,0,.35);
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 18px 60px rgba(0,0,0,.35);
+      backdrop-filter: blur(10px);
+    }
+    .wa-icon{
+      width:42px; height:42px; border-radius:999px;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      display:grid; place-items:center;
+      font-weight:900;
+      color:#072b1e;
+    }
+    .wa-text{display:flex; flex-direction:column; line-height:1.1}
+    .wa-text small{color: var(--muted)}
+    .wa-text strong{color: var(--text)}
+    .wa-float:hover{transform: translateY(-1px); border-color: rgba(37,211,102,.35);}
+
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr; padding-top: 24px;}
+      nav{display:none;}
+      .grid{grid-template-columns:1fr;}
+      .footgrid{grid-template-columns: 1fr;}
+    }
+
+    /* ✅ FIX SELECT : éviter la liste blanche illisible */
+select{
+  color-scheme: dark; /* aide le navigateur à rendre le menu en sombre */
+  background: rgba(255,255,255,.06);
+}
+
+select option{
+  background: #0B1220;   /* fond sombre des options */
+  color: #EAF0FF;        /* texte clair */
+}
+
+    select:focus{
+  outline: 2px solid rgba(30,127,214,.55);
+  outline-offset: 2px;
+}
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="inner">
+      <a class="brand" href="index.html" aria-label="Retour à l'accueil">
+        <img src="logo-dinetech.png" alt="Logo DineTech" class="logo-img">
+        <div>
+          <div style="font-size:15px; line-height:1; font-weight:900;">DineTech</div>
+          <div style="font-size:12px; color:var(--muted); margin-top:3px;">Djougou • Création de sites web</div>
+        </div>
+      </a>
+
+      <nav aria-label="Navigation">
+        <a class="navlink" href="index.html">Accueil</a>
+        <a class="navlink" href="services.html">Services</a>
+        <a class="navlink" href="web.html">Sites web</a>
+        <a class="navlink" href="soutien.html">Soutien</a>
+        <a class="navlink" href="legal.html">Légal</a>
+      </nav>
+
+      <a class="btn primary" id="btnWhatsAppHeader" href="#" rel="noopener">Devis WhatsApp</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" aria-label="Création de site web DineTech">
+      <div>
+        <h1>Création de <span style="color:var(--brand2)">site Web</span><br/>moderne, rapide et crédible.</h1>
+        <p>
+          DineTech réalise des <b>sites vitrines professionnels</b> pour entreprises, boutiques, ONG et projets.
+          Le site est <b>responsive mobile</b>, optimisé <b>SEO</b> et prêt pour le déploiement.
+        </p>
+
+        <div class="pillrow" role="list">
+          <div class="pill" role="listitem"><span class="dot" aria-hidden="true"></span> Mobile 100% propre</div>
+          <div class="pill" role="listitem">SEO + Google</div>
+          <div class="pill" role="listitem">Vercel / GitHub</div>
+        </div>
+
+        <div class="rowbtn">
+          <a class="btn primary" id="btnWhatsAppHero" href="#" rel="noopener">Demander un devis</a>
+          <a class="btn" href="#offres">Voir les offres</a>
+        </div>
+      </div>
+
+      <aside class="card heroCard" aria-label="Infos web">
+        <h2>Ce que tu obtiens</h2>
+        <div class="mini">
+          <b>Design</b>
+          <span>Moderne, cohérent, confiance client.</span>
+        </div>
+        <div class="mini">
+          <b>Vitesse</b>
+          <span>Pages légères, chargement rapide.</span>
+        </div>
+        <div class="mini">
+          <b>SEO</b>
+          <span>Balises, partage WhatsApp, Schema.org.</span>
+        </div>
+        <div class="mini">
+          <b>Déploiement</b>
+          <span>Vercel + GitHub, lien public.</span>
+        </div>
+      </aside>
+    </section>
+
+    <section id="offres" class="section" aria-label="Offres création site web">
+      <h2>Offres & fonctionnalités</h2>
+      <p>Tu choisis selon ton besoin. Devis rapide sur WhatsApp.</p>
+
+      <div class="grid">
+        <article class="box">
+          <h3>🌐 Site vitrine (Pro)</h3>
+          <ul>
+            <li>Accueil + Services + Contact</li>
+            <li>Responsive mobile (propre)</li>
+            <li>SEO + partage WhatsApp</li>
+            <li>Bouton WhatsApp + appel</li>
+          </ul>
+          <div class="tag">Le plus demandé</div>
+        </article>
+
+        <article class="box">
+          <h3>📍 Local & Google</h3>
+          <ul>
+            <li>Carte Google / localisation</li>
+            <li>Adresse claire + itinéraire</li>
+            <li>Schema LocalBusiness</li>
+            <li>Optimisé “près de moi”</li>
+          </ul>
+          <div class="tag">Pour être trouvé</div>
+        </article>
+
+        <article class="box">
+          <h3>🚀 Mise en ligne</h3>
+          <ul>
+            <li>Déploiement Vercel</li>
+            <li>Repo GitHub</li>
+            <li>Nom de domaine (option)</li>
+            <li>Suivi & petites mises à jour</li>
+          </ul>
+          <div class="tag">Clé en main</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="devis" class="section" aria-label="Formulaire devis site web">
+      <h2>Demander un devis (simple)</h2>
+      <p>Remplis ça, puis clique sur WhatsApp. Message auto prêt.</p>
+
+      <div class="card form">
+        <label for="name">Nom</label>
+        <input id="name" type="text" placeholder="Ex : Chérif Dine" autocomplete="name" />
+
+        <label for="biz">Activité / Projet</label>
+        <input id="biz" type="text" placeholder="Ex : Boutique, ONG, entreprise, projet perso..." />
+
+        <label for="pages">Pages souhaitées</label>
+        <select id="pages">
+          <option value="Site vitrine (Accueil + Services + Contact)">Site vitrine (Accueil + Services + Contact)</option>
+          <option value="Site vitrine + Galerie / Réalisations">Site vitrine + Galerie / Réalisations</option>
+          <option value="Site vitrine + Blog / Actualités">Site vitrine + Blog / Actualités</option>
+          <option value="Je ne sais pas (propose-moi)">Je ne sais pas (propose-moi)</option>
+        </select>
+
+        <label for="msg">Détails</label>
+        <textarea id="msg" placeholder="Ex : couleurs, sections, objectifs, exemples de sites que tu aimes..."></textarea>
+
+        <div class="rowbtn">
+          <a class="btn primary" id="btnWhatsAppForm" href="#" rel="noopener">Envoyer sur WhatsApp</a>
+          <a class="btn" href="soutien.html">Soutenir DineTech</a>
+        </div>
+
+        <p class="hint" style="margin-top:10px;">
+          Conseil : si tu as un logo, envoie-le sur WhatsApp + les textes.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" aria-label="FAQ web">
+      <h2>FAQ</h2>
+      <div class="grid" style="grid-template-columns:1fr 1fr 1fr;">
+        <article class="box">
+          <h3>⏱️ Délais ?</h3>
+          <ul><li>Selon le nombre de pages et contenus.</li><li>On valide d’abord le plan.</li></ul>
+        </article>
+        <article class="box">
+          <h3>📱 Mobile ?</h3>
+          <ul><li>Oui, responsive propre.</li><li>Boutons et lecture adaptés.</li></ul>
+        </article>
+        <article class="box">
+          <h3>🔎 SEO ?</h3>
+          <ul><li>Oui, ultra complet.</li><li>Prêt pour indexation.</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footgrid">
+        <div>
+          <div style="font-weight:900; font-size:14px;">DineTech</div>
+          <div style="color:rgba(234,240,255,.7); margin-top:6px; line-height:1.6;">
+            Réparation • Dépannage • Maintenance • Création de sites web • Djougou
+          </div>
+        </div>
+        <div style="text-align:left;">
+          <div style="font-weight:800;">Contact</div>
+          <div style="margin-top:6px; color:rgba(234,240,255,.7); line-height:1.6;">
+            WhatsApp : 99560661<br/>Djougou • Bénin
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:14px; border-top:1px solid rgba(255,255,255,.08); padding-top:10px;">
+        © <span id="year"></span> DineTech. Tous droits réservés.
+      </div>
+    </footer>
+  </main>
+
+  <a class="wa-float" id="btnWhatsAppFloat" href="#" aria-label="Contacter DineTech sur WhatsApp" rel="noopener">
+    <div class="wa-icon" aria-hidden="true">WA</div>
+    <div class="wa-text">
+      <small>Devis rapide</small>
+      <strong>WhatsApp</strong>
+    </div>
+  </a>
+
+  <script>
+    const phone = "22999560661";
+    const businessName = "DineTech";
+    function waLink(msg){ return `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`; }
+
+    const headerMsg = `Bonjour ${businessName}, je veux un site web. Je suis à Djougou.`;
+    document.getElementById("btnWhatsAppHeader").href = waLink(headerMsg);
+    document.getElementById("btnWhatsAppHero").href = waLink(headerMsg);
+    document.getElementById("btnWhatsAppFloat").href = waLink(headerMsg);
+
+    document.getElementById("btnWhatsAppForm").addEventListener("click", (e)=>{
+      const name = (document.getElementById("name").value || "").trim();
+      const biz = (document.getElementById("biz").value || "").trim();
+      const pages = document.getElementById("pages").value;
+      const msg = (document.getElementById("msg").value || "").trim();
+
+      const text =
+`Bonjour ${businessName}, je veux un site web.
+- Nom : ${name || "Non précisé"}
+- Activité : ${biz || "Non précisé"}
+- Pages : ${pages}
+- Détails : ${msg || "Non précisé"}
+
+Merci 🙏`;
+      e.currentTarget.href = waLink(text);
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
