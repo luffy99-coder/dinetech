@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Création de site Web à Djougou | Site vitrine, SEO & Déploiement — DineTech</title>
   <meta name="description" content="DineTech à Djougou : création de sites web modernes (site vitrine), responsive mobile, SEO, performance, déploiement Vercel/GitHub. Devis rapide sur WhatsApp : 99560661." />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="theme-color" content="#0E5AA7" />
+  <meta name="color-scheme" content="dark light" />
 
   <!-- Favicon (racine) -->
   <link rel="icon" type="image/png" href="favicon.png" />
@@ -23,6 +24,7 @@
   <meta property="og:url" content="https://dinetech.vercel.app/web.html" />
   <meta property="og:site_name" content="DineTech" />
   <meta property="og:image" content="https://dinetech.vercel.app/logo-dinetech.png" />
+  <meta property="og:image:alt" content="Logo DineTech" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -30,13 +32,20 @@
   <meta name="twitter:description" content="Site vitrine, responsive, SEO, déploiement Vercel/GitHub. WhatsApp : 99560661." />
   <meta name="twitter:image" content="https://dinetech.vercel.app/logo-dinetech.png" />
 
-  <!-- Schema.org : LocalBusiness + Service + FAQ -->
+  <!-- SEO local -->
+  <meta name="geo.region" content="BJ" />
+  <meta name="geo.placename" content="Djougou" />
+  <meta name="language" content="fr" />
+  <meta name="keywords" content="création site web Djougou, site vitrine Djougou, développeur web Djougou, SEO Djougou, site web entreprise Bénin, site web ONG Bénin, déploiement Vercel, GitHub pages, DineTech" />
+
+  <!-- Schema.org : LocalBusiness + Service + FAQ + Breadcrumbs -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@graph":[
       {
         "@type":"LocalBusiness",
+        "@id":"https://dinetech.vercel.app/#business",
         "name":"DineTech",
         "image":"https://dinetech.vercel.app/logo-dinetech.png",
         "url":"https://dinetech.vercel.app/",
@@ -46,14 +55,15 @@
           "addressLocality":"Djougou",
           "addressCountry":"BJ"
         },
-        "areaServed":"Djougou",
+        "areaServed":[{"@type":"City","name":"Djougou"},{"@type":"Country","name":"Bénin"}],
         "openingHours":"Mo-Su",
         "description":"DineTech à Djougou : réparation téléphones et ordinateurs, dépannage informatique, et création de sites web."
       },
       {
         "@type":"Service",
+        "@id":"https://dinetech.vercel.app/web.html#service-web",
         "name":"Création de site Web (site vitrine)",
-        "provider":{"@type":"LocalBusiness","name":"DineTech"},
+        "provider":{"@id":"https://dinetech.vercel.app/#business"},
         "areaServed":"Djougou",
         "serviceType":"Développement web",
         "description":"Création de sites web modernes, responsive mobile, optimisés SEO, performance et déploiement.",
@@ -66,6 +76,7 @@
       },
       {
         "@type":"FAQPage",
+        "@id":"https://dinetech.vercel.app/web.html#faq",
         "mainEntity":[
           {
             "@type":"Question",
@@ -83,6 +94,14 @@
             "acceptedAnswer":{"@type":"Answer","text":"Déploiement possible sur Vercel et GitHub, avec un lien public et une configuration propre."}
           }
         ]
+      },
+      {
+        "@type":"BreadcrumbList",
+        "@id":"https://dinetech.vercel.app/web.html#breadcrumbs",
+        "itemListElement":[
+          {"@type":"ListItem","position":1,"name":"Accueil","item":"https://dinetech.vercel.app/"},
+          {"@type":"ListItem","position":2,"name":"Sites web","item":"https://dinetech.vercel.app/web.html"}
+        ]
       }
     ]
   }
@@ -99,6 +118,8 @@
       --shadow: 0 18px 60px rgba(0,0,0,.35);
       --radius: 18px;
       --max: 1100px;
+      --menu-bg: rgba(11,18,32,.92);
+      --menu-border: rgba(255,255,255,.12);
     }
     *{box-sizing:border-box}
     html,body{
@@ -114,7 +135,7 @@
     .wrap{max-width:var(--max); margin:0 auto; padding:22px 16px 70px;}
 
     .topbar{
-      position:sticky; top:0; z-index:50;
+      position:sticky; top:0; z-index:80;
       backdrop-filter: blur(10px);
       background: rgba(11,18,32,.55);
       border-bottom: 1px solid rgba(255,255,255,.08);
@@ -128,12 +149,17 @@
       justify-content:space-between;
       gap:14px;
     }
-    .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px;}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px; min-width: 0;}
     .logo-img{
       width:42px;height:42px;border-radius:50%;
       object-fit:contain;background:#ffffff;padding:4px;
       box-shadow:0 10px 30px rgba(0,0,0,.25);
+      flex: 0 0 auto;
     }
+    .brand .bt{min-width:0}
+    .brand .bt .t1{font-size:15px; line-height:1; font-weight:900; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+    .brand .bt .t2{font-size:12px; color:var(--muted); margin-top:3px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+
     nav{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
     .navlink{
       padding:10px 12px; border-radius:12px;
@@ -141,6 +167,7 @@
       border:1px solid rgba(255,255,255,.08);
       background: rgba(255,255,255,.03);
       transition:.2s;
+      white-space:nowrap;
     }
     .navlink:hover{color:var(--text); border-color: rgba(30,127,214,.35); transform: translateY(-1px);}
 
@@ -158,6 +185,84 @@
       background: linear-gradient(135deg, var(--brand), var(--brand2));
       border-color: rgba(255,255,255,.18);
       box-shadow: 0 18px 60px rgba(14,90,167,.25);
+    }
+    .btn.ghost{
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.16);
+    }
+
+    /* Mobile menu button */
+    .navbtn{
+      display:none;
+      width:44px; height:44px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      cursor:pointer;
+      align-items:center;
+      justify-content:center;
+      gap:4px;
+      flex-direction:column;
+      flex: 0 0 auto;
+    }
+    .navbtn span{
+      display:block;
+      width:18px;
+      height:2px;
+      background: rgba(234,240,255,.85);
+      border-radius:99px;
+      transition: .2s;
+    }
+    .navbtn[aria-expanded="true"] span:nth-child(1){transform: translateY(6px) rotate(45deg);}
+    .navbtn[aria-expanded="true"] span:nth-child(2){opacity:0;}
+    .navbtn[aria-expanded="true"] span:nth-child(3){transform: translateY(-6px) rotate(-45deg);}
+
+    /* Mobile overlay menu */
+    .navpanel{
+      display:none;
+      position: fixed;
+      inset: 0;
+      z-index: 90;
+      background: rgba(0,0,0,.35);
+      backdrop-filter: blur(4px);
+    }
+    .navpanel.is-open{display:block;}
+    .navpanel .panel{
+      position:absolute;
+      right: 12px;
+      top: 72px;
+      width: min(92vw, 360px);
+      background: var(--menu-bg);
+      border: 1px solid var(--menu-border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 12px;
+    }
+    .navpanel .panel a{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding: 12px 12px;
+      border-radius: 14px;
+      color: rgba(234,240,255,.95);
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      margin-bottom: 10px;
+      font-weight: 800;
+    }
+    .navpanel .panel a small{
+      color: rgba(234,240,255,.70);
+      font-weight: 600;
+    }
+    .navpanel .panel a:hover{
+      border-color: rgba(30,127,214,.45);
+      transform: translateY(-1px);
+    }
+    .navpanel .panel .panel-cta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 6px;
     }
 
     .card{
@@ -178,6 +283,7 @@
       font-size: clamp(26px, 4vw, 42px);
       line-height: 1.08;
       margin: 0 0 10px;
+      letter-spacing: .2px;
     }
     .hero p{
       margin:0 0 16px;
@@ -294,28 +400,30 @@
     .wa-text strong{color: var(--text)}
     .wa-float:hover{transform: translateY(-1px); border-color: rgba(37,211,102,.35);}
 
+    /* ✅ FIX SELECT : éviter la liste blanche illisible */
+    select{
+      color-scheme: dark;
+      background: rgba(255,255,255,.06);
+    }
+    select option{
+      background: #0B1220;
+      color: #EAF0FF;
+    }
+    select:focus{
+      outline: 2px solid rgba(30,127,214,.55);
+      outline-offset: 2px;
+    }
+
+    /* Responsive */
     @media (max-width: 900px){
       .hero{grid-template-columns:1fr; padding-top: 24px;}
       nav{display:none;}
+      .navbtn{display:flex;}
       .grid{grid-template-columns:1fr;}
       .footgrid{grid-template-columns: 1fr;}
+      .rowbtn .btn{width:100%;}
+      .btn.primary#btnWhatsAppHeader{display:none;} /* sur mobile: on garde le bouton dans le menu */
     }
-
-    /* ✅ FIX SELECT : éviter la liste blanche illisible */
-select{
-  color-scheme: dark; /* aide le navigateur à rendre le menu en sombre */
-  background: rgba(255,255,255,.06);
-}
-
-select option{
-  background: #0B1220;   /* fond sombre des options */
-  color: #EAF0FF;        /* texte clair */
-}
-
-    select:focus{
-  outline: 2px solid rgba(30,127,214,.55);
-  outline-offset: 2px;
-}
   </style>
 </head>
 
@@ -324,9 +432,9 @@ select option{
     <div class="inner">
       <a class="brand" href="index.html" aria-label="Retour à l'accueil">
         <img src="logo-dinetech.png" alt="Logo DineTech" class="logo-img">
-        <div>
-          <div style="font-size:15px; line-height:1; font-weight:900;">DineTech</div>
-          <div style="font-size:12px; color:var(--muted); margin-top:3px;">Djougou • Création de sites web</div>
+        <div class="bt">
+          <div class="t1">DineTech</div>
+          <div class="t2">Djougou • Création de sites web</div>
         </div>
       </a>
 
@@ -339,9 +447,31 @@ select option{
         <a class="navlink" href="legal.html">Légal</a>
       </nav>
 
+      <!-- Mobile menu button -->
+      <button class="navbtn" id="navBtn" aria-expanded="false" aria-controls="navPanel" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+
       <a class="btn primary" id="btnWhatsAppHeader" href="#" rel="noopener">Devis WhatsApp</a>
     </div>
   </header>
+
+  <!-- Mobile navigation panel -->
+  <div class="navpanel" id="navPanel" aria-hidden="true">
+    <div class="panel" role="dialog" aria-label="Menu">
+      <a href="index.html"><span>Accueil</span> <small>🏠</small></a>
+      <a href="services.html"><span>Services</span> <small>🧰</small></a>
+      <a href="web.html"><span>Sites web</span> <small>💻</small></a>
+      <a href="soutien.html"><span>Soutien</span> <small>🙏</small></a>
+      <a href="contact.html"><span>Contact</span> <small>📍</small></a>
+      <a href="legal.html"><span>Légal</span> <small>📄</small></a>
+
+      <div class="panel-cta">
+        <a class="btn primary" id="btnWhatsAppMenu" href="#" rel="noopener">Devis WhatsApp</a>
+        <a class="btn ghost" href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
 
   <main class="wrap">
     <section class="hero" aria-label="Création de site web DineTech">
@@ -380,7 +510,7 @@ select option{
         </div>
         <div class="mini">
           <b>Déploiement</b>
-          <span>Mise en ligne complet.</span>
+          <span>Mise en ligne complète.</span>
         </div>
       </aside>
     </section>
@@ -431,7 +561,7 @@ select option{
 
       <div class="card form">
         <label for="name">Nom</label>
-        <input id="name" type="text" placeholder="Ex : Jhon Doe" autocomplete="name" />
+        <input id="name" type="text" placeholder="Ex : Chérif Dine" autocomplete="name" />
 
         <label for="biz">Activité / Projet</label>
         <input id="biz" type="text" placeholder="Ex : Boutique, ONG, entreprise, projet perso..." />
@@ -460,7 +590,7 @@ select option{
 
     <section class="section" aria-label="FAQ web">
       <h2>FAQ</h2>
-      <div class="grid" style="grid-template-columns:1fr 1fr 1fr;">
+      <div class="grid">
         <article class="box">
           <h3>⏱️ Délais ?</h3>
           <ul><li>Selon le nombre de pages et contenus.</li><li>On valide d’abord le plan.</li></ul>
@@ -508,20 +638,29 @@ select option{
   <script>
     const phone = "22999560661";
     const businessName = "DineTech";
+
     function waLink(msg){ return `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`; }
 
     const headerMsg = `Bonjour ${businessName}, je veux un site web. Je suis à Djougou.`;
-    document.getElementById("btnWhatsAppHeader").href = waLink(headerMsg);
-    document.getElementById("btnWhatsAppHero").href = waLink(headerMsg);
-    document.getElementById("btnWhatsAppFloat").href = waLink(headerMsg);
+    const elHeader = document.getElementById("btnWhatsAppHeader");
+    const elHero = document.getElementById("btnWhatsAppHero");
+    const elFloat = document.getElementById("btnWhatsAppFloat");
+    const elMenu = document.getElementById("btnWhatsAppMenu");
 
-    document.getElementById("btnWhatsAppForm").addEventListener("click", (e)=>{
-      const name = (document.getElementById("name").value || "").trim();
-      const biz = (document.getElementById("biz").value || "").trim();
-      const pages = document.getElementById("pages").value;
-      const msg = (document.getElementById("msg").value || "").trim();
+    if(elHeader) elHeader.href = waLink(headerMsg);
+    if(elHero) elHero.href = waLink(headerMsg);
+    if(elFloat) elFloat.href = waLink(headerMsg);
+    if(elMenu) elMenu.href = waLink(headerMsg);
 
-      const text =
+    const formBtn = document.getElementById("btnWhatsAppForm");
+    if(formBtn){
+      formBtn.addEventListener("click", (e)=>{
+        const name = (document.getElementById("name").value || "").trim();
+        const biz = (document.getElementById("biz").value || "").trim();
+        const pages = document.getElementById("pages").value;
+        const msg = (document.getElementById("msg").value || "").trim();
+
+        const text =
 `Bonjour ${businessName}, je veux un site web.
 - Nom : ${name || "Non précisé"}
 - Activité : ${biz || "Non précisé"}
@@ -529,10 +668,47 @@ select option{
 - Détails : ${msg || "Non précisé"}
 
 Merci 🙏`;
-      e.currentTarget.href = waLink(text);
-    });
+        e.currentTarget.href = waLink(text);
+      });
+    }
 
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mobile menu
+    const navBtn = document.getElementById("navBtn");
+    const navPanel = document.getElementById("navPanel");
+
+    function closeMenu(){
+      navPanel.classList.remove("is-open");
+      navPanel.setAttribute("aria-hidden","true");
+      navBtn.setAttribute("aria-expanded","false");
+      document.body.style.overflow = "";
+    }
+    function openMenu(){
+      navPanel.classList.add("is-open");
+      navPanel.setAttribute("aria-hidden","false");
+      navBtn.setAttribute("aria-expanded","true");
+      document.body.style.overflow = "hidden";
+    }
+
+    if(navBtn && navPanel){
+      navBtn.addEventListener("click", ()=>{
+        const expanded = navBtn.getAttribute("aria-expanded") === "true";
+        expanded ? closeMenu() : openMenu();
+      });
+
+      navPanel.addEventListener("click", (e)=>{
+        if(e.target === navPanel) closeMenu();
+      });
+
+      navPanel.querySelectorAll("a").forEach(a=>{
+        a.addEventListener("click", ()=> closeMenu());
+      });
+
+      document.addEventListener("keydown", (e)=>{
+        if(e.key === "Escape") closeMenu();
+      });
+    }
   </script>
 </body>
 </html>
