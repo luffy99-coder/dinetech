@@ -1,0 +1,993 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Devis automatique — DineTech | Téléphones, PC & Sites web à Djougou</title>
+  <meta name="description" content="Générez un devis estimatif en 30 secondes : réparation téléphones, ordinateurs, logiciels, réseau et création de sites web. DineTech à Djougou. WhatsApp : 99560661." />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#0E5AA7" />
+  <meta name="color-scheme" content="dark light" />
+
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+  <link rel="canonical" href="https://dinetech.vercel.app/devis.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Devis automatique — DineTech" />
+  <meta property="og:description" content="Devis estimatif instantané (Téléphones / PC / Sites web). Envoi WhatsApp en 1 clic." />
+  <meta property="og:url" content="https://dinetech.vercel.app/devis.html" />
+  <meta property="og:site_name" content="DineTech" />
+  <meta property="og:image" content="https://dinetech.vercel.app/logo-dinetech.png" />
+  <meta property="og:image:alt" content="Logo DineTech" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Devis automatique — DineTech" />
+  <meta name="twitter:description" content="Devis estimatif instantané + envoi WhatsApp." />
+  <meta name="twitter:image" content="https://dinetech.vercel.app/logo-dinetech.png" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"LocalBusiness",
+        "name":"DineTech",
+        "image":"https://dinetech.vercel.app/logo-dinetech.png",
+        "url":"https://dinetech.vercel.app/",
+        "telephone":"+22999560661",
+        "address":{
+          "@type":"PostalAddress",
+          "addressLocality":"Djougou",
+          "addressCountry":"BJ"
+        },
+        "openingHours":"Mo-Su",
+        "description":"DineTech à Djougou : réparation téléphones, ordinateurs, dépannage logiciel/réseau et création de sites web.",
+        "areaServed":[{"@type":"City","name":"Djougou"},{"@type":"Country","name":"Bénin"}]
+      },
+      {
+        "@type":"WebPage",
+        "name":"Devis automatique — DineTech",
+        "url":"https://dinetech.vercel.app/devis.html",
+        "about":{"@type":"Service","name":"Devis estimatif réparation & services DineTech"}
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#0B1220;
+      --text:#EAF0FF;
+      --muted:#B8C2E0;
+      --brand:#0E5AA7;
+      --brand2:#1E7FD6;
+      --ok:#22C55E;
+      --warn:#F59E0B;
+      --shadow: 0 18px 60px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1100px;
+
+      --menu-bg: rgba(11,18,32,.92);
+      --menu-border: rgba(255,255,255,.12);
+    }
+
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;padding:0;
+      background:
+        radial-gradient(1200px 700px at 20% 10%, rgba(30,127,214,.25), transparent 60%),
+        radial-gradient(900px 600px at 80% 20%, rgba(14,90,167,.25), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px 16px 70px;}
+
+    .topbar{
+      position:sticky; top:0; z-index:80;
+      backdrop-filter: blur(10px);
+      background: rgba(11,18,32,.55);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .topbar .inner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:14px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px;}
+    .logo-img{
+      width:42px;height:42px;border-radius:50%;
+      object-fit:contain; display:block;
+      background:#ffffff; padding:4px;
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+
+    nav{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    .navlink{
+      padding:10px 12px; border-radius:12px;
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      transition:.2s;
+      white-space:nowrap;
+    }
+    .navlink:hover{color:var(--text); border-color: rgba(24,160,251,.35); transform: translateY(-1px);}
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 16px; border-radius:14px; font-weight:800;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      transition:.2s;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+    .btn:hover{transform: translateY(-1px); border-color: rgba(24,160,251,.45);}
+    .btn.primary{
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      border-color: rgba(255,255,255,.18);
+      box-shadow: 0 18px 60px rgba(11,94,215,.25);
+    }
+    .btn.ghost{
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.16);
+    }
+
+    /* Mobile menu button */
+    .navbtn{
+      display:none;
+      width:44px; height:44px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      cursor:pointer;
+      align-items:center;
+      justify-content:center;
+      gap:4px;
+      flex-direction:column;
+    }
+    .navbtn span{
+      display:block;
+      width:18px;
+      height:2px;
+      background: rgba(234,240,255,.85);
+      border-radius:99px;
+      transition: .2s;
+    }
+    .navbtn[aria-expanded="true"] span:nth-child(1){transform: translateY(6px) rotate(45deg);}
+    .navbtn[aria-expanded="true"] span:nth-child(2){opacity:0;}
+    .navbtn[aria-expanded="true"] span:nth-child(3){transform: translateY(-6px) rotate(-45deg);}
+
+    /* Mobile overlay menu */
+    .navpanel{
+      display:none;
+      position: fixed;
+      inset: 0;
+      z-index: 90;
+      background: rgba(0,0,0,.35);
+      backdrop-filter: blur(4px);
+    }
+    .navpanel.is-open{display:block;}
+    .navpanel .panel{
+      position:absolute;
+      right: 12px;
+      top: 72px;
+      width: min(92vw, 360px);
+      background: var(--menu-bg);
+      border: 1px solid var(--menu-border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 12px;
+    }
+    .navpanel .panel a{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding: 12px 12px;
+      border-radius: 14px;
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      margin-bottom: 10px;
+      font-weight: 900;
+    }
+    .navpanel .panel a small{
+      color: rgba(234,240,255,.70);
+      font-weight: 700;
+    }
+    .navpanel .panel a:hover{
+      border-color: rgba(24,160,251,.45);
+      transform: translateY(-1px);
+    }
+    .navpanel .panel .panel-cta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 6px;
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero{
+      padding: 34px 0 10px;
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+    .hero h1{
+      font-size: clamp(26px, 4vw, 42px);
+      line-height: 1.08;
+      margin: 0 0 10px;
+    }
+    .hero p{margin:0 0 14px; color:var(--muted); font-size: 16px; line-height:1.65;}
+    .pillrow{display:flex; flex-wrap:wrap; gap:10px; margin: 12px 0 14px;}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px; border-radius: 999px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.10);
+      color: var(--muted);
+      font-weight:800;
+    }
+    .dot{width:10px; height:10px; border-radius:999px; background: var(--ok); box-shadow: 0 0 0 6px rgba(34,197,94,.12);}
+
+    .heroCard{padding:18px;}
+    .heroCard h2{margin:0 0 10px; font-size:18px;}
+    .mini{
+      padding:12px; border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.07);
+      margin-bottom:10px;
+    }
+    .mini b{display:block; margin-bottom:6px}
+    .mini span{color: rgba(234,240,255,.82); font-size: 13px; line-height:1.45}
+
+    .section{padding: 14px 0;}
+    .section h2{margin:0 0 10px; font-size: 22px;}
+    .section p{margin:0 0 14px; color: var(--muted); line-height:1.6}
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 12px;
+      align-items:start;
+    }
+
+    .stepper{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-bottom: 10px;
+    }
+    .step{
+      display:flex; align-items:center; gap:10px;
+      padding:10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      color: rgba(234,240,255,.78);
+      font-weight:900;
+      font-size: 13px;
+    }
+    .step .n{
+      width:26px; height:26px; border-radius:999px;
+      display:grid; place-items:center;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.10);
+    }
+
+    .block{padding:16px;}
+    label{display:block; font-weight:900; margin: 12px 0 6px;}
+    .hint{color: rgba(234,240,255,.75); font-size: 13px; line-height:1.5; margin:0 0 8px;}
+    input, textarea, select{
+      width:100%;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.16);
+      color: var(--text);
+      border-radius: 14px;
+      padding: 12px 12px;
+      outline: none;
+      font-size: 14px;
+    }
+    textarea{resize: vertical; min-height: 110px;}
+    select{color-scheme: dark;}
+    select option{background:#0B1220; color:#EAF0FF;}
+
+    .rowbtn{display:flex; gap:10px; flex-wrap:wrap; margin-top: 12px;}
+    .split{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px; border-radius: 999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      color: rgba(234,240,255,.78);
+      font-weight:900;
+      font-size: 12px;
+    }
+
+    .quoteBox{padding:16px;}
+    .quoteTop{
+      display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      margin-bottom: 12px;
+    }
+    .price{
+      font-size: clamp(22px, 3.6vw, 34px);
+      font-weight: 1000;
+      letter-spacing: .2px;
+      line-height: 1.05;
+    }
+    .subprice{color: rgba(234,240,255,.72); font-weight:800; font-size: 12px; margin-top:6px;}
+    .list{
+      margin:0; padding-left: 18px;
+      color: rgba(234,240,255,.78);
+      line-height: 1.6;
+      font-size: 13.5px;
+    }
+
+    .hr{height:1px; background: rgba(255,255,255,.08); margin: 12px 0;}
+    .small{font-size: 13px; color: rgba(234,240,255,.74); line-height:1.6;}
+    .ok{color:#bfffd6;}
+    .warn{color:#ffd6a5;}
+
+    /* WhatsApp Floating */
+    .wa-float{
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 60;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding: 12px 14px;
+      border-radius: 999px;
+      background: rgba(0,0,0,.35);
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 18px 60px rgba(0,0,0,.35);
+      backdrop-filter: blur(10px);
+    }
+    .wa-icon{
+      width:42px; height:42px; border-radius:999px;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      display:grid; place-items:center;
+      font-weight:1000;
+      color:#072b1e;
+    }
+    .wa-text{display:flex; flex-direction:column; line-height:1.1}
+    .wa-text small{color: var(--muted)}
+    .wa-text strong{color: var(--text)}
+    .wa-float:hover{transform: translateY(-1px); border-color: rgba(37,211,102,.35);}
+
+    footer{padding: 20px 0 8px; color: rgba(234,240,255,.7); font-size: 13px;}
+    .footgrid{display:grid; grid-template-columns: 1.2fr .8fr; gap: 12px;}
+
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr; padding-top: 24px;}
+      .grid{grid-template-columns: 1fr;}
+      nav{display:none;}
+      .navbtn{display:flex;}
+      .footgrid{grid-template-columns: 1fr;}
+      .split{grid-template-columns:1fr;}
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      *{scroll-behavior:auto!important; transition:none!important;}
+    }
+
+    @media print{
+      .topbar,.wa-float,.navpanel,.navbtn,.rowbtn .btn.ghost{display:none!important;}
+      body{background:#fff!important; color:#000!important;}
+      .card{box-shadow:none!important;}
+      .wrap{padding:0!important;}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar" role="banner">
+    <div class="inner">
+      <a class="brand" href="index.html" aria-label="Retour à l'accueil">
+        <img src="logo-dinetech.png" alt="Logo DineTech" class="logo-img">
+        <div>
+          <div style="font-size:15px; line-height:1; font-weight:1000;">DineTech</div>
+          <div style="font-size:12px; color:var(--muted); margin-top:3px;">Djougou • Devis automatique</div>
+        </div>
+      </a>
+
+      <nav aria-label="Navigation">
+        <a class="navlink" href="index.html">Accueil</a>
+        <a class="navlink" href="services.html">Services</a>
+        <a class="navlink" href="devis.html">Dévie</a>
+        <a class="navlink" href="contact.html">Contact</a>
+        <a class="navlink" href="soutien.html">Soutien</a>
+        <a class="navlink" href="legal.html">Légal</a>
+      </nav>
+
+      <button class="navbtn" id="navBtn" aria-expanded="false" aria-controls="navPanel" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <a class="btn primary" id="btnWhatsAppTop" href="#" rel="noopener">WhatsApp</a>
+    </div>
+  </header>
+
+  <!-- Mobile navigation panel -->
+  <div class="navpanel" id="navPanel" aria-hidden="true">
+    <div class="panel" role="dialog" aria-label="Menu">
+      <a href="index.html"><span>Accueil</span> <small>🏠</small></a>
+      <a href="services.html"><span>Services</span> <small>🧰</small></a>
+      <a href="devis.html"><span>Devis</span> <small>🧾</small></a>
+      <a href="contact.html"><span>Contact</span> <small>📍</small></a>
+      <a href="soutien.html"><span>Soutien</span> <small>🙏</small></a>
+      <a href="legal.html"><span>Légal</span> <small>📄</small></a>
+
+      <div class="panel-cta">
+        <a class="btn primary" id="btnWhatsAppMenu" href="#" rel="noopener">WhatsApp</a>
+        <a class="btn ghost" href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <section class="hero" aria-label="Devis automatique DineTech">
+      <div>
+        <h1>Devis <span style="color:var(--brand2)">automatique</span><br/>en 30 secondes.</h1>
+        <p>
+          Choisis le service, ajoute les détails, et le site calcule une <b>estimation réaliste</b>.
+          Ensuite, tu envoies le devis sur WhatsApp en 1 clic.
+        </p>
+
+        <div class="pillrow" role="list">
+          <div class="pill" role="listitem"><span class="dot" aria-hidden="true"></span> Estimation instantanée</div>
+          <div class="pill" role="listitem">Prix modifiables</div>
+          <div class="pill" role="listitem">Message WhatsApp pro</div>
+        </div>
+
+        <div class="rowbtn">
+          <a class="btn primary" href="#builder">Créer mon devis</a>
+          <button class="btn ghost" id="btnPrint" type="button">Imprimer / PDF</button>
+        </div>
+      </div>
+
+      <aside class="card heroCard" aria-label="Infos rapides">
+        <h2>Règle DineTech</h2>
+        <div class="mini">
+          <b>Prix = main-d’œuvre + pièce</b>
+          <span>Le devis auto donne une estimation (souvent en fourchette).</span>
+        </div>
+        <div class="mini">
+          <b>Diagnostic</b>
+          <span>Le diagnostic final confirme le prix exact.</span>
+        </div>
+        <div class="mini">
+          <b>WhatsApp</b>
+          <span>99560661 (réponse rapide)</span>
+        </div>
+      </aside>
+    </section>
+
+    <section id="builder" class="section" aria-label="Créateur de devis">
+      <h2>Créer un devis</h2>
+      <p>Remplis en ordre. Le devis se met à jour automatiquement à droite.</p>
+
+      <div class="grid">
+        <!-- FORM -->
+        <div class="card block">
+          <div class="stepper" aria-label="Étapes">
+            <div class="step"><span class="n">1</span> Service</div>
+            <div class="step"><span class="n">2</span> Détails</div>
+            <div class="step"><span class="n">3</span> Options</div>
+            <div class="step"><span class="n">4</span> Envoi</div>
+          </div>
+
+          <label for="category">Catégorie</label>
+          <select id="category">
+            <option value="phone">📱 Téléphone</option>
+            <option value="pc">🖥️ Ordinateur</option>
+            <option value="web">💻 Site web</option>
+          </select>
+
+          <label for="service">Service</label>
+          <select id="service"></select>
+          <p class="hint" id="serviceHint">Choisis un service pour afficher le prix.</p>
+
+          <div class="split">
+            <div>
+              <label for="model">Modèle / Marque</label>
+              <input id="model" type="text" placeholder="Ex : iPhone 11 / Tecno Spark / HP Elitebook..." />
+            </div>
+            <div>
+              <label for="city">Ville</label>
+              <input id="city" type="text" value="Djougou" />
+            </div>
+          </div>
+
+          <label for="details">Détails (panne / besoin)</label>
+          <textarea id="details" placeholder="Ex : écran cassé, ne charge plus, PC lent, site vitrine 5 pages..."></textarea>
+
+          <div class="split">
+            <div>
+              <label for="qty">Quantité</label>
+              <input id="qty" type="number" min="1" value="1" />
+              <p class="hint">Ex : 2 téléphones / 3 PC à nettoyer.</p>
+            </div>
+            <div>
+              <label for="parts">Coût de la pièce (optionnel)</label>
+              <input id="parts" type="number" min="0" placeholder="Ex : 30000" />
+              <p class="hint">Si tu connais déjà le prix de la pièce.</p>
+            </div>
+          </div>
+
+          <label>Options</label>
+          <div class="split">
+            <div class="mini" style="margin:0;">
+              <b><input id="urgent" type="checkbox" /> Urgent</b>
+              <span>Ajoute un bonus (service rapide).</span>
+            </div>
+            <div class="mini" style="margin:0;">
+              <b><input id="pickup" type="checkbox" /> Récupération / Dépôt</b>
+              <span>Si déplacement nécessaire.</span>
+            </div>
+          </div>
+
+          <div class="rowbtn">
+            <button class="btn primary" id="btnSend" type="button">Envoyer le devis sur WhatsApp</button>
+            <button class="btn" id="btnCopy" type="button">Copier le message</button>
+          </div>
+          <div class="small" id="state"></div>
+        </div>
+
+        <!-- QUOTE -->
+        <aside class="card quoteBox" aria-label="Résultat devis">
+          <div class="quoteTop">
+            <div>
+              <div class="badge">🧾 Devis estimatif</div>
+              <div class="small" style="margin-top:8px;">
+                <span class="warn">⚠️</span> Estimation. Le prix final dépend du diagnostic.
+              </div>
+            </div>
+            <div style="text-align:right">
+              <div class="price" id="price">—</div>
+              <div class="subprice" id="subprice">Sélectionne un service</div>
+            </div>
+          </div>
+
+          <div class="small">
+            <b>Résumé</b>
+            <ul class="list" id="summary"></ul>
+          </div>
+
+          <div class="hr"></div>
+
+          <div class="small">
+            <b>Conseil pour accélérer</b>
+            <ul class="list">
+              <li>Envoie <b>modèle + photo + symptômes</b>.</li>
+              <li>Pour PC : donne la <b>taille disque</b> et si tu veux un <b>SSD</b>.</li>
+              <li>Pour site : dis <b>nombre de pages</b> + exemples de sites.</li>
+            </ul>
+          </div>
+
+          <div class="hr"></div>
+
+          <div class="rowbtn">
+            <a class="btn primary" id="btnWhatsAppPreview" href="#" rel="noopener">WhatsApp (pré-rempli)</a>
+            <button class="btn ghost" id="btnReset" type="button">Réinitialiser</button>
+          </div>
+
+          <div class="small" style="margin-top:10px;">
+            <span class="ok">✅</span> Tu peux modifier les prix dans le code JS (section <b>PRIX</b>).
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footgrid">
+        <div>
+          <div style="font-weight:1000; font-size:14px;">DineTech</div>
+          <div style="color:rgba(234,240,255,.7); margin-top:6px; line-height:1.6;">
+            Réparation • Dépannage • Maintenance • Réseau/Wi-Fi • Données • Création web • Djougou
+          </div>
+        </div>
+        <div style="text-align:left;">
+          <div style="font-weight:900;">Contact</div>
+          <div style="margin-top:6px; color:rgba(234,240,255,.7); line-height:1.6;">
+            WhatsApp : 99560661<br/>Djougou • Bénin
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:14px; border-top:1px solid rgba(255,255,255,.08); padding-top:10px;">
+        © <span id="year"></span> DineTech. Tous droits réservés.
+      </div>
+    </footer>
+  </main>
+
+  <!-- WhatsApp Floating -->
+  <a class="wa-float" id="btnWhatsAppFloat" href="#" aria-label="Contacter DineTech sur WhatsApp" rel="noopener">
+    <div class="wa-icon" aria-hidden="true">WA</div>
+    <div class="wa-text">
+      <small>Devis rapide</small>
+      <strong>WhatsApp</strong>
+    </div>
+  </a>
+
+  <script>
+    // =========================
+    // CONFIG
+    // =========================
+    const phone = "22999560661";
+    const businessName = "DineTech";
+
+    const $ = (id) => document.getElementById(id);
+
+    function waLink(msg){
+      return `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+    }
+    function fmt(n){
+      try { return Number(n).toLocaleString("fr-FR"); } catch { return String(n); }
+    }
+
+    // =========================
+    // PRIX (MODIFIABLES)
+    // - min / max = main-d'oeuvre + estimation
+    // - "piece": true => on affiche "+ pièce" si parts non renseigné
+    // =========================
+    const PRICE = {
+      phone: [
+        { id:"diag_fast", name:"Diagnostic rapide", min:0, max:2000, piece:false, hint:"Petit diagnostic / check rapide." },
+        { id:"diag_adv",  name:"Diagnostic carte mère / panne complexe", min:3000, max:10000, piece:false, hint:"Quand c'est compliqué." },
+
+        { id:"screen_iphone_low", name:"Écran iPhone 6/6s/7/8/SE", min:20000, max:40000, piece:true, hint:"Fourchette selon qualité écran." },
+        { id:"screen_iphone_x",   name:"Écran iPhone X/XS/XR", min:35000, max:60000, piece:true, hint:"Fourchette selon qualité écran." },
+        { id:"screen_iphone_11",  name:"Écran iPhone 11", min:45000, max:75000, piece:true, hint:"Fourchette selon qualité écran." },
+        { id:"screen_iphone_12",  name:"Écran iPhone 12", min:70000, max:110000, piece:true, hint:"Fourchette selon qualité écran." },
+        { id:"screen_iphone_13",  name:"Écran iPhone 13", min:85000, max:135000, piece:true, hint:"Fourchette selon qualité écran." },
+        { id:"screen_iphone_14",  name:"Écran iPhone 14", min:110000, max:170000, piece:true, hint:"Fourchette selon qualité écran." },
+        { id:"screen_iphone_15",  name:"Écran iPhone 15", min:140000, max:220000, piece:true, hint:"Fourchette selon qualité écran." },
+
+        { id:"screen_android", name:"Écran Android (Tecno/Infinix/Itel/Samsung…)", min:15000, max:70000, piece:true, hint:"Selon modèle et disponibilité." },
+
+        { id:"battery", name:"Batterie (téléphone)", min:8000, max:25000, piece:true, hint:"Selon modèle." },
+        { id:"charge_port", name:"Port de charge / connecteur", min:8000, max:25000, piece:true, hint:"Selon modèle." },
+        { id:"camera", name:"Caméra (avant / arrière)", min:10000, max:40000, piece:true, hint:"Selon module." },
+        { id:"audio", name:"Micro / écouteur / haut-parleur", min:8000, max:20000, piece:true, hint:"Selon pièce." },
+        { id:"network", name:"Réseau / SIM / Wi-Fi / Bluetooth", min:5000, max:25000, piece:false, hint:"Selon panne." },
+        { id:"water", name:"Désoxydation (téléphone mouillé)", min:10000, max:35000, piece:false, hint:"Si carte touchée, ça peut monter." },
+
+        { id:"soft_basic", name:"Logiciel (déblocage / MAJ / optimisation)", min:5000, max:15000, piece:false, hint:"Sans ouvrir le téléphone." },
+        { id:"data_reco",  name:"Récupération de données (téléphone)", min:10000, max:50000, piece:false, hint:"Selon cas." }
+      ],
+
+      pc: [
+        { id:"pc_diag_simple", name:"Diagnostic PC simple", min:0, max:3000, piece:false, hint:"Petit check." },
+        { id:"pc_diag_adv", name:"Diagnostic PC avancé", min:5000, max:10000, piece:false, hint:"Panne complexe." },
+
+        { id:"win_basic", name:"Installation Windows + drivers", min:8000, max:15000, piece:false, hint:"Installation propre." },
+        { id:"win_full",  name:"Windows + drivers + essentiels", min:12000, max:25000, piece:false, hint:"Pack complet." },
+        { id:"office",    name:"Installation Office", min:5000, max:10000, piece:false, hint:"Selon version." },
+        { id:"virus",     name:"Nettoyage virus / lenteur", min:8000, max:25000, piece:false, hint:"Selon état." },
+        { id:"clean_therm",name:"Nettoyage + pâte thermique (laptop)", min:5000, max:15000, piece:false, hint:"Refroidissement." },
+        { id:"optimize",  name:"Optimisation performance", min:5000, max:15000, piece:false, hint:"Réglages + nettoyage." },
+
+        { id:"ram_ssd_labor", name:"Ajout SSD/RAM (main-d’œuvre)", min:5000, max:12000, piece:true, hint:"Pièce en plus." },
+        { id:"clone_ssd", name:"Clonage disque vers SSD", min:10000, max:25000, piece:false, hint:"Selon taille du disque." },
+
+        { id:"keyboard_labor", name:"Clavier laptop (main-d’œuvre)", min:5000, max:15000, piece:true, hint:"Pièce en plus." },
+        { id:"screen_labor",   name:"Écran laptop (main-d’œuvre)", min:10000, max:25000, piece:true, hint:"Pièce en plus." },
+        { id:"hinge_labor",    name:"Charnière / coque (main-d’œuvre)", min:10000, max:30000, piece:true, hint:"Pièce en plus." },
+        { id:"ports_labor",    name:"Port charge / USB / jack (main-d’œuvre)", min:10000, max:35000, piece:true, hint:"Pièce en plus." },
+
+        { id:"wifi_router", name:"Configuration Wi-Fi / routeur", min:5000, max:15000, piece:false, hint:"Maison / boutique." },
+        { id:"printer",     name:"Installation imprimante", min:5000, max:12000, piece:false, hint:"Connexion + test." },
+        { id:"small_office",name:"Réseau petit bureau (estimation)", min:20000, max:80000, piece:true, hint:"Selon taille." }
+      ],
+
+      web: [
+        { id:"web_starter", name:"Site Starter (1 page)", min:60000, max:100000, piece:false, hint:"Une page pro + WhatsApp." },
+        { id:"web_pro",     name:"Site Pro (3–5 pages)", min:120000, max:250000, piece:false, hint:"Le plus demandé." },
+        { id:"web_business",name:"Site Business (6–10 pages)", min:250000, max:450000, piece:false, hint:"Plus complet." },
+
+        { id:"seo_ultra",   name:"SEO ultra + indexation", min:40000, max:120000, piece:false, hint:"Balises + structure + schema." },
+        { id:"gbp",         name:"Google Business Profile (mise en place)", min:15000, max:40000, piece:false, hint:"Pour être trouvé." },
+        { id:"quote_form",  name:"Formulaire devis / WhatsApp auto", min:20000, max:60000, piece:false, hint:"Comme cette page." },
+        { id:"maint_month", name:"Maintenance (1 mois)", min:15000, max:50000, piece:false, hint:"Mises à jour + suivi." }
+      ]
+    };
+
+    // Options (bonus)
+    const BONUS = {
+      urgent: { min: 2000, max: 10000, label: "Urgent" },
+      pickup: { min: 1000, max: 8000, label: "Récupération / Dépôt" }
+    };
+
+    // =========================
+    // UI: charger services selon catégorie
+    // =========================
+    function loadServices(){
+      const cat = $("category").value;
+      const list = PRICE[cat] || [];
+      $("service").innerHTML = list.map(s => `<option value="${s.id}">${s.name}</option>`).join("");
+      $("service").value = list[0]?.id || "";
+      updateHint();
+      compute();
+    }
+
+    function getService(){
+      const cat = $("category").value;
+      const id  = $("service").value;
+      return (PRICE[cat] || []).find(s => s.id === id) || null;
+    }
+
+    function updateHint(){
+      const s = getService();
+      $("serviceHint").textContent = s ? (s.hint || "—") : "Choisis un service.";
+    }
+
+    // =========================
+    // CALCUL
+    // =========================
+    function getNum(id){
+      const v = ($(id).value || "").trim();
+      if(!v) return null;
+      const n = Number(v);
+      if(!Number.isFinite(n)) return null;
+      return n;
+    }
+
+    function compute(){
+      const s = getService();
+      if(!s){
+        $("price").textContent = "—";
+        $("subprice").textContent = "Sélectionne un service";
+        $("summary").innerHTML = "";
+        const msg = buildMessage(true);
+        setWhatsAppTargets(msg);
+        return;
+      }
+
+      const qty = Math.max(1, Math.floor(getNum("qty") || 1));
+      const parts = getNum("parts"); // optional
+      const urgent = $("urgent").checked;
+      const pickup = $("pickup").checked;
+
+      let min = s.min * qty;
+      let max = s.max * qty;
+
+      // Si pièce renseignée -> on l'ajoute
+      let pieceLine = "";
+      if(parts && parts > 0){
+        min += parts;
+        max += parts;
+        pieceLine = `Pièce : ${fmt(parts)} FCFA`;
+      }else if(s.piece){
+        pieceLine = "Pièce : + (selon modèle)";
+      }else{
+        pieceLine = "Pièce : incluse / non nécessaire";
+      }
+
+      // Bonus options
+      const bonuses = [];
+      if(urgent){
+        min += BONUS.urgent.min;
+        max += BONUS.urgent.max;
+        bonuses.push(`${BONUS.urgent.label} (+${fmt(BONUS.urgent.min)} à ${fmt(BONUS.urgent.max)} FCFA)`);
+      }
+      if(pickup){
+        min += BONUS.pickup.min;
+        max += BONUS.pickup.max;
+        bonuses.push(`${BONUS.pickup.label} (+${fmt(BONUS.pickup.min)} à ${fmt(BONUS.pickup.max)} FCFA)`);
+      }
+
+      $("price").textContent = `${fmt(min)} – ${fmt(max)} FCFA`;
+      $("subprice").textContent = `Estimation (x${qty}) • ${s.name}`;
+
+      // Résumé
+      const model = ($("model").value || "").trim() || "Non précisé";
+      const city = ($("city").value || "").trim() || "Non précisé";
+      const details = ($("details").value || "").trim() || "Non précisé";
+
+      const li = [];
+      li.push(`<li><b>Catégorie :</b> ${catLabel($("category").value)}</li>`);
+      li.push(`<li><b>Service :</b> ${escapeHtml(s.name)} (x${qty})</li>`);
+      li.push(`<li><b>Modèle :</b> ${escapeHtml(model)}</li>`);
+      li.push(`<li><b>Ville :</b> ${escapeHtml(city)}</li>`);
+      li.push(`<li><b>Détails :</b> ${escapeHtml(details)}</li>`);
+      li.push(`<li><b>${escapeHtml(pieceLine)}</b></li>`);
+      if(bonuses.length) li.push(`<li><b>Options :</b> ${escapeHtml(bonuses.join(" • "))}</li>`);
+      li.push(`<li><b>Total estimatif :</b> ${fmt(min)} – ${fmt(max)} FCFA</li>`);
+      $("summary").innerHTML = li.join("");
+
+      const msg = buildMessage(false);
+      setWhatsAppTargets(msg);
+    }
+
+    function catLabel(v){
+      if(v === "phone") return "Téléphone";
+      if(v === "pc") return "Ordinateur";
+      if(v === "web") return "Site web";
+      return v;
+    }
+
+    function buildMessage(isFallback){
+      const s = getService();
+      const model = ($("model").value || "").trim();
+      const city = ($("city").value || "").trim() || "Djougou";
+      const details = ($("details").value || "").trim();
+      const qty = Math.max(1, Math.floor(getNum("qty") || 1));
+      const parts = getNum("parts");
+      const urgent = $("urgent").checked;
+      const pickup = $("pickup").checked;
+
+      if(isFallback || !s){
+        return `Bonjour ${businessName}, je veux un devis. Je suis à ${city}.`;
+      }
+
+      // Recalcule rapidement pour message
+      let min = s.min * qty;
+      let max = s.max * qty;
+      let pieceTxt = "Non précisé";
+      if(parts && parts > 0){
+        min += parts; max += parts;
+        pieceTxt = `${fmt(parts)} FCFA`;
+      }else if(s.piece){
+        pieceTxt = "+ (selon modèle)";
+      }else{
+        pieceTxt = "Incluse / non nécessaire";
+      }
+
+      const options = [];
+      if(urgent){ min += BONUS.urgent.min; max += BONUS.urgent.max; options.push("Urgent"); }
+      if(pickup){ min += BONUS.pickup.min; max += BONUS.pickup.max; options.push("Récupération/Dépôt"); }
+
+      const optTxt = options.length ? options.join(", ") : "Aucune";
+
+      return `Bonjour ${businessName}, je veux un devis 🙏
+
+- Catégorie : ${catLabel($("category").value)}
+- Service : ${s.name}
+- Quantité : x${qty}
+- Modèle : ${model || "Non précisé"}
+- Ville : ${city}
+- Détails : ${details || "Non précisé"}
+- Pièce : ${pieceTxt}
+- Options : ${optTxt}
+
+➡️ Estimation : ${fmt(min)} – ${fmt(max)} FCFA
+
+Merci.`;
+    }
+
+    function setWhatsAppTargets(msg){
+      const link = waLink(msg);
+      ["btnWhatsAppTop","btnWhatsAppMenu","btnWhatsAppFloat","btnWhatsAppPreview"].forEach(id=>{
+        const el = $(id);
+        if(el) el.href = link;
+      });
+    }
+
+    // =========================
+    // COPY + ACTIONS
+    // =========================
+    async function copyText(text){
+      try{
+        await navigator.clipboard.writeText(text);
+        return true;
+      }catch(e){
+        return false;
+      }
+    }
+
+    // =========================
+    // SAFETY: escape HTML (for summary)
+    // =========================
+    function escapeHtml(str){
+      return String(str)
+        .replaceAll("&","&amp;")
+        .replaceAll("<","&lt;")
+        .replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;")
+        .replaceAll("'","&#039;");
+    }
+
+    // =========================
+    // EVENTS
+    // =========================
+    $("category").addEventListener("change", loadServices);
+    $("service").addEventListener("change", ()=>{ updateHint(); compute(); });
+
+    ["model","city","details","qty","parts"].forEach(id=>{
+      $(id).addEventListener("input", compute);
+    });
+    ["urgent","pickup"].forEach(id=>{
+      $(id).addEventListener("change", compute);
+    });
+
+    $("btnSend").addEventListener("click", ()=>{
+      const msg = buildMessage(false);
+      window.open(waLink(msg), "_blank", "noopener");
+    });
+
+    $("btnCopy").addEventListener("click", async ()=>{
+      const msg = buildMessage(false);
+      const ok = await copyText(msg);
+      $("state").innerHTML = ok
+        ? `<span class="ok">✅ Message copié. Tu peux coller sur WhatsApp.</span>`
+        : `<span class="warn">⚠️ Copie impossible. Sélectionne le texte dans le résumé et copie.</span>`;
+      setTimeout(()=>{$("state").textContent="";}, 2500);
+    });
+
+    $("btnReset").addEventListener("click", ()=>{
+      $("model").value = "";
+      $("details").value = "";
+      $("qty").value = "1";
+      $("parts").value = "";
+      $("urgent").checked = false;
+      $("pickup").checked = false;
+      compute();
+    });
+
+    $("btnPrint").addEventListener("click", ()=> window.print());
+
+    // Footer year
+    $("year").textContent = new Date().getFullYear();
+
+    // =========================
+    // Mobile menu
+    // =========================
+    const navBtn = $("navBtn");
+    const navPanel = $("navPanel");
+
+    function closeMenu(){
+      navPanel.classList.remove("is-open");
+      navPanel.setAttribute("aria-hidden","true");
+      navBtn.setAttribute("aria-expanded","false");
+      document.body.style.overflow = "";
+    }
+    function openMenu(){
+      navPanel.classList.add("is-open");
+      navPanel.setAttribute("aria-hidden","false");
+      navBtn.setAttribute("aria-expanded","true");
+      document.body.style.overflow = "hidden";
+    }
+
+    if(navBtn && navPanel){
+      navBtn.addEventListener("click", ()=>{
+        const expanded = navBtn.getAttribute("aria-expanded") === "true";
+        expanded ? closeMenu() : openMenu();
+      });
+      navPanel.addEventListener("click", (e)=>{
+        if(e.target === navPanel) closeMenu();
+      });
+      navPanel.querySelectorAll("a").forEach(a=>{
+        a.addEventListener("click", ()=> closeMenu());
+      });
+      document.addEventListener("keydown", (e)=>{
+        if(e.key === "Escape") closeMenu();
+      });
+    }
+
+    // INIT
+    loadServices();
+    setWhatsAppTargets(`Bonjour ${businessName}, je veux un devis. Je suis à Djougou.`);
+  </script>
+</body>
+</html>
